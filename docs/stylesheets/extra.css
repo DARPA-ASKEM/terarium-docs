@@ -1,0 +1,155 @@
+/*Uncharted font-family*/
+:root {
+  --md-text-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+}
+
+.md-typeset h1 {
+  font-weight: bold;
+}
+
+.procedure {
+  font-weight: bold;
+}
+
+.numberCircle {
+  width: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 15px;
+  border: 0px;
+  background: #AC0C64;
+  color: #fff;
+}
+
+figcaption {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 0.9em;
+}
+
+.md-typeset a {
+  text-decoration: underline;
+}
+
+.md-typeset img {
+    display: block;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.stacked-images {
+          display: flex;
+  justify-content: space-around;
+       margin-top: 16px;
+}
+
+.stacked-image {
+  align-self: center;
+  max-height: 400px !important;
+}
+
+img.inline-img {
+  display: inline;
+  height: 1em; 
+  margin-top: 0; 
+  margin-bottom: 0;
+} 
+
+:root {
+  --md-primary-fg-color: #353554;
+}
+
+[data-md-color-scheme="terarium"] {
+  --md-primary-fg-color: #fff;
+  --md-primary-bg-color: #000;
+  --md-primary-bg-color--light: #0000008a;
+  --md-typeset-a-color: blue;
+  --md-icon: #000;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #AFBAFD;
+  --md-primary-bg-color--light: #fff;
+}
+
+[data-md-color-scheme=slate][data-md-color-primary=indigo] {
+  --md-typeset-a-color: #AFBAFD;
+}
+
+.md-header {
+    color: var(--md-primary-bg-color--light);
+}
+
+.md-search__form {
+  background: var(--md-primary-fg-color);
+}
+
+/*Adjust icon sizes and alignment*/
+
+.md-typeset .emojione svg,.md-typeset .gemoji svg,.md-typeset .twemoji svg {
+    font-size: .9em;
+}
+
+.md-typeset .emojione,.md-typeset .gemoji,.md-typeset .twemoji {
+    height: .9em;
+    vertical-align: baseline;
+}
+
+svg.feather {
+  fill: none !important;
+}
+
+/*Show correct logo for current mode*/
+
+#logo_light_mode {
+    display: var(--md-footer-logo-terarium);
+}
+
+#logo_dark_mode {
+    display: var(--md-footer-logo-slate);
+}
+
+[data-md-color-scheme="terarium"] {
+    --md-footer-logo-slate: none;
+    --md-footer-logo-terarium: block;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-footer-logo-slate: block;
+    --md-footer-logo-terarium: none;
+}
+
+/*Admonition for procedure lists*/
+
+:root {
+  --md-admonition-icon--list: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>')
+}
+
+.md-typeset .admonition.list,
+.md-typeset details.list {
+  border-color: #9e9e9e;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.md-typeset .list > .admonition-title,
+.md-typeset .list > summary {
+  background-color: rgba(54, 70, 78, 0.1);
+}
+
+.md-typeset .list > .admonition-title::before,
+.md-typeset .list > summary::before {
+  background-color: rgb(54, 70, 78);
+  -webkit-mask-image: var(--md-admonition-icon--list);
+          mask-image: var(--md-admonition-icon--list);
+}
+
+.md-typeset .md-button {
+  color: var(--md-primary-fg-color--light);
+  text-decoration: none;
+}
