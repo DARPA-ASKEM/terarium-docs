@@ -2,13 +2,15 @@
 title: "Gather modeling resources"
 ---
 
-## Find papers, models, and datasets
+With Terarium, you can search for, upload, store, and manage resources needed for your modeling and simulation workflows. Many resources are available for search within the Terarium databases. You can also upload your own resources or resources found in relevant code repositories.
 
-You can search for the following types of resources to use in your modeling and simulation workflows:
+![Explorer showing document results for "covid" keyword search filtered by publication year](../img/resources/explorer.png)
 
-- **Documents** from a continuously updated collection of published scientific papers related to the COVID-19 pandemic
+??? info "Resource extractions"
 
-    ??? info "Document extractions"
+    Terarium summarizes the following types of metadata and data extracted from the supported resources.
+
+    === ":octicons-file-24:{ aria-hidden="true" } Documents"
 
         Each document has an associated PDF (from Unpaywall) and a set of extracted metadata and contents, including:
 
@@ -26,17 +28,41 @@ You can search for the following types of resources to use in your modeling and 
         * References
         * GitHub URLs
 
-- **Models** from the Terarium databases.
-- **Datasets** from the Terarium databases.
+    === ":octicons-share-android-24:{ aria-hidden="true" } Models"
+
+        * Description:
+            - Description
+            - Parameters
+            - State variables
+            - Transitions
+            - Variable statements
+        * Model:
+            - Diagram
+            - Configurations
+            - Simulation space
+
+    === ":octicons-database-24:{ aria-hidden="true" } Datasets"
+
+        * Descriptions
+        * Annotations
+        * Features
+
+## Find papers, models, and datasets
+
+You can search for the following types of resources to use in your modeling and simulation workflows:
+
+- :octicons-file-24:{ aria-hidden="true" } **Documents** from a continuously updated collection of published scientific papers related to the COVID-19 pandemic.
+- :octicons-share-android-24:{ aria-hidden="true" } **Models** from the Terarium databases.
+- :octicons-database-24:{ aria-hidden="true" } **Datasets** from the Terarium databases.
 
 ??? list "To search for resources"
 
     1. Enter a keyword in the search bar and press ++enter++.
     2. Review the **Suggested terms** and click any that you think will improve your search.
     3. To choose the type of resources you want to review, click one of the following buttons:
-        * **Documents**
-        * **Models**
-        * **Datasets**
+        * :octicons-file-24:{ aria-hidden="true" } **Documents**
+        * :octicons-share-android-24:{ aria-hidden="true" } **Models**
+        * :octicons-database-24:{ aria-hidden="true" } **Datasets**
     4. Review the facets to see a breakdown of the resources that match your search. Different facets are available depending on the type of resources you are searching for.
         <figure>
           <img src="/img/facets.png" class="docimage">
@@ -46,12 +72,12 @@ You can search for the following types of resources to use in your modeling and 
 
 ??? list "To find resources similar to an example"
 
-    1. Click and drag the card that represents the example resource into the Search by example dialog. 
-    2. Select any of the following options to choose how Terarium should determine similary:
-        - **Similar content** for a document using similarity vector. (provided by xdd)
-        - **Forward citations** (not implemented)
-        - **Backward citation** (not implemented)
-        - **Related resources** (not implemented)
+    1. In the search results, click and drag the card that represents the example resource into the Search by example dialog. 
+    2. Select any of the following options to choose how Terarium should determine similarity:
+        - **Similar content** for a document using similarity vector.
+        - **Forward citations** <span class="md-tag">to be supported in a future release</span> 
+        - **Backward citation** <span class="md-tag">to be supported in a future release</span>
+        - **Related resources** <span class="md-tag">to be supported in a future release</span>
     3. Click **Search**.
 
 ??? list "To filter a search"
@@ -66,12 +92,12 @@ You can search for the following types of resources to use in your modeling and 
 
     - Perform one of the following actions:
         * Click the value in the Facets, or
-        * Click **x** on the filter badge below the summary of the results.
+        * Click :octicons-x-24:{ title="Clear" } on the filter badge below the summary of the results.
 
 ??? list "To add resources to your project"
 
     1. To select resources, perform one of the following actions:
-        * Click **+** on the upper right of the resource card.
+        * Click :octicons-plus-24:{ title="Add to selected resources" } on the upper right of the resource card.
         * With the resource details expanded, click **Add to selected resources**.
     2. Repeat the previous step for all the resources you want to add.
     3. In the Selected resources panel, click **Add to project** and select your project name from the list.
@@ -85,9 +111,13 @@ In addition to the papers, models, and datasets you can find using the Explorer,
 
 ### Upload your own resources
 
+The project overview tab has a quick link that lets you **Upload resources** (PDF and CSV) from your computer.
+
+![Upload dialog configured to upload and extract metadata from a scientific paper on COVID-19](../img/resources/upload.png)
+
 ??? list "To upload resources"
 
-    1. Click **Upload resources**.
+    1. On the project overview, click **Upload resources**.
     2. Drag your resource files into the Upload resource dialog or click **upload a file** to browse to the location of the files you want to add.
     3. Configure any file-specific settings:
     
@@ -108,9 +138,9 @@ In addition to the papers, models, and datasets you can find using the Explorer,
 
             1. Enter a description of the dataset contents in the **Description** field.
 
-    4. Click **Upload Data**.
+    4. Click **Import Data**.
     5. Review the extractions that appear at the bottom of the dialog.
-    6. Once you are satisfied with the extracts, click **Upload**.
+    6. Once you are satisfied with the extractions, click **Upload**.
 
 ### Import resources from a GitHub repository
 
@@ -121,15 +151,27 @@ If your project has a document that references a GitHub repository, you can impo
 - Document files (PDF, TXT, MD)
 - Unknown files (provided you specify which resource type to import it as)
 
+![](../img/resources/github.png)
+
 ??? list "To import resources from GitHub"
 
-    1. In the GitHub URLs section of the document extractions, click **Import**.
-    2. Select the code, data, and documents you want to import. 
-    3. To import an unknown file type, select it and choose whether you want to import it as code, data, or a document.
-    4. Click **Import X files**.
+    1. On Resources pane, click the title of the paper to open it in a new tab.
+    2. In the GitHub URLs section of the document extractions, click **Import**.
+    3. Select the code, data, and documents you want to import. 
+    4. To import an unknown file type, select it and choose whether you want to import it as code, data, or a document.
+    5. Click **Import X files**.
 
 ## Annotate document resources
 
-You can open the source PDF for a document and add comments, highlights, underlines, strikethroughs, and freehand drawings.
+You can open the source PDF for a document and add comments, highlights, underlines, strike-throughs, and freehand drawings.
 
-More info coming soon.
+![](../img/resources/annotate-pdf.png)
+
+??? list "To upload resources"
+
+    1. On Resources pane, click the title of the paper to open it in a new tab.
+    2. Click :octicons-file-24:{ aria-hidden="true" } **PDF** to view the source document.
+    3. Use the annotation toolbar on the left side to add:
+        - Comments.
+        - Highlighting, underlines, or strike-throughs.
+        - Freehand drawings.
