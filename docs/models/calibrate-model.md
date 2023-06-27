@@ -9,7 +9,7 @@ Calibrating a model lets you determine or update the value of model parameters i
 <p class="procedure">To calibrate a model</p>
 
 1. In the workflow graph, drag in the model and dataset you want to calibrate.
-2. Right click the workflow graph and select **Calibrate**.
+2. Right-click the workflow graph and select **Deterministic > Calibrate**.
 3. Connect the output ports of the model and dataset to the input node on the calibrate node:
     1. On the model node, click the output port for the config you want to use and then click the input node on the calibrate node.
     2. On the dataset node, click the output port and then click the other input node on the calibrate node.

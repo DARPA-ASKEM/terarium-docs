@@ -4,7 +4,7 @@ title: "Save insights as notes"
 
 The Notes pane on the right side of the page lets you capture and save insights you've gained during your modeling processes. 
 
-![](../img/notes/note.png)
+![Reference to scientific paper saved as an insight](../img/notes/note.png)
 
 To assist with publishing a paper, the Notes pane lets you organize insights into sections such as *Abstract*, *Intro*, *Methods*, *Results*, *Discussion*, or *References*.
 

@@ -80,6 +80,16 @@ You can search for the following types of resources to use in your modeling and 
         - **Related resources** <span class="md-tag">to be supported in a future release</span>
     3. Click **Search**.
 
+??? list "To browse all resources"
+
+    1. Click in the search bar, clear any search terms, and press ++enter++.
+    2. To choose the type of resources you want to review, click one of the following buttons:
+        * :octicons-file-24:{ aria-hidden="true" } **Documents**
+        * :octicons-share-android-24:{ aria-hidden="true" } **Models**
+        * :octicons-database-24:{ aria-hidden="true" } **Datasets**
+    3. Review the facets to see a breakdown of all the resources in the Terarium databases. Different facets are available depending on the type of resources you are searching for.
+    4. To view more details about a resource, click anywhere on its card in the search results.
+
 ??? list "To filter a search"
 
     - Click a value in the Facets. For example, if you only want to see the latest research, click the current year in the Publication year facet.
@@ -151,7 +161,7 @@ If your project has a document that references a GitHub repository, you can impo
 - Document files (PDF, TXT, MD)
 - Unknown files (provided you specify which resource type to import it as)
 
-![](../img/resources/github.png)
+![Import dialog showing the directory structure of the nytimes/covid-19-data GitHub repository](../img/resources/github.png)
 
 ??? list "To import resources from GitHub"
 
@@ -165,9 +175,9 @@ If your project has a document that references a GitHub repository, you can impo
 
 You can open the source PDF for a document and add comments, highlights, underlines, strike-throughs, and freehand drawings.
 
-![](../img/resources/annotate-pdf.png)
+![Annotation toolbar on a PDF preview of a COVID-19 scientific paper](../img/resources/annotate-pdf.png)
 
-??? list "To upload resources"
+??? list "To annotate document resources"
 
     1. On Resources pane, click the title of the paper to open it in a new tab.
     2. Click :octicons-file-24:{ aria-hidden="true" } **PDF** to view the source document.
