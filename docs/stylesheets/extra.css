@@ -8,7 +8,9 @@
 }
 
 .procedure {
-  font-weight: bold;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: -.01em;
 }
 
 .numberCircle {
@@ -139,17 +141,44 @@ svg.feather {
 
 .md-typeset .list > .admonition-title,
 .md-typeset .list > summary {
-  background-color: rgba(54, 70, 78, 0.1);
+  background-color: #9e9e9e1a;
 }
 
 .md-typeset .list > .admonition-title::before,
 .md-typeset .list > summary::before {
-  background-color: rgb(54, 70, 78);
+  background-color: #9e9e9e;
   -webkit-mask-image: var(--md-admonition-icon--list);
           mask-image: var(--md-admonition-icon--list);
 }
 
+/*Improved styling for grid buttons on home page*/
+
 .md-typeset .md-button {
   color: var(--md-primary-fg-color--light);
   text-decoration: none;
+}
+
+/*Transform for flipping icons horizontally*/
+
+.flip {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  }
+
+/*Grid cards for home page*/
+
+.gridcards {
+  text-align: center;
+}
+
+.gridcards p {
+  margin: 0;
+}
+
+.gridcards p a {
+  display: block;
+  margin: 10px auto;
 }

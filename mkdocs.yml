@@ -54,6 +54,8 @@ markdown_extensions:
     md_in_html: {}
     pymdownx.details: {}
     pymdownx.superfences: {}
+    pymdownx.tabbed:
+      alternate_style: true 
     pymdownx.keys: {}
     pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
@@ -78,13 +80,13 @@ nav:
   - Work with models: 
     - models/index.md
     - Extract a model from code: models/extract-code.md
-    - Enrich model and dataset descriptions: models/enrich-descriptions.md
+    - Enrich model descriptions: models/enrich-descriptions.md
     - Stratify a model: models/stratify-model.md
     - Configure a model: models/configure-model.md
     - Simulate a model: models/simulate-model.md
     - Calibrate a model: models/calibrate-model.md
     - Create, calibrate, and simulate a model ensemble: models/model-ensemble.md
-  - Save insights as notes: models/insights.md
+  - Save insights as notes: notes/index.md
   - Integrated subsystems:
     - subsystems/index.md
     - TDS: subsystems/TDS.md
