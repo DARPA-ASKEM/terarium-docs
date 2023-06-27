@@ -14,7 +14,7 @@ For information on finding or uploading datasets, see [Gather modeling resources
 
 ## Dataset descriptions
 
-Terarium relies on LLMs to make sense of datasets and enable data transformations of:
+Terarium relies on large language models (LLMs) to make sense of datasets and enable data transformations of:
 
 - Descriptions
 - Annotations
@@ -22,7 +22,7 @@ Terarium relies on LLMs to make sense of datasets and enable data transformation
 
 <p class="procedure">To view the raw data in a dataset</p>
 
-1. Open the dataset.
+1. Open the dataset in a new tab.
 2. Click the :octicons-file-24:{ aria-hidden="true" } **Data** tab.
 
 ### Enrich dataset descriptions
@@ -31,5 +31,55 @@ Terarium also has an enrichment service that can automatically populate dataset 
 
 <p class="procedure">To enrich a dataset description</p>
 
-1. Click **Add resources to describe this data**.
+1. Open the dataset in a new tab.
+1. Click :octicons-plus-24:{ aria-hidden="true" } **Add resources**.
 2. Select the resources you want to use and click **Use these resources to enrich descriptions**.
+
+## Transform a dataset
+
+Terarium has a large language model interface, TGPT, to help you transform data to suit your modeling and simulation processes. With TGPT, you can use simple language to explain the changes you want to make and quickly save the transformed data as a new resource within your project. 
+
+![TGPT with a prompt and python code to filter covid case dataset to only include US locations](../img/data/transform.jpg)
+
+TGPT can perform multiple commands at once. With it, you can:
+
++ Perform math
++ Add or drop columns
++ Describe the dataset
++ Sort the data
++ Plot the data
++ Undo changes <span class="md-tag">to be supported in a future release</span>
+
+??? example "Example prompts"
+
+    * Filter the data to just location = "US"
+    * Convert the date column to timestamps and plot the data
+    * Create a new census column that is a rolling sum of 'value' over the previous 10 days
+    * Add a new column that is the cumulative sum of the values 
+    * Plot the data
+    * Rename column 'cases' to 'I', column 'hospitalizations' to 'H', and 'deaths' to 'E' 
+
+<p class="procedure">To use TGPT to transform a dataset</p>
+
+1. Click :fontawesome-solid-arrows-rotate:{ aria-hidden="true" } **Transform**.
+2. Use the text box at the bottom of the page to describe the transformation you want to make and then press ++enter++.
+3. Scroll up to the Data Preview section to inspect the transformation.
+4. To make changes to the transformation, edit the provided python code and click :material-play-outline:{ aria-hidden="true" } **Run again**.
+5. Repeat steps 2&ndash;4 to make additional transformations. 
+6. At any time, save the transformed data as a new dataset by entering a unique name in the **Save As** text box and clicking :octicons-check-24:{ title="Save" }.
+
+### Understand how TGPT interprets your prompt
+
+To give you a sense whether it correctly interpreted your prompt, TGPT displays the following information while it's running: 
+
+- Its thoughts about your prompt (*I need to filter the dataset to only include rows with location equal to 'US'*)
+- How it intends to perform the transformation (*DatasetToolset.generate_python_code*)
+
+You can show/hide these thoughts at any time by clicking :fontawesome-regular-eye:{ title="Show/Hide Thought"}.
+
+When the transformation is complete, TGPT shows:
+
+- A preview of the transformed data.
+- Any python code used to complete the transformation.
+- Error codes (if applicable).
+- Any visualizations (if prompted).

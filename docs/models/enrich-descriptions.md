@@ -6,5 +6,6 @@ Terarium uses an enrichment service to automatically populate model descriptions
 
 <p class="procedure">To enrich a model description</p>
 
-1. Click **Add resources to describe this model**.
+1. Open the model in a new tab.
+1. In the Related publications section, click :octicons-plus-24:{ aria-hidden="true" } **Add resources**.
 2. Select the resources you want to use and click **Use these resources to enrich descriptions**.

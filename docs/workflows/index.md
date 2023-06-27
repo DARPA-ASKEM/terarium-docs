@@ -4,7 +4,7 @@ title: "Workflows"
 
 A workflow is a visual canvas that lets you to build and run complex operators (calibration, simulation, and stratification) on models and data.
 
-![](../img/workflows/workflow.png)
+![Workflow graph with an SIR model and related dataset passed into calibration and simulation operations](../img/workflows/workflow.png)
 
 ## Create a workflow
 
@@ -21,7 +21,7 @@ A workflow is a visual canvas that lets you to build and run complex operators (
 ??? list "To add a new model operation to the workflow"
 
     * Perform one of the following actions:
-        + Right click anywhere on the graph and then select an operation from the menu.
+        + Right-click anywhere on the graph and then select an operation from the menu.
         + Click :octicons-plus-24:{ aria-hidden="true"} **Add component** and then select the operation list.
 
 ### Workflow node inputs and outputs
@@ -38,9 +38,17 @@ Nodes in your workflow graph have input and output ports that let you string the
 
         - To configure a simulation operation to use a dataset, first click the output port on the dataset node and then click the input port on the simulation node.
 
+## Workflow node details
+
+Nodes in the workflow graph summarize the resources and operations that they represent. You can drill down on a node to view more details or access additional settings.
+
+??? list "To view node details"
+
+    - Click :octicons-sign-in-24:{ .flip title="Open details" } next to the node title.
+
 ## Manage a workflow
 
-To clean your workflow graph so it's easy to follow, you can freely move, rearrange, or remove the nodes it contains.
+To organize your workflow graph so it's easy to follow, you can freely move, rearrange, or remove the nodes it contains.
 
 ???+ note "Saving workflows"
 

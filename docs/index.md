@@ -13,6 +13,7 @@ Terarium is a comprehensive modeling and simulation ecosystem designed to suppor
 
 Need help? Check out these topics:
 
+<div class="gridcards" markdown>
 [Get started](get-started/){ .md-button }
 [Gather modeling resources](modeling-resources/){ .md-button }
 
@@ -21,3 +22,4 @@ Need help? Check out these topics:
 
 [Work with models](models/){ .md-button }
 [Integrated subsystems](subsystems/){ .md-button }
+</div>

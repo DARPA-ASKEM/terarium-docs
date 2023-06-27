@@ -167,3 +167,18 @@ svg.feather {
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
   }
+
+/*Grid cards for home page*/
+
+.gridcards {
+  text-align: center;
+}
+
+.gridcards p {
+  margin: 0;
+}
+
+.gridcards p a {
+  display: block;
+  margin: 10px auto;
+}
