@@ -39,16 +39,16 @@ Terarium also has an enrichment service that can automatically populate dataset 
 
 Terarium has a large language model interface, TGPT, to help you transform data to suit your modeling and simulation processes. With TGPT, you can use simple language to explain the changes you want to make and quickly save the transformed data as a new resource within your project. 
 
-![TGPT with a prompt and python code to filter covid case dataset to only include US locations](../img/data/transform.jpg)
+![TGPT with a prompt and python code to filter convert a date column to timestamps](../img/data/transform.jpg)
 
-TGPT can perform multiple commands at once. With it, you can:
+Each subsequent transformation you make builds off your previous changes. TGPT can perform multiple commands at once. With it, you can:
 
 + Perform math
 + Add or drop columns
 + Describe the dataset
 + Sort the data
 + Plot the data
-+ Undo changes <span class="md-tag">to be supported in a future release</span>
++ Undo changes <span class="md-tag">coming soon</span>
 
 ??? example "Example prompts"
 
@@ -63,10 +63,12 @@ TGPT can perform multiple commands at once. With it, you can:
 
 1. Click :fontawesome-solid-arrows-rotate:{ aria-hidden="true" } **Transform**.
 2. Use the text box at the bottom of the page to describe the transformation you want to make and then press ++enter++.
-3. Scroll up to the Data Preview section to inspect the transformation.
+3. Scroll to the data preview below your prompt to inspect the transformation.
 4. To make changes to the transformation, edit the provided python code and click :material-play-outline:{ aria-hidden="true" } **Run again**.
 5. Repeat steps 2&ndash;4 to make additional transformations. 
-6. At any time, save the transformed data as a new dataset by entering a unique name in the **Save As** text box and clicking :octicons-check-24:{ title="Save" }.
+6. At any time, save the transformed data:
+    - Save the dataset as a new dataset in Terarium by clicking :material-content-save-outline:{ aria-hidden="true" } **Save as**, entering a unique name in the text box and clicking :octicons-check-24:{ title="Save" }.
+    - Download the dataset to your computer by clicking :octicons-download-24:{ aria-hidden="true" } **Download**.
 
 ### Understand how TGPT interprets your prompt
 
@@ -76,6 +78,10 @@ To give you a sense whether it correctly interpreted your prompt, TGPT displays 
 - How it intends to perform the transformation (*DatasetToolset.generate_python_code*)
 
 You can show/hide these thoughts at any time by clicking :fontawesome-regular-eye:{ title="Show/Hide Thought"}.
+
+??? tip "Always show/hide thoughts"
+
+    To always show or hide thoughts, click :octicons-gear-24:{ title="Chat options" } > **Auto hide chat thoughts** / **Do not auto hide chat thoughts**.
 
 When the transformation is complete, TGPT shows:
 

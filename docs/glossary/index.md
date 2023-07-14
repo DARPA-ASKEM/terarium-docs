@@ -156,7 +156,7 @@ Examples include infectious contact between subpopulations of different age grou
 
 : The process of dividing the populations of a [model](#model) into subsets (subpopulations or strata), often along demographic characteristics such as age and location. The goal is to include more fine-grained interactions&mdash;those between the strata&mdash;into the model. 
 
-    It is [herein](https://algebraicjulia.github.io/AlgebraicPetri.jl/dev/generated/covid/stratification/stratification/) :octicons-link-external-24: implemented as a kind of "typed" [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product_of_graphs) :octicons-link-external-24: between the graph representation of a model `P` and that of one or many "strata models" `Q`. The stratified model `G` has: 
+    It is [herein](https://algebraicjulia.github.io/AlgebraicPetri.jl/dev/generated/covid/stratification/) :octicons-link-external-24: implemented as a kind of "typed" [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product_of_graphs) :octicons-link-external-24: between the graph representation of a model `P` and that of one or many "strata models" `Q`. The stratified model `G` has: 
 
     - A node for every pair of nodes in `P` and `Q` of the same type.
     - A link for every link in `P` or `Q` with the same pair of node types.
