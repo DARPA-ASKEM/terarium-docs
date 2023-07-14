@@ -40,7 +40,7 @@ All the modeling resources are accessible from the Explorer, which you can open 
 
 ![Search for "covid" in Explorer with a 2023 filter on publication year shows 643 scientific papers](../img/resources/explorer.png)
 
-<p class="procedure">To explore and add data</p>
+<p class="procedure">To explore and add documents and related data</p>
 
 1. Enter `covid` in the search bar and press ++enter++.
 2. In the **Publication year** facet, click the current year.
@@ -54,7 +54,9 @@ All the modeling resources are accessible from the Explorer, which you can open 
 
 Along with documents and datasets, the Terarium databases also store **models**. You can add models to your project resources and then calibrate, simulate, and stratify them.
 
-In this step, you'll add some COVID-19 models to your project.
+In this step, you'll add a COVID-19 model to your project.
+
+![View model results in the Explorer](../img/get-started/model-search.png)
 
 <p class="procedure">To explore and add models</p>
 
@@ -77,18 +79,24 @@ To do this, you'll create a new workflow. A workflow graph is a visual workspace
 1. On the project overview, click **New workflow**.
 2. Drag the **us** dataset from the list of resources onto the workflow graph.
 3. Right-click the workflow graph and click **Deterministic > Calibrate**.
-4. Click the output port on the us dataset node and then click one of the input nodes on the CalibrationOperation node.
+4. Click the output port on the us dataset node and then click the **Dataset** input port on the Calibration node.
 
 ## Simulate a model
 
 Before you can continue with the calibration operation you began in the previous step, you need to select a model. In this step, you'll simulate a model to determine its fit to your task.
 
+![A simulate operation for a COVID-19 model with a plot of the results of infected, healed, and extinct over time](../img/get-started/simulate-results.png)
+
 <p class="procedure">To simulate a model</p>
 
 1. Drag the **Giordano2020** model from the list of resources onto the workflow graph.
 2. Right-click the workflow graph and click **Deterministic > Simulate**.
-3. Click the output port on the **Giordano2020** model node and then click the input node on the SimulateOperation node.
+3. Click the Default config output port on the **Giordano2020** model node and then click the Model Configuration input port on the Simulate (Deterministic) node.
 4. Click **Run**.
+5. To view the results:
+      1. (Optional) Click :octicons-sign-in-24:{ .flip title="Open simulate details" } to open the Simulate pane.
+      2. Click **Select variables to plot** to choose the variables you want to visualize.
+      3. Click :octicons-plus-24:{ aria-hidden="true" } **Add Chart** to display another chart with different variables.
 
 ## Calibrate a model
 
@@ -96,7 +104,7 @@ Now you can connect the **Giordano2020** to the calibration node and run the ope
 
 <p class="procedure">To calibrate a model</p>
 
-1. Click the output port on the **Giordano2020** model node and then click the remaining input node on the CalibrationOperation node.
+1. Click the Default config output port on the **Giordano2020** model node and then click the Model Configuration input port on the Calibration node.
 2. Click :octicons-sign-in-24:{ .flip title="Open calibrate details" } to open the **Giordano2020** Calibrate pane.
 3. Scroll down to the Train / Test ratio section and, if necessary, drag the slider to adjust how much data should be reserved for training.
 4. In the Mapping section, match the **Giordano2020** model variables with the corresponding columns in the us dataset.
@@ -104,8 +112,15 @@ Now you can connect the **Giordano2020** to the calibration node and run the ope
 
 ## Compare simulations
 
-Pipe the output of calibration into the same simulate node to compare the model before and after calibration.
+You can use the same simulate node to compare multiple configurations of a model. Connect the output port of each configuration into the same Simulate input port to compare them.
 
 <p class="procedure">To compare simulations</p>
 
-More info coming soon.
+1. For each configuration you want to use, click its output port and then click the **Model Configuration** input node on the Simulate node.
+2. On the Simulate node, click **Run**.
+3. On the Simulate pane, click :octicons-sign-out-24:{ aria-hidden="true" } **Output**.
+4. Use the **Select variables to plot** dropdown to choose the variable you want to visualize. 
+
+  When comparing simulations, you can only add one variable to each plot. Each simulation result is color-coded to match the line coming out of the configuration port in the workflow graph.
+
+5. To compare a different variable, click :octicons-plus-24:{ aria-hidden="true"} **Add Chart** and repeat the previous step.

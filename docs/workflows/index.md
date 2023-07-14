@@ -22,7 +22,7 @@ A workflow is a visual canvas that lets you to build and run complex operators (
 
     * Perform one of the following actions:
         + Right-click anywhere on the graph and then select an operation from the menu.
-        + Click :octicons-plus-24:{ aria-hidden="true"} **Add component** and then select the operation list.
+        + Click :octicons-plus-24:{ aria-hidden="true"} **Add component** and then select the operation from the list.
 
 ### Workflow node inputs and outputs
 
@@ -36,7 +36,7 @@ Nodes in your workflow graph have input and output ports that let you string the
 
     ??? example
 
-        - To configure a simulation operation to use a dataset, first click the output port on the dataset node and then click the input port on the simulation node.
+        - To configure a Calibrate operation to use a dataset, first click the output port on the right side of the Dataset node and then click the **Dataset** input port on the left side of the Calibrate node.
 
 ## Workflow node details
 
@@ -53,6 +53,10 @@ To organize your workflow graph so it's easy to follow, you can freely move, rea
 ???+ note "Saving workflows"
 
     Terarium periodically autosaves the state of your workflow as you make changes.
+
+??? list "To rename a workflow"
+
+    * Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" } > :octicons-pencil-24:{ aria-hidden="true"} **Rename**, type a unique name for the workflow, and press ++enter++.
 
 ??? list "To move a workflow node"
 

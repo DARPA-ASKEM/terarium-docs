@@ -30,7 +30,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  favicon: img/terarium-icon.a133c57d.png
+  favicon: img/terarium-icon.png
   font: false
   language: custom
 
@@ -79,6 +79,7 @@ nav:
   - Work with data: datasets/index.md
   - Work with models: 
     - models/index.md
+    - Edit a model: models/edit-model.md
     - Extract a model from code: models/extract-code.md
     - Enrich model descriptions: models/enrich-descriptions.md
     - Stratify a model: models/stratify-model.md
