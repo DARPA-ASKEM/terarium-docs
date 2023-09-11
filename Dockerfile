@@ -1,4 +1,4 @@
-FROM docker-hub.uncharted.software/nginx:alpine
+FROM nginx:alpine
 
 RUN apk update && \
     apk upgrade && \
