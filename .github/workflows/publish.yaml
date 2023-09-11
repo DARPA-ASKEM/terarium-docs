@@ -30,15 +30,10 @@ jobs:
           ref: ${{ github.event.workflow_run.head_branch }}
 
       # 1.2 - Generate a matrix output of all the targets for the specified group
-      # if its not triggered by tag use `staging` bake group instead
       - name: Create matrix
         id: targets
         run: |
-          if [[ "${{ github.ref_type }}" == "branch" && "${{ github.ref_name }}" == "main" ]]; then
-            BAKE_GROUP=staging
-          else
-            BAKE_GROUP=prod
-          fi
+          BAKE_GROUP=documentation
           TARGETS=$(docker buildx bake $BAKE_GROUP -f ${{ env.BAKE_FILE }} --print | jq -cr ".group.$BAKE_GROUP.targets")
           echo "matrix=$TARGETS" >> $GITHUB_OUTPUT
 
