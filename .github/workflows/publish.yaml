@@ -73,10 +73,10 @@ jobs:
 
       # 2.2 - Build all packages and move them to required location for Docker
       - name: Build
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        uses: Tiryoh/actions-mkdocs@v0
         env:
-          CONFIG_FILE: folder/mkdocs.yml
-          EXTRA_PACKAGES: mkdocs-material, mkdocs-glightbox, mkdocs-macros-plugin
+          requirements: 'requirements.txt'
+          configfile: 'mkdocs.yml'
 
       # 2.3 - Set environment variables to be used within the bake file
       # NOTE: this overrides the defaults and should be specific to this deployment

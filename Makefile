@@ -1,5 +1,5 @@
 SOURCE := ./src
-SITE := ./_site
+SITE := ./site
 
 .PHONY: all
 all:

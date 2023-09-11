@@ -31,4 +31,4 @@ bin/
 # Local environment
 overrides/.icons/
 _notes.md
-_site/
+site/

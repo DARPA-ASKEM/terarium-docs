@@ -7,6 +7,6 @@ RUN apk update && \
       curl \
       vim
 
-ADD ./_site /www/docs/
+ADD ./site /www/docs/
 
 ADD default.conf /etc/nginx/conf.d/default.conf
