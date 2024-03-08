@@ -32,3 +32,5 @@ bin/
 overrides/.icons/
 _notes.md
 site/
+vale.ini
+styles/

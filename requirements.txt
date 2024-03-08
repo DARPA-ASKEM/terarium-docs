@@ -1,5 +1,6 @@
 # Requirements for mkdocs
-mkdocs == 1.5.2
-mkdocs-material == 9.2.7
-mkdocs-glightbox == 0.3.4
-mkdocs-macros-plugin == 0.7.0
+mkdocs == 1.5.3
+mkdocs-material == 9.5.13
+mkdocs-glightbox == 0.3.7
+mkdocs-macros-plugin == 1.0.5
+mkdocs-print-site-plugin  == 2.3.6
