@@ -2,50 +2,46 @@
 title: "Stratify a model"
 ---
 
-Stratifying a model allows you to divide its populations into subsets along demographic characteristics such as age and location. Terarium automatically updates both the graphical representation of the model and its equations to reflect your changes.
+# Stratify a model
+
+By stratifying a model, you divide its populations into subsets along demographic characteristics such as age and location.
 
 ![](../img/models/stratify.png)
 
-## Define the strata
+Terarium automatically updates both the graphical representation of the model and its equations to reflect your changes.
 
-More info coming soon.
+<figure markdown>![](../img/models/stratify-model-operator.png)<figcaption markdown>How it works: [MIRA](https://github.com/gyorilab/mira/blob/main/notebooks/viz_strat_petri.ipynb) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
 
-<p class="procedure">To define the strata</p>
+<div class="grid cards" markdown>
 
-1. In the workflow graph, drag in the model you want to stratify.
-2. Right-click the workflow graph and select **Stratify**.
-3. Click a configuration output port on the model node and then click the **Model configuration** input port on the stratify node.
-4. Click :octicons-sign-in-24:{ .flip title="Open stratify details" } to open the Stratify panel, and use the **Select a strata type** dropdown to choose the type of strata you want to add (such as age groups or locations).
+-   :material-arrow-collapse-right:{ .lg .middle aria-hidden="true" } __Inputs__
+
+    ---
+
+    Model
+
+-   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
+
+    ---
+
+    Stratified model
+
+</div>
+
+<p class="procedure">To stratify a model</p>
+
+1. Add the model to a workflow graph.
+2. Right-click anywhere on the workflow graph and select **Work with model** > **Stratify model**.
+3. Connect the output of the Model resource to the input of the Stratify model operator.
+4. On the Stratify model operator, click **Edit**.
+4. Enter a **Name** for the strata you want to add.
+5. Use the **Select variables and parameters to stratify** dropdown.
 5. Enter a comma-separated list of labels for each of the strata groups:
     ```
     A1, A2
     ```
-6. To add another strata group, click :octicons-plus-24:{ aria-hidden="true" } **Add another strata group** and repeat steps 4&ndash;5.
-7. Click **Generate strata**.
-8. Click **Continue to step 2: Assign types**.
-
-## Assign types
-
-More info coming soon.
-
-<p class="procedure">To assign types</p>
-
-1. In the Model section, use the **Assign to** dropdowns to assign model concepts to each of the depicted node types.
-2. To add a type not depicted, click :octicons-plus-24:{ aria-hidden="true" } **Add type** and provide a name for the new type. Repeat the node typing described in the previous steps.
-3. Click **Continue to step 3: Manage Interactions**.
-
-## Manage interactions
-
-More info coming soon.
-
-<p class="procedure">To manage interactions</p>
-
-- In the Strata section, use the dropdown list to indicate which populations in the new strata are allowed to perform certain transitions.
-
-## Stratify the model
-
-More info coming soon.
-
-<p class="procedure">To stratify the model</p>
-
-- Click **Stratify**.
+6. Choose whether you want to:
+    - Create new transitions between strata
+    - Allow existing interactions to involve multiple strata
+7. Click :material-play-outline:{ aria-hidden="true" } **Stratify**.
+8. Click **Save as new model**.
