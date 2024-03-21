@@ -70,7 +70,7 @@ img.inline-img {
   --md-primary-fg-color: #fff;
   --md-primary-bg-color: #000;
   --md-primary-bg-color--light: #0000008a;
-  --md-typeset-a-color: blue;
+  --md-typeset-a-color: #1b8073;;
   --md-icon: #000;
 }
 
@@ -154,18 +154,30 @@ svg.feather {
 /*Improved styling for grid buttons on home page*/
 
 .md-typeset .md-button {
-  color: var(--md-primary-fg-color--light);
+  color: #1b8073;
   text-decoration: none;
+  &:hover {
+    background-color: #1b8073;
+    border-color: #1b8073;
+  }
 }
 
 /*Transform for flipping icons horizontally*/
 
-.flip {
+.hflip {
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
   -o-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
+  }
+
+.vflip {
+  -moz-transform: scale(1, -1);
+  -webkit-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
   }
 
 /*Grid cards for home page*/

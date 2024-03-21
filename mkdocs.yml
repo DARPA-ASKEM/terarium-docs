@@ -77,23 +77,28 @@ extra_css:
 nav:
   - Home: 
     - index.md
-  - What's new: 
-    - whats-new/index.md
   - Get started:
-    - get-started/index.md
+    - Using Terarium: get-started/using-terarium.md
   - Gather modeling resources: modeling-resources/index.md
   - Manage workflows: workflows/index.md
-  - Work with data: datasets/index.md
-  - Work with models: 
+  - Work with data: 
+    - datasets/index.md
+    - Subset dataset: datasets/subset-dataset.md
+    - Transform gridded dataset: datasets/transform-gridded-dataset.md
+  - Work with a model: 
     - models/index.md
     - Edit a model: models/edit-model.md
-    - Extract a model from code: models/extract-code.md
+    - Create a model from code: models/extract-code.md
     - Enrich model descriptions: models/enrich-descriptions.md
     - Stratify a model: models/stratify-model.md
     - Configure a model: models/configure-model.md
     - Simulate a model: models/simulate-model.md
     - Calibrate a model: models/calibrate-model.md
-    - Create, calibrate, and simulate a model ensemble: models/model-ensemble.md
+  - Work with multiple models:
+    - Compare models: multiple-models/compare-models.md
+    - Couple models: multiple-models/couple-models.md
+    - Simulate ensemble: multiple-models/simulate-ensemble.md
+    - Calibrate ensemble: multiple-models/calibrate-ensemble.md
   - Save insights as notes: notes/index.md
   - Integrated subsystems:
     - subsystems/index.md
@@ -102,5 +107,6 @@ nav:
     - Knowledge extraction: subsystems/knowledge-extraction.md
     - Modeling: subsystems/modeling.md
     - Simulation: subsystems/simulation.md
+    - Beaker: subsystems/beaker.md
   - Glossary: 
     - glossary/index.md

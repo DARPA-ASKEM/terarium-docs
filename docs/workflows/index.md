@@ -2,53 +2,62 @@
 title: "Workflows"
 ---
 
-A workflow is a visual canvas that lets you to build and run complex operators (calibration, simulation, and stratification) on models and data.
+# Manage workflows
 
-![Workflow graph with an SIR model and related dataset passed into calibration and simulation operations](../img/workflows/workflow.png)
+A workflow is a visual canvas that lets you to build and run complex operations (calibration, simulation, and stratification) on models and data.
 
-## Create a workflow
+![Workflow graph with an SIR model and related dataset passed into a calibration operation](../img/workflows/workflow.png)
 
 ??? list "To create a new workflow"
 
-    * On the project overview tab, click :octicons-git-merge-24:{ aria-hidden="true"} **New workflow**.
+    * In the Resources panel, click :fontawesome-solid-plus:{ aria-hidden="true"} **New** in the Workflow section.
 
-??? list "To add a dataset or model to the workflow"
+## Add resources and operators to a workflow
 
-    * Perform one of the following actions:
-        + Drag the model or dataset in from the Resources pane.
-        + Click :octicons-plus-24:{ aria-hidden="true"} **Add component > Model** or **Dataset** and then select the resource from the dropdown list on the new node.
+Workflows consist of models, datasets, documents, and code that you can feed into a series of operators that transform or simulate your resources.
 
-??? list "To add a new model operation to the workflow"
+??? list "To add a resource to the workflow"
 
-    * Perform one of the following actions:
-        + Right-click anywhere on the graph and then select an operation from the menu.
-        + Click :octicons-plus-24:{ aria-hidden="true"} **Add component** and then select the operation from the list.
+    Perform one of the following actions:
 
-### Workflow node inputs and outputs
+    + Drag the model, dataset, document, or code in from the Resources panel.
+    + Right-click anywhere on the graph, select **Add resource** > **Model**, **Dataset**, **Document**, or **Code** and then select the resource from the dropdown list.
 
-Nodes in your workflow graph have input and output ports that let you string them together to form complex model operations.
+??? list "To add an operator to the workflow"
 
-![Output nodes (left) for a model and a dataset connected to the input nodes of a calibrate operation](../img/workflows/nodes.png)
+    Perform one of the following actions:
 
-??? list "To connect node ports"
+    + Right-click anywhere on the graph and then select an operation from the menu.
+    + Click :octicons-plus-24:{ aria-hidden="true"} **Add component** and then select the operation from the list.
 
-    - Click the input or output port of one node and then click the opposite port on another node.
+### Link resources and operators
+
+Resources and operators in your workflow graph have inputs and outputs that let you string them together to form complex model operations.
+
+![Outputs (left) for a model and a dataset connected to the input of a calibrate operation](../img/workflows/nodes.png)
+
+??? list "To connect resources and operators"
+
+    - Click the output of one operator and then click the corresponding input on another operator.
 
     ??? example
 
-        - To configure a Calibrate operation to use a dataset, first click the output port on the right side of the Dataset node and then click the **Dataset** input port on the left side of the Calibrate node.
+        - To configure a Calibrate operation to use a dataset, first click the output on the right side of the Dataset operator and then click the **Dataset** input on the left side of the Calibrate operator.
 
-## Workflow node details
+### Edit resource and operator details
 
-Nodes in the workflow graph summarize the resources and operations that they represent. You can drill down on a node to view more details or access additional settings.
+Resources and operators in the workflow graph summarize the data and inputs/outputs that they represent. You can drill down to view more details or settings.
 
-??? list "To view node details"
+??? list "To view resource or operator details"
 
-    - Click :octicons-sign-in-24:{ .flip title="Open details" } next to the node title.
+    Perform one of the following actions:
+
+    - Click **Open** or **Edit**.
+    - Click :fontawesome-solid-ellipsis-vertical:{ alt="Menu" title="Menu" } > :fontawesome-solid-up-right-from-square:{ aria-hidden="true" } **Open in new window**.
 
 ## Manage a workflow
 
-To organize your workflow graph so it's easy to follow, you can freely move, rearrange, or remove the nodes it contains.
+To organize your workflow graph, you can move, rearrange, or remove any of the operators.
 
 ???+ note "Saving workflows"
 
@@ -58,14 +67,14 @@ To organize your workflow graph so it's easy to follow, you can freely move, rea
 
     * Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" } > :octicons-pencil-24:{ aria-hidden="true"} **Rename**, type a unique name for the workflow, and press ++enter++.
 
-??? list "To move a workflow node"
+??? list "To move a workflow operator"
 
-    * Click the title of the node and drag it to another location on the graph.
+    * Click the title of the operator and drag it to another location on the graph.
 
-??? list "To bring a workflow node to the front of the graph"
+??? list "To adjust the layering of a workflow operator"
 
-    * Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" } **> Bring to front**.
+    * Click :fontawesome-solid-ellipsis-vertical:{ alt="Menu" title="Menu" } > :fontawesome-solid-arrow-up:{ aria-hidden="true" } **Bring to front** or :fontawesome-solid-arrow-down:{ aria-hidden="true" } **Send to back**.
 
-??? list "To remove a workflow node"
+??? list "To remove a workflow operator"
 
-    * Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" } **>** :fontawesome-regular-trash-can:{ aria-hidden="true" } **Remove**.
+    * Click :fontawesome-solid-ellipsis-vertical:{ alt="Menu" title="Menu" } > :fontawesome-regular-trash-can:{ aria-hidden="true" } **Remove**.
