@@ -12,6 +12,7 @@ The help is designed to build with the latest MkDocs and Material theme. It also
 
 - [mkdocs-glightbox](https://github.com/blueswen/mkdocs-glightbox) enables zoom functionality for images.
 - [mkdocs-macros-plugin](https://github.com/fralau/mkdocs_macros_plugin) allows the use of variables in Markdown files.
+- [mkdocs-print-site-plugin](https://github.com/timvink/mkdocs-print-site-plugin) creates a single page with all site content so that it can be exported to PDF.
 
 To install the latest MkDocs, theme, and extensions: 
 
@@ -20,6 +21,7 @@ pip install mkdocs
 pip install mkdocs-material
 pip install mkdocs-glightbox
 pip install mkdocs-macros-plugin
+pip install mkdocs-print-site-plugin
 ``` 
 
 ## Building the help site ##
