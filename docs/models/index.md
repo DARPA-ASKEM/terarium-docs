@@ -68,8 +68,13 @@ You can create models from equations that have been extracted from a paper or ma
     3. Right-click anywhere on the workflow graph and select **Work with model** > **Create model from equations**.
     4. Connect the output of the Document resource to the input of the Create model from equations operator.
     5. Click **Edit** on the Create model from equations operator.
-    6. To customize the selected equations, edit the LaTeX expressions or clear **Include in process** to deselect them.
-    7. Enter a name for the new model and click **Run**.
+    6. To customize the selected equations: 
+        - Edit the LaTeX expressions.
+        - Clear **Include in process** to remove an equation.
+        - Click :octicons-plus-24:{ aria-hidden="true" } **Add an equation** to enter a new equation.
+    7. Choose the **framework** for the new model.
+    8. Click **Run**.
+    9. Review the model preview and click **Save as new model**.
 
 ??? list "To create a model from manually entered equations"
 

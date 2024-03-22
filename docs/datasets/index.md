@@ -56,15 +56,22 @@ Terarium relies on large language models (LLMs) to make sense of datasets and en
 
 Terarium also has an enrichment service that can automatically populate dataset descriptions based on related publications you've identified. When you enrich a dataset, the service looks at your related publications to find and apply definitions for concepts.
 
+???+ tip
+
+    Curating concepts improves structural comparison and alignment of models and data.
+
 <p class="procedure">To enrich a dataset description</p>
 
 1. Open the dataset in a new tab.
-1. Click **Enrich description**.
-2. Select a publication and click **Use document to generate descriptions**. 
+2. Click **Enrich description**.
+3. Perform one of the following actions:
+
+    - To enrich descriptions without selecting a document, click **Generate descriptions**.
+    - To use a document, select a publication and click **Use document to generate descriptions**. 
 
 ## Transform a dataset
 
-Terarium has an operator with a large language model interface, TGPT, to help you transform data to suit your modeling and simulation processes. With TGPT, you can use plain language to explain the changes you want to make and save the transformed data as a new resource within your project. 
+Terarium has an operator with a large language model interface, TGPT, to help you clean and transform data to suit your modeling and simulation processes. With TGPT, you can use plain language to explain the changes you want to make and save the transformed data as a new resource within your project. 
 
 <figure markdown>![Transform dataset that takes a UK compartments dataset as an input and outputs a filtered version](../img/data/transform-operator.png)<figcaption markdown>How it works: [pandas](https://pandas.pydata.org/docs/user_guide/index.html#user-guide) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
 

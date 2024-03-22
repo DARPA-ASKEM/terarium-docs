@@ -13,6 +13,10 @@ Simulating a model lets you understand how the underlying system might behave un
 
 Terarium supports two types of simulations: deterministic (with SciML) and probabilistic (with PyCIEMSS).
 
+??? tip
+
+    Simulating early with a simple model (one with a population of 1,000) can help you spot issues and fix them before you start using a more complex model.
+
 ## Deterministic simulations
 
 Deterministic simulations (SciML) take a model configuration as an input and run a single simulation across an editable time range.
@@ -45,6 +49,7 @@ Deterministic simulations (SciML) take a model configuration as an input and run
     6. Configure the simulation options as needed:
         - **Start time** and **End time**: Specify the simulation time range.
     8. Click :material-play-outline:{ aria-hidden="true" } **Run**.
+    9. Review the output and click :fontawesome-solid-floppy-disk:{ aria-hidden="true" } **Save as new dataset** to add the results to your project resources.
 
 ## Probabilistic simulations
 
@@ -73,14 +78,20 @@ Probabilistic simulations (PyCIEMSS) take a model configuration and an optional 
 
     1. Add the model to a workflow graph.
     2. Connect the Model operator output to a Configure model operator. See [Configure a model](configure-model.md) for information on selecting a model configuration. 
-    2. Right-click anywhere on the workflow graph and select **Run model** > **Simulate with PyCIEMSS**.
-    3. Connect the Configure model operator output to the Simulate with PyCIEMSS input.
-    4. Click **Edit** on the Simulate with PyCIEMSS operator.
-    4. Configure the simulation options as needed:
+    3. Right-click anywhere on the workflow graph and select **Run model** > **Simulate with PyCIEMSS**.
+    4. Connect the Configure model operator output to the Simulate with PyCIEMSS input.
+    5. Click **Edit** on the Simulate with PyCIEMSS operator.
+    6. Configure the simulation options as needed:
         - **Start time** and **End time**: Specify the simulation time range.
         - **Number of samples**: Enter the number of stochastic samples to generate.
-        - **Method**: Choose whether to solve ordinary differential equations using [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) or [euler](https://en.wikipedia.org/wiki/Euler_method). 
-    6. Click :material-play-outline:{ aria-hidden="true" } **Run**.
+        - **Method**: Choose whether to solve ordinary differential equations using [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) or [euler](https://en.wikipedia.org/wiki/Euler_method).
+
+            ??? tip
+
+                Using a low number of samples and the dopri5 method can speed up your runtime for debugging purposes.
+
+    7. Click :material-play-outline:{ aria-hidden="true" } **Run**.
+    8. Review the output and click :fontawesome-solid-floppy-disk:{ aria-hidden="true" } **Save as new dataset** to add the results to your project resources.
 
 ## View and save simulation results
 
@@ -90,6 +101,10 @@ Simulation results are summarized on each Simulate operator and in the operator 
 
     1. In the output section of the Simulate operator details, use the dropdown list to choose the variables you want to visualize. If you choose multiple variables, Terarium overlaps them on the same plot.
     2. To add an additional chart, click :octicons-plus-24:{ aria-hidden="true"} **Add chart** and repeat the previous step.
+
+        ??? tip
+
+            It's recommended to use multiple charts if the variables you want to display have very different magnitudes.
 
 ??? list "To save simulation results as a new dataset"
 
