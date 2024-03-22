@@ -44,6 +44,14 @@ Resources and operators in your workflow graph have inputs and outputs that let 
 
         - To configure a Calibrate operation to use a dataset, first click the output on the right side of the Dataset operator and then click the **Dataset** input on the left side of the Calibrate operator.
 
+??? list "To remove a connection between resources and operators"
+
+    - Hover over the input or output and click :octicons-unlock-24:{ aria-hidden="true" } **Unlink**.
+
+??? note "Operators with yellow headers"
+
+    An operator with a yellow header indicates that a resource or indicator that feeds into it has changed and the operator needs to be rerun.
+
 ### Edit resource and operator details
 
 Resources and operators in the workflow graph summarize the data and inputs/outputs that they represent. You can drill down to view more details or settings.
@@ -54,6 +62,10 @@ Resources and operators in the workflow graph summarize the data and inputs/outp
 
     - Click **Open** or **Edit**.
     - Click :fontawesome-solid-ellipsis-vertical:{ alt="Menu" title="Menu" } > :fontawesome-solid-up-right-from-square:{ aria-hidden="true" } **Open in new window**.
+
+??? list "To duplicate a resource or operator"
+
+    - Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" } > :octicons-copy-24:{ aria-hidden="true"} **Duplicate**
 
 ## Manage a workflow
 

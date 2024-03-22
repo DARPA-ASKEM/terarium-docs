@@ -4,39 +4,7 @@ title: "Edit a model"
 
 # Edit a model
 
-You can use Terarium to edit model resources in your project or even create new ones. The editor represents the model as a diagram where:
-
-- State variables are nodes.
-- Dependencies are directed edges. 
-
-For each model framework, the editor has a set of model templates that you can use to quickly edit or create different parts of the model.
-
-<!-- ## Add or edit an equation
-
-Terarium represents model equations as both [MathLive](https://cortexjs.io/mathlive/virtual-keyboard/) :octicons-link-external-24: and [LaTeX](https://www.latex-project.org/) :octicons-link-external-24: expressions. You can create or edit either expression, and your changes are automatically applied to the other.
-
-![Mathematical equations for a SIR model](../img/models/equation-edit.png)
-
-Equations are also linked to the model diagram. Changes you make to the expressions are automatically reflected in the diagram. 
-
-??? list "To create or edit an equation"
-
-    1. Add the Model to a workflow graph and click **Open**.
-    2. Scroll down to the Model equations section and click **Edit**.
-    3. Select or create an equation to edit: 
-    
-        * To add a new equation, click :octicons-plus-24:{ aria-hidden="true" } **Add Equation**.
-        * To edit an existing equation, click anywhere on the equation.
-        * To delete an equation, hover over it and click **Delete** > **Confirm delete**.
-    
-    4. Edit the equation in either the **MathLive** or **LaTeX** field. Changes you make in either field are automatically reflected in the other.
-    
-        ??? tip "Virtual keyboard"
-    
-            The MathLive field has a [virtual keyboard](https://cortexjs.io/mathlive/virtual-keyboard/) :octicons-link-external-24: that helps you enter mathematical symbols and functions. Click :material-keyboard-outline:{ title="Virtual keyboard" } to enable it.
-    
-    5. Click **Save**.
-    6. Repeat steps 3&ndash;5 to add or edit more equations.  -->
+You can use Terarium to edit model resources in your project or even create new ones. The Edit model operator allows you to compose or modify a diagram of the model states and transitions or prompt an AI assistant to generate code that makes your requested changes.
 
 <figure markdown>
 ![](../img/models/model-edit-operator.png)
@@ -59,31 +27,37 @@ Equations are also linked to the model diagram. Changes you make to the expressi
 
 </div>
 
-## Model templates
+## Edit a model diagram
 
-Available templates vary depending on the selected framework. Options include:
+The Wizard view of the Edit model operator represents each model as a diagram where:
 
+- State variables are nodes.
+- Dependencies are directed edges. 
+
+![Diagram showing the connected states and transitions in a SIR model](../img/models/diagram-edit.png)
+
+For each model framework, the editor has a set of model templates that you can use to quickly edit or create different parts of the model. Available templates vary depending on the selected framework. Options include:
+
+<div class="grid" markdown>
+<div markdown>
 - **Natural conversion**: subject converts into outcome at a constant rate.
 - **Natural production**: outcome is generated at a constant rate.
 - **Natural degradation**: subject is destroyed at a constant rate
 - **Controlled conversion**: subject converts into outcome at a rate that depends on some controller variable
 - **Controlled production**: outcome is produced at a rate that depends on some controller variable
 - **Controlled degradation**: subject is destroyed at a rate that depends on some controller variable
+</div>
+<div markdown>
 - **Grouped controlled conversion**: subject converts into outcome at a rate that depends on several controller variables
 - **Grouped controlled production**: subject is produced at a rate  that depends on several controller variables
 - **Grouped controlled degradation**: subject converts into outcome at a rate that depends on several controller variables
 - **Natural replication**: subject is generated at a rate that depends on itself
-- **Controlled replication**: subject generates at a rate that depends on itself and some controller variable
+- **Controlled replication**: subject generates at a rate that depends on itself and some controller variable</div>
+</div>
 
-## Create or edit a diagram
+The model diagram is linked to the model equations. Changes you make to the diagram are automatically reflected in the equations.
 
-The model diagram represents the model as a set of states and transitions connected by directed edges.
-
-![Diagram showing the connected states and transitions in a SIR model](../img/models/diagram-edit.png)
-
-The model diagram is linked to the model equations. Changes you make to the diagram are automatically reflected in the equations. 
-
-??? list "To begin editing the model diagram"
+??? list "To begin editing a model diagram"
 
     1. Add the Model to a workflow graph.
     2. Right-click anywhere on the workflow graph and select **Work with model** > **Edit model**.
@@ -95,35 +69,25 @@ The model diagram is linked to the model equations. Changes you make to the diag
         - To link states across templates, click an output port on a template and connect it to another and output port on another template.
     6. To view the edited model, click **Flattened**.
 
-<!-- ## Add or edit an observable
+## Edit a model with the AI assistant
 
-An observable is quantity of a model that can be measured as an "observation" data point. Terarium represents observables as both [MathLive](https://cortexjs.io/mathlive/virtual-keyboard/) :octicons-link-external-24: and [LaTeX](https://www.latex-project.org/) :octicons-link-external-24: expressions. You can create or edit either expression, and your changes are automatically applied to the other.
+Using the Notebook view of the Edit model operator, you can steer an AI assistant to quickly create, modify, and refine a model from code. All generated code is directly editable, allowing you to make modifications at any time.
 
-![Mathematical equations for a SIR model](../img/models/observable-edit.png)
+???+ note
 
-??? list "To create or edit an observable"
+    Each time you submit a new prompt or command, the generated code is added below any existing code. Each time you run the code, the whole notebook is executed.
 
-    1. Add the Model to a workflow graph and click **Open**.
-    2. Scroll down to the Model observables section and click **Edit**.
-    3. Select or create an observable to edit:
-    
-        * To add a new observable, click :octicons-plus-24:{ aria-hidden="true" } **Add observable**.
-        * To edit an existing observable, click anywhere on the observable.
-        * To delete an observable, hover over it and click **Delete** > **Confirm delete**.
-    
-    4. Edit the observable in either the [MathLive](https://cortexjs.io/mathlive/virtual-keyboard/) :octicons-link-external-24: or [LaTeX](https://www.latex-project.org/) :octicons-link-external-24: field. Changes you make in either field are automatically reflected in the other.
-    
-        ??? tip "Virtual keyboard"
-    
-            The MathLive field has a [virtual keyboard](https://cortexjs.io/mathlive/virtual-keyboard/) :octicons-link-external-24: that helps you enter mathematical symbols and functions. Click :material-keyboard-outline:{ title="Virtual keyboard" } to enable it.
-    
-    5. Click **Save**.
-    6. Repeat steps 3&ndash;5 to add or edit more observables. -->
+??? list "To edit a model using the AI assistant"
 
-## Add or edit a configuration
+    1. In the Edit model operator details, click **Notebook**.
+    2. Click :fontawesome-solid-angle-down:{ title="Suggested prompts" alt="Suggested prompts"" } in the prompt field to see suggested actions. Select a suggestion or enter your own command using plain language.
+    3. Click :material-play-outline:{ aria-hidden="true" } **Run**.
 
-With model configurations, you can set the initial values and parameters for conditions you want to test.
+        ???+ tip
 
-![Model configurations table showing the initial conditions and parameters for a default configuration](../img/models/configurations.png)
+            To generate model code but not run and preview it, click :fontawesome-regular-paper-plane:{ alt="Generate code" title="Generate code"}.
 
-For information about adding or editing a model configuration, see [Configure a model](configure-model.md).
+    4. Review the resulting model diagram in the Preview. 
+    5. To make changes, submit a new prompt that clarifies or builds on what you asked for or directly edit the generated code.
+    6. Click :material-play-outline:{ aria-hidden="true" } **Run** again to update the model.
+    7. To save an iteration of the model at any point, enter a unique **name** and click **Save as new model**.

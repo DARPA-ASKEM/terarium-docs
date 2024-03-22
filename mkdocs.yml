@@ -94,6 +94,7 @@ nav:
     - Configure a model: models/configure-model.md
     - Simulate a model: models/simulate-model.md
     - Calibrate a model: models/calibrate-model.md
+    - Optimize a model: models/optimize-model.md
   - Work with multiple models:
     - Compare models: multiple-models/compare-models.md
     - Couple models: multiple-models/couple-models.md

@@ -37,10 +37,20 @@ Deterministic calibrations (SciML) take a model configuration and a dataset as a
 
 1. Add the model and reference dataset to a workflow graph.
 2. Connect the Model operator output to a Configure model operator. See [Configure a model](configure-model.md) for information on selecting a model configuration. 
-2. Right-click anywhere on the workflow graph and select **Run model** > **Calibrate with SciML**.
-3. Connect the outputs of the Configure model operator and Dataset resource to the inputs on the Calibrate with SciML operator.
-4. Click **Edit** on the Calibrate with SciML operator.
+
+    ??? tip
+
+        At least one parameter in the configuration needs to be defined as a distribution, and there needs to be a timestamp column.
+
+3. Right-click anywhere on the workflow graph and select **Run model** > **Calibrate with SciML**.
+4. Connect the outputs of the Configure model operator and Dataset resource to the inputs on the Calibrate with SciML operator.
+5. Click **Edit** on the Calibrate with SciML operator.
 6. In the Mapping section, map the model variables to the columns in the dataset.
+
+    ??? tip
+
+        If the model concepts are assigned to variables, click :octicons-plus-24:{ aria-hidden="true" } **Auto map** to speed the alignment process. 
+
 7. Configure the calibration options as needed:
     - **Chains**: Number of parallel chains to run during the calibration.
     - **Iterations**: Number of steps each chain should take.
