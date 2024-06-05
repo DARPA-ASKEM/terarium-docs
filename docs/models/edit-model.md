@@ -8,7 +8,7 @@ You can use Terarium to edit model resources in your project or even create new 
 
 <figure markdown>
 ![](../img/models/model-edit-operator.png)
-<figcaption markdown>How it works: [MIRA Model Edit](https://github.com/DARPA-ASKEM/beaker-kernel/blob/main/docs/contexts_mira_model_edit.md) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption> 
+<figcaption markdown>How it works: [MIRA Model Edit](https://darpa-askem.github.io/askem-beaker/contexts_mira_model_edit.html) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption> 
 </figure>
 
 <div class="grid cards" markdown>
