@@ -84,11 +84,11 @@ Model Service provides REST-API wrappers for creating, manipulating, and transfo
 
     ---
 
-    [beaker-kernel](https://github.com/DARPA-ASKEM/beaker-kernel/blob/main/docs/contexts_climate_data_utility.md) :octicons-link-external-24:{ alt="External link" title="External link" }
+    [beaker-kernel](https://darpa-askem.github.io/askem-beaker/contexts_climate_data_utility.html) :octicons-link-external-24:{ alt="External link" title="External link" }
 
 -   __Source code__
 
     ---
 
-    [beaker-kernel | GitHub](https://github.com/DARPA-ASKEM/beaker-kernel/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
+    [askem-beaker | GitHub](https://github.com/DARPA-ASKEM/askem-beaker/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
 </div>
