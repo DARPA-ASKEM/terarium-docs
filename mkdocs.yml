@@ -1,4 +1,4 @@
-site_name: Terarium Help
+site_name: Terarium help
 site_author: Uncharted Software Inc.
 
 copyright: Copyright &copy; 2024 Uncharted Software Inc.
@@ -22,13 +22,13 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: terarium
       toggle:
-        icon: material/brightness-7 
+        icon: material/weather-sunny 
         name: Switch to dark mode
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
   favicon: img/terarium-icon.png
   font: false
@@ -38,6 +38,11 @@ plugins:
   - search: {}
   - glightbox: {}
   - macros: {}
+  - redirects:
+      redirect_maps:
+        # 'old.md': 'new.md'
+        # 'old/file.md': 'new/file.md'
+        # 'some_file.md': 'http://external.url.com/foobar'
   - print-site:
       enumerate_headings: false
       add_cover_page: true
@@ -79,27 +84,32 @@ nav:
     - index.md
   - Get started:
     - Using Terarium: get-started/using-terarium.md
-  - Gather modeling resources: modeling-resources/index.md
-  - Manage workflows: workflows/index.md
-  - Work with data: 
+    - "Example project: Recreating, modifying, and simulating an SIR model": get-started/example-workflow.md  
+  - Upload modeling resources: upload-resources/index.md
+  - Build a workflow graph: workflows/index.md
+  - Review and transform data: 
     - datasets/index.md
+    - Review and enrich a dataset: datasets/review-and-enrich-dataset.md
+    - Transform dataset: datasets/transform-dataset.md
     - Subset dataset: datasets/subset-dataset.md
     - Transform gridded dataset: datasets/transform-gridded-dataset.md
-  - Work with a model: 
-    - models/index.md
-    - Edit a model: models/edit-model.md
-    - Create a model from code: models/extract-code.md
-    - Enrich model descriptions: models/enrich-descriptions.md
-    - Stratify a model: models/stratify-model.md
-    - Configure a model: models/configure-model.md
-    - Simulate a model: models/simulate-model.md
-    - Calibrate a model: models/calibrate-model.md
-    - Optimize a model: models/optimize-model.md
-  - Work with multiple models:
-    - Compare models: multiple-models/compare-models.md
-    - Couple models: multiple-models/couple-models.md
-    - Simulate ensemble: multiple-models/simulate-ensemble.md
-    - Calibrate ensemble: multiple-models/calibrate-ensemble.md
+  - Modeling: 
+    - modeling/index.md
+    - Create a model from equations: modeling/create-model-from-equations.md
+    - Enrich model metadata: modeling/enrich-descriptions.md
+    - Edit a model: modeling/edit-model.md
+    - Stratify a model: modeling/stratify-model.md
+    - Compare models: modeling/compare-models.md
+  - Configuration and intervention:
+    - config-and-intervention/index.md
+    - Configure a model: config-and-intervention/configure-model.md
+    - Create and optimize an intervention policy: config-and-intervention/create-intervention-policy.md
+  - Simulation:
+    - simulation/index.md
+    - Simulate a model: simulation/simulate-model.md
+    - Calibrate a model: simulation/calibrate-model.md
+    - Simulate ensemble: simulation/simulate-ensemble.md
+    - Calibrate ensemble: simulation/calibrate-ensemble.md
   - Save insights as notes: notes/index.md
   - Integrated subsystems:
     - subsystems/index.md

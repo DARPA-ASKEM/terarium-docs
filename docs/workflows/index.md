@@ -1,27 +1,26 @@
 ---
-title: "Workflows"
+title: "Build a workflow graph"
 ---
 
-# Manage workflows
+# Build a workflow graph
 
 A workflow is a visual canvas that lets you to build and run complex operations (calibration, simulation, and stratification) on models and data.
 
 ![Workflow graph with an SIR model and related dataset passed into a calibration operation](../img/workflows/workflow.png)
 
-??? list "To create a new workflow"
+???+ list "To create a new workflow"
 
-    * In the Resources panel, click :fontawesome-solid-plus:{ aria-hidden="true"} **New** in the Workflow section.
+    * In the Resources panel, click :fontawesome-solid-plus:{ aria-hidden="true"} **New** in the Workflows section.
 
 ## Add resources and operators to a workflow
 
-Workflows consist of models, datasets, documents, and code that you can feed into a series of operators that transform or simulate your resources.
+Workflows consist of resources (models, datasets, and documents) that you can feed into a series of operators that transform or simulate them. 
+
+Each resource or operator is a "node" with a title, thumbnail preview, and a set of inputs and outputs. 
 
 ??? list "To add a resource to the workflow"
 
-    Perform one of the following actions:
-
-    + Drag the model, dataset, document, or code in from the Resources panel.
-    + Right-click anywhere on the graph, select **Add resource** > **Model**, **Dataset**, **Document**, or **Code** and then select the resource from the dropdown list.
+    + Drag the model, dataset, or document in from the Resources panel.
 
 ??? list "To add an operator to the workflow"
 
@@ -30,19 +29,23 @@ Workflows consist of models, datasets, documents, and code that you can feed int
     + Right-click anywhere on the graph and then select an operation from the menu.
     + Click :octicons-plus-24:{ aria-hidden="true"} **Add component** and then select the operation from the list.
 
-### Link resources and operators
+### Connect resources and operators
 
-Resources and operators in your workflow graph have inputs and outputs that let you string them together to form complex model operations.
+Resource and operator inputs and outputs let you string them together to form complex model operations.
 
 ![Outputs (left) for a model and a dataset connected to the input of a calibrate operation](../img/workflows/nodes.png)
 
-??? list "To connect resources and operators"
+??? list "To connect resources and operators already in the workflow"
 
-    - Click the output of one operator and then click the corresponding input on another operator.
+    - Click the output of one resource or operator and then click the corresponding input on another operator.
 
     ??? example
 
         - To configure a Calibrate operation to use a dataset, first click the output on the right side of the Dataset operator and then click the **Dataset** input on the left side of the Calibrate operator.
+
+??? list "To connect resources and operators to a new operator"
+
+    - Hover over the output of the resource or operator, then click :octicons-plus-24:{ title="Link" aria-label="Link" }, and then select an operator.
 
 ??? list "To remove a connection between resources and operators"
 
@@ -50,7 +53,7 @@ Resources and operators in your workflow graph have inputs and outputs that let 
 
 ??? note "Operators with yellow headers"
 
-    An operator with a yellow header indicates that a resource or indicator that feeds into it has changed and the operator needs to be rerun.
+    An operator with a yellow header indicates that a resource or indicator that flows into it has changed and the operator needs to be rerun.
 
 ### Edit resource and operator details
 
@@ -71,9 +74,9 @@ Resources and operators in the workflow graph summarize the data and inputs/outp
 
 To organize your workflow graph, you can move, rearrange, or remove any of the operators.
 
-???+ note "Saving workflows"
+???+ note "To save a workflow"
 
-    Terarium periodically autosaves the state of your workflow as you make changes.
+    Terarium automatically saves the state of your workflow as you make changes.
 
 ??? list "To rename a workflow"
 
@@ -82,10 +85,6 @@ To organize your workflow graph, you can move, rearrange, or remove any of the o
 ??? list "To move a workflow operator"
 
     * Click the title of the operator and drag it to another location on the graph.
-
-??? list "To adjust the layering of a workflow operator"
-
-    * Click :fontawesome-solid-ellipsis-vertical:{ alt="Menu" title="Menu" } > :fontawesome-solid-arrow-up:{ aria-hidden="true" } **Bring to front** or :fontawesome-solid-arrow-down:{ aria-hidden="true" } **Send to back**.
 
 ??? list "To remove a workflow operator"
 

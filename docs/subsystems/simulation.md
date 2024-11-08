@@ -6,41 +6,7 @@ title: "Simulation"
 
 More info coming soon.
 
-## Simulate with SciML
-
-<div class="grid cards" markdown>
-
--   __Documentation__
-
-    ---
-
-    [sciml-service](https://github.com/DARPA-ASKEM/sciml-service/blob/main/src/operations.jl#L222) :octicons-link-external-24:{ alt="External link" title="External link" }
-
--   __Source code__
-
-    ---
-
-    [sciml-serivce | GitHub](https://github.com/DARPA-ASKEM/sciml-service/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
-</div>
-
-## Calibrate with SciML
-
-<div class="grid cards" markdown>
-
--   __Documentation__
-
-    ---
-
-    [sciml-service](https://github.com/DARPA-ASKEM/sciml-service/blob/main/src/operations.jl#L245) :octicons-link-external-24:{ alt="External link" title="External link" }
-
--   __Source code__
-
-    ---
-
-    [sciml-serivce | GitHub](https://github.com/DARPA-ASKEM/sciml-service/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
-</div>
-
-## Simulate with PyCIEMSS
+## Simulate
 
 <div class="grid cards" markdown>
 
@@ -57,7 +23,7 @@ More info coming soon.
     [PyCIEMSS | GitHub](https://github.com/ciemss/pyciemss/tree/main/pyciemss) :octicons-link-external-24:{ alt="External link" title="External link" }
 </div>
 
-## Calibrate with PyCIEMSS
+## Calibrate
 
 <div class="grid cards" markdown>
 
@@ -74,7 +40,7 @@ More info coming soon.
     [PyCIEMSS | GitHub](https://github.com/ciemss/pyciemss/tree/main/pyciemss) :octicons-link-external-24:{ alt="External link" title="External link" }
 </div>
 
-## Optimize with PyCIEMSS
+## Optimize
 
 <div class="grid cards" markdown>
 

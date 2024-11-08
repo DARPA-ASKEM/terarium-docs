@@ -67,20 +67,28 @@ img.inline-img {
 }
 
 [data-md-color-scheme="terarium"] {
+  --md-accent-fg-color: #1b8073;
   --md-primary-fg-color: #fff;
   --md-primary-bg-color: #000;
   --md-primary-bg-color--light: #0000008a;
   --md-typeset-a-color: #1b8073;;
   --md-icon: #000;
+  --md-footer-bg-color: #f5f5f5;
+  --md-footer-bg-color--dark: #d6d6d6;
+  --md-footer-fg-color: #000000de;
+  --md-footer-fg-color--light: #000000de;
+  --md-footer-fg-color--lighter: #000000de;
+  --md-footer-typeset-color: ;
 }
 
 [data-md-color-scheme="slate"] {
-  --md-accent-fg-color: #AFBAFD;
+  --md-accent-fg-color: #1b8073;
   --md-primary-bg-color--light: #fff;
+  --md-primary-fg-color: #1b8073;
 }
 
 [data-md-color-scheme=slate][data-md-color-primary=indigo] {
-  --md-typeset-a-color: #AFBAFD;
+  --md-typeset-a-color: #1b8073;
 }
 
 .md-header {
@@ -193,4 +201,15 @@ svg.feather {
 .gridcards p a {
   display: block;
   margin: 10px auto;
+}
+
+div.tabbed-labels a {
+    text-decoration: none;
+}
+
+img.node-icon {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.85em;
 }

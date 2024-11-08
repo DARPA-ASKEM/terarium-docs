@@ -73,20 +73,3 @@ More info coming soon.
 
     [MIRA | GitHub](https://github.com/gyorilab/mira/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
 </div>
-
-## Couple models
-
-<div class="grid cards" markdown>
-
--   __Documentation__
-
-    ---
-
-    [Decapodes.jl](https://algebraicjulia.github.io/Decapodes.jl/dev/overview/#Merging-Multiple-Physics) :octicons-link-external-24:{ alt="External link" title="External link" }
-
--   __Source code__
-
-    ---
-
-    [Decapodes.jl | GitHub](https://github.com/AlgebraicJulia/Decapodes.jl) :octicons-link-external-24:{ alt="External link" title="External link" }
-</div>
