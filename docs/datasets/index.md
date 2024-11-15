@@ -19,12 +19,16 @@ The Transform data operator can also serve as a place to visually plot and compa
 
 ## Dataset resource
 
-Once you add a dataset to your project, you can: 
+A dataset resource can represent:
 
-- [Open it to explore the raw data](review-and-enrich-dataset.md).
-- Drag it into a workflow from the Resources panel and connect it to transformation, configuration, and calibration operators.
+- A dataset you've uploaded.
+- A dataset you've modified and saved.
+- The output of a simulation or an optimized intervention policy.
+ 
+In a workflow graph, a dataset resource lists the columns it contains. You can use it to: 
 
-In a workflow, the Dataset resource lists the columns it contains.
+- [Open and explore the raw data](review-and-enrich-dataset.md).
+- Run data transformations, model configurations, and model calibrations.
 
 ![Resource node of a SEIRD dataset for UK compartments with a 5-row preview](../img/data/data-resource.png)
 
@@ -34,19 +38,23 @@ In a workflow, the Dataset resource lists the columns it contains.
 
     ---
 
-    None
+    - None
 
 -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
 
     ---
 
-    Dataset
+    - Dataset
 
 </div>
 
+???+ list "Add a dataset resource operator to a workflow"
+
+    - Drag the resource from the Datasets section of the Resources panel.
+
 ### What can I do with a dataset resource?
 
-Hover over the output of the Dataset resource and click :octicons-plus-24:{ title="Link" aria-label="Link" } to use the dataset as an input to one of the following operators.
+Hover over the output of the Dataset resource and click <span class="sr-only" id="link-icon-label">link</span> :octicons-plus-24:{ title="Link" aria-labelledBy="link-icon-label" } to use the dataset as an input to one of the following operators.
 
 <div class="grid cards" markdown>
 

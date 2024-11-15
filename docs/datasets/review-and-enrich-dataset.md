@@ -10,35 +10,47 @@ Once you have [uploaded a dataset into your project](../upload-resources/index.m
 - Manually add metadata that explains the data in each column.
 - Automatically enrich metadata using documents in your dataset or without additional context.
 
+![Metadata and column summaries for a LA county COVID dataset](../img/data/dataset.png)
+
 ## Review a dataset
 
 To get an understanding of your data, you can open a dataset and review its columns and a selection of its rows. A dataset resource previews up to 100 rows of data.
 
-??? list "To open a dataset"
+??? list "Open a dataset"
 
     - Perform one of the following actions:
-      - In the Resources panel, click the name of the dataset.
-      - On a Dataset node in the workflow graph, click **Open**.
+      
+        - In the Resources panel, click the name of the dataset.
+        - On a Dataset node in the workflow graph, click **Open**.
 
-??? list "To view the raw data in a dataset"
+??? list "View the raw data in a dataset"
 
     - Click **Data** in the navigation list on the right.
 
-??? list "To download a dataset"
+??? list "Download a dataset"
 
-    - Next to the dataset name, click :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-label="Menu" } > :octicons-download-24:{ aria-hidden="true"} **Download**.
+    - Next to the dataset name, click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="Menu" } > :octicons-download-24:{ aria-hidden="true"} **Download**.
 
 ## Enrich a dataset
 
-Terarium's enrichment service can automatically populate dataset descriptions and column metadata based on the documents in your project. When you enrich a dataset, the service looks at a selected document to find and apply definitions for concepts.
+If your dataset lacks descriptive details about what each column contains, you can use Terarium's dataset enrichment capability to complete the:
 
-???+ tip
+- **Units**: What the column measures (dates, cases, people) or contains (text).
+- **Descriptions**: A short plain language explanation of the column's contents. 
+- **Concepts**: The meaning of the data in the column and how it should map to model variables.
+- **Distributions of values** 
 
-    Curating concepts improves structural comparison and alignment of models and data.
+Terarium's enrichment service uses an AI language model to generate column details based on either:
 
-![Metadata and column summaries for a SIDARTHE dataset](../img/data/data-details.png)
+- Contextual clues in the contents of a document in your project. 
+- The column headers in the dataset. In this case, the language model attempts to define the columns as if they relate to a general epidemiological context.
 
-???+ list "To enrich dataset metadata"
+???+ note
+
+    - Curating concepts improves structural comparison and alignment of models and data.
+    - If Terarium can't determine what a column represents, it fills out the description to summarize distribution of values it contains.
+
+??? list "Enrich dataset metadata"
 
     1. Click **Enrich metadata**.
     2. Perform one of the following actions:
@@ -49,3 +61,8 @@ Terarium's enrichment service can automatically populate dataset descriptions an
     3. Click **Enrich**.
     4. Review the updated description and column information. 
     5. Click **Save**.
+
+??? list "Add or edit dataset metadata"
+
+    1. Edit the **Name**, **Unit**, **Data type**, **Concept**, or **Description** of any field.
+    2. Click **Save**.

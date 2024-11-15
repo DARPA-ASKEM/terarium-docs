@@ -24,10 +24,10 @@ The Subset dataset operator allows you to generate a subset of an Earth System G
 
 </div>
 
-???+ list "To generate a subset of an ESGF dataset"
+???+ list "Generate a subset of an ESGF dataset"
 
     1. From the Resources panel, drag the Dataset into the workflow graph.
-    2. Hover over the output of the Dataset resource and click :octicons-plus-24:{ title="Link" aria-label="Link" } > **Subset dataset**.
+    2. Hover over the output of the Dataset resource and click <span class="sr-only" id="link-icon-label">link</span> :octicons-plus-24:{ title="Link" aria-labelledBy="link-icon-label" } > **Subset dataset**.
     3. On the Subset dataset operator, click **Open**.
     4. Choose the subset of data you want to include:
         - **Geo-boundaries**: Specify a pair of **Latitude** and **Longitude** coordinates that define a bounding box around an area of interest. 

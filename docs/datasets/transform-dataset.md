@@ -19,7 +19,7 @@ If a dataset doesn't align with your modeling goals, you can transform it by cle
     - Adding or dropping columns.
     - Sorting the data.
     - Handling missing values.
-    - Converting incidence data (e.g., daily new case counts) to prevalence data (current total counts at any given time).
+    - Converting incidence data (such as daily new case counts) to prevalence data (total case counts at any given time).
 
 -   __Visualization and summarization__
 
@@ -32,7 +32,7 @@ If a dataset doesn't align with your modeling goals, you can transform it by cle
 
 </div>
 
-The Transform dataset operator has an interactive AI assistant. You describe in plain language the changes you want to make, and the LLM-powered assistant automatically generates the code for you. 
+The Transform dataset operator is a code notebook with an interactive AI assistant. You describe in plain language the changes you want to make, and the LLM-powered assistant automatically generates the code for you.
 
 !!! note
 
@@ -44,11 +44,19 @@ The Transform dataset operator has an interactive AI assistant. You describe in 
 
 ## Transform dataset operator
 
-The Transform dataset operator takes one or more datasets or simulation results as inputs and outputs a transformed dataset for use in other operations.
+In a workflow, the Transform dataset operator takes one or more datasets or simulation results as inputs and outputs a transformed dataset.
 
-You can choose any step in your transformation process as the thumbnail preview on the node in the workflow graph.
+???+ tip
 
-<figure markdown>![Transform dataset that takes a UK compartments dataset as an input and outputs a filtered version](../img/data/transform-operator.png)<figcaption markdown>How it works: [pandas](https://pandas.pydata.org/docs/user_guide/index.html#user-guide) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
+    For complex transformations with multiple steps, it can be helpful to chain multiple Transform dataset operators together. This allows you to:
+
+    - Keep each notebook short and readable.
+    - Isolate transformations that take a long time so you don't have to rerun them multiple times.
+    - Access intermediate results for testing or comparison.
+
+You can choose any step in your transformation process as the thumbnail preview.
+
+<figure markdown>![Transform dataset that takes two datasets as inputs and displays choropleth comparison maps](../img/data/transform-operator.png)<figcaption markdown>**How it works**: The Transform dataset operator is an interactive code notebook with a [pandas](https://pandas.pydata.org/) :octicons-link-external-24:{ alt="External link" title="External link" } dataframe. See the [pandas User Guide](https://pandas.pydata.org/docs/user_guide/index.html#user-guide) :octicons-link-external-24:{ alt="External link" title="External link" } for information on using pandas to work with data.</figcaption></figure>
 
 <div class="grid cards" markdown>
 
@@ -56,61 +64,307 @@ You can choose any step in your transformation process as the thumbnail preview 
 
     ---
 
-    - Dataset
+    - [Dataset](index.md#dataset-resource)
     - Simulation output
 
 -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
 
     ---
 
-    Dataset
+     - [Dataset](index.md#dataset-resource)
 
 </div>
 
-# Work with the Transform dataset AI assistant
+???+ list "Add the Transform dataset operator to a workflow"
 
-Each transformation you make builds off your earlier changes. The Transform dataset operator can perform more than one command at a time. With it, you can:
-
-??? example "Example prompts"
-
-    * Filter the data to just location = "US"
-    * Convert the date column to timestamps and plot the data
-    * Create a new census column that is a rolling sum of 'value' over the previous 10 days
-    * Add a new column that is the cumulative sum of the values 
-    * Plot the data
-    * Rename column 'cases' to 'I', column 'hospitalizations' to 'H', and 'deaths' to 'E' 
-
-???+ list "To transform a dataset"
-
-    1. Drag the dataset into a workflow graph.
-    2. Hover over the output of the Dataset resource and click :octicons-plus-24:{ title="Link" aria-label="Link" } > **Transform dataset**.
-    3. On the new Transform dataset operator, click **Edit**.
-    4. Use the text box at the top of the page to describe the transformation you want to make and then click :octicons-paper-airplane-24:{ style="transform: rotate(-45deg);" title="" aira-label="" }.
-       ![A prompt and python code to filter convert a date column to timestamps](../img/data/transform.jpg)
-    5. Scroll to the data preview under your prompt to inspect the transformation.
-    6. To make changes to the transformation, edit the code and click :material-play-outline:{ title="Run again" }.
-    7. Repeat steps 4 through 6 to make more transformations.
-    8. At any time, save the transformed data as a new dataset in Terarium by clicking **Save for reuse**, entering a unique name in the text box and clicking **Save**.
-        
-        !!! tip
+    - Perform one of the following actions:
     
-            Saved datasets appear in your Resources panel and the output of the Transform dataset operator.
-    
-            Download the dataset to your computer by clicking :octicons-download-24:{ aria-hidden="true" } **Download**.
+        - Hover over the output of a Dataset and click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Transform dataset**.
+        - Right-click anywhere on the workflow graph, select **Data** > **Transform dataset**, and then connect the output of one or more Datasets or Simulations to the Transform dataset inputs.
 
-### Understand how the Transform dataset operator interprets your prompt
+## Modify data in the Transform dataset code notebook
 
-To give you a sense whether it correctly interpreted your prompt, the Transform dataset operator: 
+Inside the Transform dataset operator is a code notebook in which you can prompt an AI assistant to answer questions about or modify your data. If you're comfortable writing code, you can also edit anything the assistant generates or add your own custom code (in a variety of languages).
+
+![Transform dataset code notebook in which the AI assistant creates a new comparison](../img/data/transform-notebook.png)
+
+Prompts and responses are written to cells where you can preview, edit, and run code or data. Each cell builds on the previous ones, letting you gradually make complex changes and save the history of your work. You can insert prompts or cells at any point in the chain of transformations.
+
+???+ tip
+
+    Wait until the status of the AI assistant is :green_circle:{ aria-hidden="true" title="" style="margin: 0;" } Ready (not :red_circle:{ aria-hidden="true" title="" style="margin: 0;" } Offline or :orange_circle:{ aria-hidden="true" title="" style="margin: 0;" } Busy) before attempting to make any transformations. 
+
+??? list "Access the Transform dataset code notebook"
+
+    - Make sure you've connected one or more datasets to the Transform dataset operator and then click **Edit**.
+
+??? list "Rerun a code notebook"
+
+    When you reopen a Transform dataset notebook, the code environment is completely fresh. The initial datasets may be preloaded, but none of the transformations you previously made will be. To load them all:
+
+    - Click :material-refresh:{ aria-hidden="true" style="transform: rotate(315deg);" } **Rerun all cells**.
+
+??? list "Reset the kernel"
+
+    From time to time, the AI assistant may get caught in a loop or stuck in a long-running transformation. To reset it:
+
+    ???+ note
+
+        Resetting the kernel doesn't delete your prompts or the code cells in the notebook. You can still access and reload them at any time.
+
+    1. Click :material-refresh:{ aria-hidden="true" style="transform: rotate(45deg) scaleX(-1);" } **Reset kernel**.
+    2. To reload the transformations in the notebook, click :material-refresh:{ aria-hidden="true" style="transform: rotate(315deg);" } **Rerun all cells**.
+
+### Prompt the AI assistant to transform data
+
+The Transform dataset AI assistant interprets plain language to answer questions about or transform your data.
+
+???+ tip
+
+    The AI assistant can perform more than one command at a time.
+
+??? list "Prompt or question the AI assistant"
+
+    1. Use the text box at the top of the page to enter a question or describe the transformation you want to make and then click <span class="sr-only" id="submit-icon-label">Submit</span> :octicons-paper-airplane-24:{ style="transform: rotate(-45deg);" title="Submit" aira-labelledby="Submit" }.
+    2. Scroll down to the new code cell to inspect the transformation.
+
+??? list "Choose where to insert a prompt"
+
+    By default, new prompts and responses appear at the bottom of the notebook. To go back and insert intermediate steps in your transformation, you can change where your prompts appear. Note that if you do this, you will need to rerun any downstream transformations.
+
+    1. Select the cell above where you want to insert the new prompt and response.
+    2. Submit your new prompt.
+
+#### How to write better prompts
+
+The AI assistant generates better code when given specific instructions. Unintended actions or hallucinations are more likely to occur when instructions are vague. Describe what you want in steps, and clearly identify source datasets, columns, and actions.
+
+The assistant often doesn't create previews or new datasets unless prompted. Include in your prompts whether you want to:
+
+- Preview your data:
+
+    `Add a new column that keeps a running total of infections. Show me the first 10 rows.`
+
+- Create an intermediate dataset: 
+
+    `Create a new dataset named "result". The first column is named "fips" and its values are...`
+
+If you're not satisfied with a response, you can generate a new one or modify your prompt to refine what you'd like to see.
+
+???+ tip
+
+    If the assistant doesn't produce the desired results, you can keep your transformation process well organized by adding more details to your prompt and then regenerating the responses. This ensures that any unnecessary results don't get saved in the notebook.
+
+??? list "Change your prompt"
+
+    - Click **Edit prompt**, change the text as needed, and then press ++enter++.
+
+??? list "Get a new response to your prompt"
+
+    - Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > **Re-run answer**.
+
+#### How the AI assistant interprets prompts
+
+To give you a sense whether it correctly interpreted your prompt, the assistant: 
 
 - Records its thoughts about your prompt (*I need to filter the dataset to only include rows with location equal to 'US'*).
 - Shows how it intends to perform the transformation (*DatasetToolset.generate_python_code*).
-- Comments its code to explain what it's done. 
+- Presents commented code that explains what it's done. 
 
-You can show or hide these thoughts at any time by clicking **Show/Hide thoughts**.
+When the response is complete, the code cell may also contain:
 
-When the transformation is complete, the Transform dataset operator shows:
-
+- A direct answer to your question.
 - A preview of the transformed data.
-- Any code used to complete the transformation.
 - Any applicable error codes.
 - Any requested visualizations.
+
+??? list "Show or hide the assistant's thoughts about your prompt"
+
+    - Click **Show/Hide thoughts**.
+
+### Add or edit code
+
+At any time, you can edit the code generated by the AI assistant or enter your own custom code.
+
+??? list "Make changes to a transformation"
+
+    - Directly edit the code in the In cell and then click <span class="sr-only" id="run-icon-label">Run</span> :material-play-outline:{ title="Run" aria-LabelledBy="run-icon-label"}.
+
+??? list "Add your own custom code"
+
+    1. Scroll to the bottom of the window and click :octicons-plus-24:{ aria-hidden="true" } **Add a cell**.
+    2. Enter your code in the In cell and then click <span class="sr-only" id="run-icon-label">Run</span> :material-play-outline:{ title="Run" aria-LabelledBy="run-icon-label"}.
+
+??? list "Choose where to insert your custom code"
+
+    By default, new code cells appear at the bottom of the notebook. You can add intermediate steps in your transformation by changing where your code cells appear. Note that if you do this, you will need to rerun any downstream transformations.
+
+    1. Select the cell above where you want to insert the new code cell.
+    2. Click :octicons-plus-24:{ aria-hidden="true" } **Add a cell**.
+
+??? list "Change the language of generated code"
+
+    The Transform dataset AI assistant writes Python code by default. You can switch between Python, R, or Julia code at any time.
+
+    - Use the **language** drop down above the code cells.
+
+## Save transformed data
+
+Saved datasets appear in your Resources panel and the output of the Transform dataset operator.
+
+??? list "Save transformed data as a new dataset in Terarium"
+
+    You can save your transformations as a new dataset at any time.
+
+    1. (Optional) If connected multiple datasets to your Transform dataset operator or if you created intermediary dataframes in the process, **Select a dataframe** to save.
+    2. Click **Save for reuse**, enter a unique name in the text box, and then click **Save**.
+
+??? list "Preview a transformation on the Transform dataset operator in the workflow graph"
+
+    - Select **Display on node thumbnail**.
+
+??? list "Download a transformed dataset"
+    
+    1. Save the transformation as a new dataset.
+    2. Close the Transform dataset code notebook.
+    3. In the Resources panel, click the name of the new dataset.
+    4. Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-download-24:{ aria-hidden="true" } **Download**.
+
+## Transformation examples
+
+The following sections show examples of how to prompt the Transform dataset AI assistant to perform commonly used transformations. 
+
+???+ example "Example prompts"
+
+    Some simple prompts that can be used as part of larger transformation processes include:
+
+    * `Filter the data to just location = "US"`
+    * `Convert the date column to timestamps and plot the data`
+    * `Create a new census column that is a rolling sum of 'value' over the previous 10 days`
+    * `Add a new column that is the cumulative sum of the values`
+    * `Plot the data`
+    * `Rename column 'cases' to 'I', column 'hospitalizations' to 'H', and 'deaths' to 'E'` 
+
+### Clean a dataset
+
+You can use the AI assistant to clean your dataset by specifying column types, reformatting dates, and performing other common data preparation tasks.
+
+??? example "Specify the type of data in a column"
+
+    Reformat a column of numeric IDs to, for example, add back leading zeroes that were stripped off: 
+
+    `Set the data type of the column "fips" to "string". Add leading zeros to the "fips" column to a length of 5 characters.`
+
+??? example "Reformat dates"
+
+    Datasets with inconsistent date formats can interfere with accurate interpretation and integration into model parameters:
+
+    `Set the data type of the column "t0" to datetime with format like YYYY-MM-DD hh:mm:ss UTC`
+
+### Combine datasets
+
+Before you combine datasets, make sure they share at least one common column like name, ID, date, or location. You can ask the AI assistant to link them by matching records based on the common data so that information aligns correctly.
+
+??? example "Combine multiple datasets"
+
+    1. Connect the outputs of each dataset to the input of a Transform dataset operator and then click **Edit**.
+    2. Ask the assistant to `Join d1 and d2 where date, county, and state match. Save the result as a new dataset and show me the first 10 rows.`
+
+        ???+ tip
+
+            You can also specify what type of join (such as inner join, left join, right join, or full outer join) you want the assistant to perform.
+
+    3. To save the dataset as a new resource in your project, change the dataframe and click **Save for reuse**.
+
+### Plot a dataset
+
+You can visualize your data to explore patterns, compare quantities, identify relationships, analyze distributions, and capture insights tailored your analysis. Supported visualizations include:
+
+<div class="col-container" markdown>
+<div class="text-col" markdown>
+- Line plots
+- Bar charts
+- Scatter plots
+- Box plots
+- Histograms
+- Pie charts
+- Heatmaps
+- Violin plots
+- Bubble charts
+- Area charts
+</div>
+<div class="image-col" markdown>
+![](../img/data/example-visualize-data.png)
+</div>
+</div>
+
+???+ tip
+
+    To refine your visualizations, edit your prompt to add more details about what you want to see (for example, add `Insert a legend` to a prompt that initially only requests a plot).
+
+??? example "Visualize a dataset"
+
+    1. Ask the assistant to plot your data. For the best results, be as specific as possible about what you want to see:
+
+        `plot the number of hospitalizations over the 150 days for the baseline, masking, and vaccination interventions.`
+
+    2. To refine the visualization, perform one of the following actions:
+
+        - Edit your prompt to add more information that explains the changes you want.
+        - Edit the generated code and then click <span class="sr-only" id="run-icon-label">Run</span> :material-play-outline:{ title="Run" aria-LabelledBy="run-icon-label"}.
+    
+    3. (Optional) To share the image:
+
+        - Select **Display on node thumbnail** to use the image as the thumbnail on the Transform dataset operator in the workflow.
+        - Right-click the image, select **Copy image**, and then paste it into your project overview.
+
+### Create a map-based visualization
+
+The AI assistant can connect to third-party code repositories and data visualization libraries to incorporate geolocation data and then create map plots.
+
+![Blue and yellow choropleth map of reproduction numbers in parts of the U.S.](../img/data/chloropleth-map.png)
+
+??? example "Create a choropleth map of reproduction numbers"
+
+    These prompts ask the assistant to get U.S. county-level data from plotly and then use using matplotlib and geopandas handle and visualize geographic data structures.
+
+    1. `Write me code that downloads the US counties geojson from plotly GitHub using urlopen`
+    2. `Use matplotlib to make a figure. Create a choropleth map from the column "Rl" in the geopandas dataframe "new_df_all". Use the "cividis" colormap. Add a legend.`
+
+### Compare datasets
+
+You can use the AI assistant to compare multiple datasets or simulation results. 
+
+??? example "Compare optimized intervention policies"
+
+    See the [Working with Data](https://app.terarium.ai/projects/a9462f60-14bc-4ca3-869e-8a7e5a8600e2/workflow/33433e99-6c34-446b-83fa-41bad1440dd8){ target="_blank" } workflow in the [Terarium Sample Project](https://app.terarium.ai/projects/a9462f60-14bc-4ca3-869e-8a7e5a8600e2/overview){ target="_blank" }. It takes three datasets generated by optimizing intervention policies and then:
+    
+    - Combines them into a new scenario comparison dataset.
+    - Calculates summary statistics for hospitalizations in each dataset.
+    - Identifies the timepoint at which the maximum number of hospitalizations occur in each dataset.
+    - In a separate data transformation, plots hospitalizations for each intervention over time.
+
+### Convert incidence data to prevalence data
+
+If you have an epidemiological dataset that contains incidence data (such as new cases per day), you can prompt the AI assistant to convert it to prevalence data (such as total cases at any given time). You will need to specify:
+
+- How long it takes people to recover.
+- The susceptible population.
+
+??? example "Convert incidence data to prevalence data"
+
+    This prompt converts daily case counts into prevalence data. It uses user-supplied recovery and population data to calculate total cases: 
+
+    `let's assume avg time to recover is 14 days and time to exit hosp is 10 days. Can you convert this data into **prevalence** data? please map it to SIRHD. Assume a population of 150 million.`
+
+For more information on the logic of how the AI assistant converts from incidence to prevalence data, see the [instructions](https://github.com/DARPA-ASKEM/askem-beaker/blob/4c17fc262e01badb4427a5f3e529940c17510677/src/askem_beaker/contexts/dataset/incidence_to_prevalence.md){ target="_blank" } the assistant follows in these cases.
+
+### Calculate peak times
+
+Calculating peak times can help you identify critical periods of disease spread, enabling targeted interventions.
+
+??? example "Calculate peak times"
+
+    This prompt takes a collection of daily infection rates for various FIPs codes and identifies the peak time for each one:
+
+    `Create a column named "peak_time". The first column is "fips". The second column is "peak_time", and its values are the values of the "timepoint" column for which the values of the FIPS columns are at a maximum.`
