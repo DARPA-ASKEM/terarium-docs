@@ -64,10 +64,6 @@ Hover over the output of the Dataset resource and click <span class="sr-only" id
 
     - [Transform dataset](transform-dataset.md)  
       Guide an AI assistant to modify or visualize the dataset. 
-    - [Subset dataset](subset-dataset.md)  
-      Generate a subset of an Earth System Grid Federation (ESGF) dataset along geo-boundaries or temporal slices.
-    - [Transform gridded dataset](transform-gridded-dataset.md)  
-      Guide an AI assistant to modify or visualize a gridded dataset.
 
 -   __Configuration and intervention__
 
