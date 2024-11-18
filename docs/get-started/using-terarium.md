@@ -10,7 +10,7 @@ Terarium is a comprehensive platform that supports your scientific modeling proc
 
 A project in Terarium acts as a repository for resources (models, datasets, and documents) related to your modeling goals.
 
-???+ list "To upload resources"
+???+ list "Upload resources"
 
     1. Click **Upload** in the Resources panel.
        ![](../img/get-started/upload.png)
@@ -19,7 +19,7 @@ A project in Terarium acts as a repository for resources (models, datasets, and 
     
         !!! note
     
-            When you upload a PDF, Terarium automatically scans the document and extracts any linear ordinary differential equations. Depending on the size of the document, this may take some time. Click :material-bell-outline:{ title="Notifications" aria-label="Notifications" } in the nav bar to check the progress of an extraction. 
+            When you upload a PDF, Terarium automatically scans the document and extracts any linear ordinary differential equations. Depending on the size of the document, this may take some time. Click <span class="sr-only" id="notifications-icon-label">Notifications</span> :material-bell-outline:{ title="Notifications" aria-labelledBy="notifications-icon-label" } in the nav bar to check the progress of an extraction. 
 
 ## Constructing scientific modeling workflows
 
@@ -29,7 +29,7 @@ A workflow in Terarium is a graphical editor for building and executing complex 
 
 Graph nodes represent resources or operators that handle transformation and simulation. Connect them to recreate models from documents, iteratively modify them, and run sophisticated calibration, optimization, and simulation tasks.
 
-???+ list "To create a workflow"
+???+ list "Create a workflow"
 
     1. Click :octicons-plus-24:{ aria-hidden="true" } **New** in the Workflows section of the Resource panel.
     2. Enter a name for the new workflow and click **Save**.
@@ -71,17 +71,11 @@ Using Terarium's library of operators, you can recreate, reuse, and modify exist
     - [**Transform dataset**](../datasets/transform-dataset.md) [:octicons-book-24:{ title="User Guide" aria-label="User Guide" class="md-annotation__index" }](https://pandas.pydata.org/docs/user_guide/index.html#user-guide){ target="_blank" rel="noopener noreferrer" }  
         Modify a dataset by explaining your changes to an AI assistant.
 
-    - [**Subset dataset**](../datasets/subset-dataset.md)  
-        
-
-    - [**Transform gridded dataset**](../datasets/transform-gridded-dataset.md)  
-        
-
 </div>
 
 Some operators have a dual-view design, with a wizard for common settings and a notebook for direct coding. An AI assistant in the notebook helps you generate and refine code even if you don't have any programming experience.
 
-???+ list "To access resource or operator settings"
+???+ list "Access resource or operator settings"
 
     1. Click **Open** or **Edit** on the operator node.
     2. Switch to the Wizard or Notebook view depending on your preference.

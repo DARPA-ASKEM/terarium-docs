@@ -91,8 +91,6 @@ nav:
     - datasets/index.md
     - Review and enrich a dataset: datasets/review-and-enrich-dataset.md
     - Transform dataset: datasets/transform-dataset.md
-    - Subset dataset: datasets/subset-dataset.md
-    - Transform gridded dataset: datasets/transform-gridded-dataset.md
   - Modeling: 
     - modeling/index.md
     - Create a model from equations: modeling/create-model-from-equations.md
