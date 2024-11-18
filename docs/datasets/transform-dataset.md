@@ -143,11 +143,11 @@ The assistant often doesn't create previews or new datasets unless prompted. Inc
 
 - Preview your data:
 
-    `Add a new column that keeps a running total of infections. Show me the first 10 rows.`
+    > `Add a new column that keeps a running total of infections. Show me the first 10 rows.`
 
 - Create an intermediate dataset: 
 
-    `Create a new dataset named "result". The first column is named "fips" and its values are...`
+    > `Create a new dataset named "result". The first column is named "fips" and its values are...`
 
 If you're not satisfied with a response, you can generate a new one or modify your prompt to refine what you'd like to see.
 
@@ -167,8 +167,8 @@ If you're not satisfied with a response, you can generate a new one or modify yo
 
 To give you a sense whether it correctly interpreted your prompt, the assistant: 
 
-- Records its thoughts about your prompt (*I need to filter the dataset to only include rows with location equal to 'US'*).
-- Shows how it intends to perform the transformation (*DatasetToolset.generate_python_code*).
+- Records its thoughts about your prompt (`I need to filter the dataset to only include rows with location equal to 'US'`).
+- Shows how it intends to perform the transformation (`DatasetToolset.generate_python_code`).
 - Presents commented code that explains what it's done. 
 
 When the response is complete, the code cell may also contain:
@@ -253,13 +253,13 @@ You can use the AI assistant to clean your dataset by specifying column types, r
 
     Reformat a column of numeric IDs to, for example, add back leading zeroes that were stripped off: 
 
-    `Set the data type of the column "fips" to "string". Add leading zeros to the "fips" column to a length of 5 characters.`
+    > `Set the data type of the column "fips" to "string". Add leading zeros to the "fips" column to a length of 5 characters.`
 
 ??? example "Reformat dates"
 
     Datasets with inconsistent date formats can interfere with accurate interpretation and integration into model parameters:
 
-    `Set the data type of the column "t0" to datetime with format like YYYY-MM-DD hh:mm:ss UTC`
+    > `Set the data type of the column "t0" to datetime with format like YYYY-MM-DD hh:mm:ss UTC`
 
 ### Combine datasets
 
@@ -306,7 +306,7 @@ You can visualize your data to explore patterns, compare quantities, identify re
 
     1. Ask the assistant to plot your data. For the best results, be as specific as possible about what you want to see:
 
-        `plot the number of hospitalizations over the 150 days for the baseline, masking, and vaccination interventions.`
+        > `plot the number of hospitalizations over the 150 days for the baseline, masking, and vaccination interventions.`
 
     2. To refine the visualization, perform one of the following actions:
 
@@ -355,7 +355,7 @@ If you have an epidemiological dataset that contains incidence data (such as new
 
     This prompt converts daily case counts into prevalence data. It uses user-supplied recovery and population data to calculate total cases: 
 
-    `let's assume avg time to recover is 14 days and time to exit hosp is 10 days. Can you convert this data into **prevalence** data? please map it to SIRHD. Assume a population of 150 million.`
+    > `let's assume avg time to recover is 14 days and time to exit hosp is 10 days. Can you convert this data into **prevalence** data? please map it to SIRHD. Assume a population of 150 million.`
 
 For more information on the logic of how the AI assistant converts from incidence to prevalence data, see the [instructions](https://github.com/DARPA-ASKEM/askem-beaker/blob/4c17fc262e01badb4427a5f3e529940c17510677/src/askem_beaker/contexts/dataset/incidence_to_prevalence.md){ target="_blank" } the assistant follows in these cases.
 
@@ -367,4 +367,4 @@ Calculating peak times can help you identify critical periods of disease spread,
 
     This prompt takes a collection of daily infection rates for various FIPs codes and identifies the peak time for each one:
 
-    `Create a column named "peak_time". The first column is "fips". The second column is "peak_time", and its values are the values of the "timepoint" column for which the values of the FIPS columns are at a maximum.`
+    > `Create a column named "peak_time". The first column is "fips". The second column is "peak_time", and its values are the values of the "timepoint" column for which the values of the FIPS columns are at a maximum.`

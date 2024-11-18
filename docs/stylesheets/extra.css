@@ -243,3 +243,7 @@ img.node-icon {
   max-width: 100%; /* Ensure the image fits within its column */
   height: auto; /* Maintain aspect ratio */
 }
+
+.md-typeset blockquote {
+    color: var(--md-typeset-color);
+}
