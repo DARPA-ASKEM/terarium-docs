@@ -15,6 +15,7 @@ theme:
     - navigation.instant
     - navigation.footer
     - content.code.copy
+    - content.tabs.link
   logo_dark_mode: img/terarium-logo-dark.svg
   logo_light_mode: img/terarium-logo-light.svg
   palette:
