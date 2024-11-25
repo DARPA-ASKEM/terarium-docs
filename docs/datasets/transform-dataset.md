@@ -350,7 +350,7 @@ Saved datasets appear in your Resources panel and the output of the Transform da
     1. Save the transformation as a new dataset.
     2. Close the Transform dataset code notebook.
     3. In the Resources panel, click the name of the new dataset.
-    4. Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-download-24:{ aria-hidden="true" } **Download**.
+    4. Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-download-24:{ aria-hidden="true" } **Download**.
 
 ## Transformation examples
 

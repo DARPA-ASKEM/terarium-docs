@@ -4,16 +4,22 @@ title: Create a model from equations
 
 # Create a model from equations
 
-You can create models from equations that: 
+The Create model from equations operator helps you to recreate a model from literature or build a new model from [LaTeX equations](https://www.latex-project.org/help/documentation/) :octicons-link-external-24:{ aria-hidden="true" alt="External link" title="External link" }. In this process, you: 
 
-- Have been automatically extracted from literature (a document). 
-- You enter in LaTeX format.
-- You captured in a screenshot.
+1. [Choose or enter the equations](#choose-the-equations) you want to include in the model.
+2. [Create the model](#create-the-model) as an output or resource for use in other modeling and configuration processes. 
+
+![SIR model created from equations extracted from a COVID-19 research paper](../img/models/model-create-from-equations.png)
 
 !!! note
 
-    - Terarium's equation extractor is not optimized to handle every single way to represent a model. Therefore, it's recommended that you to check any extracted equations before using them to create a model.
-    - When you modify equations extract from a document, your changes are only saved to the current Create model from equations operator.
+    When you upload a document to your project, Terarium automatically extracts any ordinary differential equations it contains and converts them to LaTeX. However, the extraction doesn't handle all the ways that equations can represent models. Before using any equations, check and edit them if needed.
+
+## Create model from equations operator
+
+In a workflow, the Create model from equations operator takes an optional document as an input and outputs a new model. You can use the operator without any inputs by entering or uploading LaTeX equations that represent the model you want to create. 
+
+Once you have created a model, the operator in the workflow shows its underlying diagram or equations.
 
 <figure markdown>
 ![](../img/models/model-equations-resource.png)
@@ -32,11 +38,82 @@ You can create models from equations that:
 
     ---
 
-    Model
+    [Model](index.md)
 
 </div>
 
-## Recommended LaTeX format
+???+ list "Add the Create model from equations operator to a workflow"
+
+    - Perform one of the following actions:
+    
+        - Hover over the output of a Document and click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Create model from equations**.
+        - Right-click the workflow graph and select **Modeling** > **Create models from equations**.  
+
+            If needed, connect the output of a Document to the Create model from equations input.
+
+## Choose the equations
+
+You can create a model from a set of ordinary differential equations by: 
+
+- [Selecting equations from a document in your project](#select-equations-from-a-document).
+- [Uploading and extracting equations from an image](#extract-equations-from-an-image). 
+- [Manually entering equations as LaTeX code](#enter-your-own-equations).
+
+To ensure the best results, Terarium uses a set of [LaTeX formatting guidelines](#recommended-latex-format) when converting extracted equations. It is recommended that you follow these guidelines for any LaTeX you add or edit as well.  
+
+### Select equations from a document
+
+To recreate a model from literature, you can select any ordinary differential equations extracted from an input document. Terarium represents each equation as LaTeX.
+
+In some cases you may want to change the LaTeX either to correct or and new details. As you edit the LaTeX, the equation is automatically updated.
+
+??? list "Select equations from a document"
+
+    1. In the workflow, make sure the document is connected to the operator input and then click **Edit**.
+    2. In the Input panel, review and select the equations you want to include in the model.
+
+??? list "Edit equations extracted from a document" 
+
+    ???+ note
+
+    When you modify equations extracted from a document, your changes are only saved to the current Create model from equations operator. If you reuse the document in another Create model from equations operator, you need to make the edits again.
+
+    1. Click an equation to jump to where it's found in the document and reveal the converted LaTeX code.
+    2. Edit the code as necessary and verify that the updated equation matches your edits.
+    3. Select the check box next to the equation to include it in the model.
+
+### Extract equations from an image
+
+In some cases, Terarium may not extract all the equations you want from a document. Or you may have equations from other sources that you want to bring into your project. In these cases, you can capture a screenshot of the equations and load them into Terarium for automatic extraction.
+
+??? list "Extract equations from an image"
+
+    1. Take a screenshot of the equations you want to use or copy a saved image of the equations.
+    2. Click inside the text box and paste your image. For example, right click and select **Paste** or press ++ctrl+v++.
+    3. Click :octicons-plus-24:{ aria-hidden="true" } **Add**.
+    4. Review the new equations. Click to reveal the LaTeX code and edit it if necessary.
+
+### Enter your own equations
+
+In addition to selecting extracted equations, you can also paste or enter LaTeX code from elsewhere.
+
+??? list "Manually enter equations"
+
+    1. Use the text box to add LaTeX equations to enter a new equation and click :octicons-plus-24:{ aria-hidden="true" } **Add**.
+    2. Repeat step 3 for each equation you want to add.
+    3. Enter a name for the new model and click **Run**.
+
+??? list  "Manually copy an equation from a document"
+
+    If the automatic extraction missed an equation from your document, you can still copy it and add it separately.
+
+    1. Select the text in the document viewer and then click :octicons-copy-24:{ aria-hidden="true"} **Copy text**.
+    2. Paste the equation into the Input text box and edit as necessary.
+    3. Click :octicons-plus-24:{ aria-hidden="true" } **Add**.
+
+### Recommended LaTeX format
+
+The Create model from equations operator works with LaTeX equations. When adding or editing LaTeX equations, use the following guidelines.
 
 <div class="grid cards" markdown>
 
@@ -44,74 +121,77 @@ You can create models from equations that:
 
     ---
 
-    - Derivatives must be written in Leibniz notation (`\frac{d X}{d t}`). Convert any equations using Newton or Lagrange notation.
-    - Place first-order derivatives to the left of the equal sign.
+    - Write derivatives in **Leibniz notation**, not Newton or Lagrange notation.
+    
+        *Recommended*: `\frac{d X}{d t}`  
+        *Not recommended*: `\dot{X}`  
+        *Not recommended*: `X^\prime` or `X'`
+
+    - Represent partial derivatives of one-variable functions as **ordinary derivatives**.
+    
+        *Recommended*: `\frac{d X}{d t}`  
+        *Not recommended*: `\partial_t X`  
+        *Not recommended*: `\frac{\partial X}{\partial t}`
+
+    - Place **first-order derivatives** to the left of the equal sign.
 
 -   __Mathematical notations__
 
     ---
 
-    Avoid using: 
+    - Avoid the use of: 
+        - `(t)` to denote time.
+        - Parentheses.
+        - Capital sigma (`Σ`) and pi (`Π`) notations for summation and product.
+        - Non-ASCII characters.
+        - Homoglyphs (characters that look similar but have different meanings).
+    - To indicate multiplication, use whitespace between variables instead of `\cdot` or `*`.
 
-    - `(t)` to denote time.
-    - Superscripts and LaTeX superscripts `^`, particularly to denote sub-variables.
-    - Parentheses.
-    - Capital sigma (Σ) and pi (Π) notations for summation and product.
-    - Homoglyphs (characters that look similar but have different meanings).
-
--   __Subscripts__
-
-    ---
-
-    Subscripts using LaTeX `_` are permitted, but ensure that all characters in the subscript are enclosed by curly brackets `{...}`.
-
--   __Variable names__
+-   __Superscripts and subscripts__
 
     ---
 
-    Avoid words or multi-character names for variables. Instead, use camel case to represent multi-word or multi-character names.
+    - To denote **indices**, use LaTeX subscripts `_` instead of superscripts and LaTeX superscripts `^`.
+    - Use **LaTeX subscripts** `_` instead of Unicode subscripts. Wrap all characters in the subscript in curly brackets `{...}`.
 
--   __ASCII characters__
-
-    ---
-
-    Avoid using non-ASCII characters when possible.
-
--   __Symbolic notation for multiplication__
+-   __Variable and symbol usage__
 
     ---
 
-    Do not use `\cdot` or `*` to indicate multiplication. Instead, use whitespace between variables.
-
--   __Symbolic notation for multiplication__
-
-    ---
-
-    Avoid using symbolic notation for constants like `e` and `pi`. Instead, use their actual values (up to 3 decimal places).
+    - For **variables and names**, avoid the use of words or multiple character.
+    - If needed, use camel case (`susceptiblePopulationSize`) to **combine multi-word or multi-character names**.
+    - To represent a **parameter or variable**, use `\varepsilon` instead of `\epsilon`.
+    - Don't separate equations by commas.
+    - Replace **constants** like `e` and `pi` with their actual values (up to 3 decimal places).
 
 </div>
 
-## Create a model from equations extracted from a document
+## Create the model
 
-???+ list "To extract model equations from a document"
+Once you have selected the equations you want to use, you can create a new model as:
 
-    1. Add the Document to a workflow graph.
-    3. Hover over the output of the Document resource and click :octicons-plus-24:{ title="Link" aria-label="Link" } > **Create model from equations**.
-    4. Click **Edit** on the Create model from equations operator.
-    5. To customize the extracted equations: 
-        - Edit the LaTeX expressions.
-        - Clear a checkbox to remove an equation.
-        - Use the text box to add LaTeX equations to enter a new equation and click **Add**.
-    6. Choose the **framework** for the new model.
-    7. Click **Run**.
-    8. Review the model preview and click **Save as new model**.
+- An output you can connect to other operators in the same workflow.
+- A project resource that you can use in any of your workflows.
+- A downloadable JSON file you can use in external tools. 
 
-## Create a model by uploading or entering equations
+???+ note
 
-???+ list "To create a model from manually entered equations"
+    Before it creates a model, Terarium uses an AI assistant to "clean" the selected equations according to the [LaTeX formatting guidelines](#recommended-latex-format). When the model is ready, the Input panel shows the equations "Edited by AI" that appear in the model.
 
-    1. Right-click anywhere on the workflow graph and select **Modeling** > **Create model from equations**.
-    2. Click **Edit** on the Create model from equations operator.
-    3. Use the text box to add LaTeX equations to enter a new equation and click **Add**.
-    5. Repeat step 3 for each equation you want to add.
-    6. Enter a name for the new model and click **Run**.
+
+??? list "Create a new model from the selected equations"
+
+    When you run the Create model from equations operator, the newly created model becomes an output you can connect to other operations in the same workflow. 
+
+    1. Click **Run**.
+    2. If needed, use the Output panel to [enrich the model metadata](review-and-enrich-model-metadata.md) and then click **Save**.
+
+??? list "Save the new model as a resource for use in other workflows"
+
+    By default, your new model only appears as an output of the Create new model. You can enable it for use in other workflows by saving it as a project resource.
+
+    - In the Output panel, click **Save for re-use** and choose a name for the new model.
+
+??? list "Download the new model"
+
+    - Next to the model name, click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="Menu" } > :octicons-download-24:{ aria-hidden="true"} **Download**. 

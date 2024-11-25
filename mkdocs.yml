@@ -94,8 +94,8 @@ nav:
     - Transform dataset: datasets/transform-dataset.md
   - Modeling: 
     - modeling/index.md
+    - Review and enrich a model: modeling/review-and-enrich-model.md
     - Create a model from equations: modeling/create-model-from-equations.md
-    - Enrich model metadata: modeling/enrich-descriptions.md
     - Edit a model: modeling/edit-model.md
     - Stratify a model: modeling/stratify-model.md
     - Compare models: modeling/compare-models.md
