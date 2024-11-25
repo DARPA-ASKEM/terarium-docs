@@ -1,16 +1,30 @@
 ---
-title: "Work with a model"
+title: "Working with a model"
 ---
 
-# Work with a model
+# Working with a model
 
-In Terarium, a model is an abstract representation that approximates the behavior of a system. You can build a chain of complex operations to edit, configure, stratify, calibrate, and simulate models.
+A model is an abstract representation that approximates the behavior of a system. In Terarium, you can build a chain of complex operations to recreate, edit, configure, stratify, calibrate, and simulate models.
 
-![Workflow graph with an SIR model and related dataset passed into calibration and simulation operations](../img/models/description.png)
+![Diagram and model representations of an SEIRHD model](../img/models/description.png)
+
+!!! note
+
+    For information about: 
+
+    - Uploading models, see [Upload modeling resources](../upload-resources/index.md).
+    - Creating models, see [Edit model](edit-model.md).
 
 ## Model resource
 
-A model resource represents a model you've uploaded or created in Terarium. In the workflow graph, you can display its diagram or equations. It takes no inputs and outputs the model for use in modeling, configuration, and intervention operators.
+A model resource represents a model you've uploaded to or created in Terarium.
+
+In a workflow graph, a model resource shows its underlying diagram or equations. You can use the resource to:
+
+- Open, review, and enrich the model variables, parameters, observables, and transitions.
+- Edit or stratify the model.
+- Compare it to other models.
+- Create model configurations or intervention policies.
 
 ![Model resource for a SIDARTHE model of COVID-19 with a diagram preview](../img/models/model-resource.png)
 
@@ -20,86 +34,39 @@ A model resource represents a model you've uploaded or created in Terarium. In t
 
     ---
 
-    None
+    - None
 
 -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
 
     ---
 
-    Model
+    - Model
 
 </div>
 
-## What can I do with a model resource?
+???+ list "Add a model resource to a workflow"
 
-You can connect a model resource to the following operators:
+    - Drag the resource from the Models section of the Resources panel.
 
-- [Edit model](edit-model.md): Add, remove, or change state variables, transitions, parameters, rate laws, and observables.
-- [Stratify model](stratify-model.md): Divide populations into subsets along demographic characteristics such as age and location.
-- [Compare models](compare-models.md): Compare side-by-side with other models to understand their similarities and differences.
-- [Configure model](../config-and-intervention/configure-model.md): Set the initial values and parameters for the condition you want to test
-- [Create intervention policy](../config-and-intervention/create-intervention-policy.md): Create static and dynamic interventions for "what-if" scenarios.
+### What can I do with a model resource?
 
-## Add a model to a workflow
+Hover over the output of the model resource and click <span class="sr-only" id="link-icon-label">link</span> :octicons-plus-24:{ title="Link" aria-labelledBy="link-icon-label" } to use the model as an input to one of the following operators.
 
-!!! note
+<div class="grid cards" markdown>
 
-    For information about: 
+-   __Modeling__
 
-    - Uploading models, see [Upload modeling resources](../upload-resources/index.md).
-    - Creating models, see [Edit model](edit-model.md).
+    ---
 
-Once you create a model or add it to your project, you can open it to view more details or add it to a workflow for use in scientific modeling processes.
+    - [Edit model](edit-model.md): Add, remove, or change state variables, transitions, parameters, rate laws, and observables.
+    - [Stratify model](stratify-model.md): Divide populations into subsets along demographic characteristics such as age and location.
+    - [Compare models](compare-models.md): Compare side-by-side with other models to understand their similarities and differences.
 
-???+ list "To add a model to a workflow"
+-   __Configuration and intervention__
 
-    - From the Resources panel, drag the model into a workflow graph.
+    ---
 
-## Understand model representations
+    - [Configure model](../config-and-intervention/configure-model.md): Set the initial values and parameters for the condition you want to test
+    - [Create intervention policy](../config-and-intervention/create-intervention-policy.md): Create static and dynamic interventions for "what-if" scenarios.
 
-Each model has a detailed view that summarizes the following extracted details:
-
-- Description
-- Diagram
-- Model equations
-- State variables
-- Parameters
-- Observables
-- Transitions
-- Time
-- Provenance
-- Other concepts
-
-To support systematic curation of model structure and extracted metadata, you can view and [edit](edit-model.md) different representations of a model:
-
-- A diagram that summarizes the different states and transitions in the model.
-- Equations that show the same.
-
-![Diagram and equations representing the structure of an SIR model](../img/models/diagram.png)
-
-???+ list "To view model details"
-
-    - Click the model name in the Resources panel.
-
-## Manage models
-
-You can create, copy, and edit models for use in your workflows.
-
-??? list "To create a new model"
-
-    1. In the Resources panel, click :octicons-plus-24:{ aria-hidden="true" } **New** in the Model section.
-    2. Enter a unique name for the model and click **Save**.
-    3. From the Resources panel, drag the new model into a workflow.
-    4. Hover over the Model output and click :octicons-plus-24:{ title="Link" aria-label="Link" } > **Edit model**.
-    5. Click **Edit** on the Edit model operator.
-    6. Use the AI assistant or code editor to construct a set of equations that describe the model.
-
-??? list "To rename a model"
-
-    * Click :fontawesome-solid-ellipsis-vertical:{ title="Menu" } > :octicons-pencil-24:{ aria-hidden="true"} **Rename**, type a unique name for the model, and press ++enter++.
-
-??? list "To copy a model"
-
-    1. Add the Model operator to a workflow graph and connect it to an Edit model operator.
-    2. Click **Edit** on the Edit model operator.
-    3. Click **Save for re-use**, enter a name for the copy, and click **Save**.
+</div>
