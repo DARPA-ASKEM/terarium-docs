@@ -37,7 +37,7 @@ Using the Notebook view of the Edit model operator, you can steer an AI assistan
 
     Each time you submit a new prompt or command, the generated code is added below any existing code. Each time you run the code, the whole notebook is executed.
 
-???+ list "To edit a model using the AI assistant"
+???+ list "Edit a model using the AI assistant"
 
     2. Click in the prompt field to see suggested actions. Select a suggestion or enter your own command using plain language.
     3. Click :material-play-outline:{ aria-hidden="true" } **Run**.

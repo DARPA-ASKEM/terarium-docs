@@ -136,27 +136,42 @@ svg.feather {
 
 /*Admonition for procedure lists*/
 
-:root {
-  --md-admonition-icon--list: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>')
-}
-
 .md-typeset .admonition.list,
 .md-typeset details.list {
-  border-color: #9e9e9e;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  border-top: .075rem solid #e1e3e1;
+  border-bottom: .075rem solid #e1e3e1;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: inherit;
 }
 
 .md-typeset .list > .admonition-title,
 .md-typeset .list > summary {
-  background-color: #9e9e9e1a;
+  background-color: transparent;
+  font-size: inherit;
+  text-decoration: none;
+  padding-left: 0;
+  margin-left: 0;
+  font-weight: normal;
+  color: var(--md-typeset-a-color);
 }
 
 .md-typeset .list > .admonition-title::before,
 .md-typeset .list > summary::before {
-  background-color: #9e9e9e;
+  content: none;
   -webkit-mask-image: var(--md-admonition-icon--list);
           mask-image: var(--md-admonition-icon--list);
+}
+
+.md-typeset details.list[open] {
+  box-shadow: none; /* Removes the shadow */
+}
+
+.md-typeset details.list + details.list {
+  border-top: none;
 }
 
 /*Improved styling for grid buttons on home page*/

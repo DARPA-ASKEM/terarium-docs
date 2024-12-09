@@ -30,7 +30,7 @@ For example, to assist with publishing a paper, you could organize insights into
 
     Terarium automatically saves the state of your overview as you make changes.
 
-???+ list "To edit the project overview"
+???+ list "Edit the project overview"
 
     1. In the Resources panel, click **Overview**.
     2. Enter your insights in the text field. Use the style bar to format your text.

@@ -38,10 +38,10 @@ Simulations take a model configuration and an optional intervention as inputs an
 
 </div>
 
-???+ list "To run a simulation"
+???+ list "Run a simulation"
 
     1. Add the model to a workflow graph.
-    2. Hover over the Model output and click :octicons-plus-24:{ title="Link" aria-label="Link" } > [**Configure**](../config-and-intervention/configure-model.md). 
+    2. Hover over the Model output and click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledBy="link-icon-label" } > [**Configure**](../config-and-intervention/configure-model.md). 
     3. Right-click anywhere on the workflow graph and select **Simulation** > **Simulate**.
     4. Connect the Configure model operator output to the Simulate input.
     5. Click **Edit** on the Simulate operator.
@@ -61,7 +61,7 @@ Simulations take a model configuration and an optional intervention as inputs an
 
 Simulation results are summarized on each Simulate operator and in the operator details. You can choose which variables to plot.
 
-??? list "To view simulation results"
+??? list "View simulation results"
 
     1. In the output section of the Simulate operator details, use the dropdown list to choose the variables you want to visualize. If you choose multiple variables, Terarium overlaps them on the same plot.
     2. To add an additional chart, click :octicons-plus-24:{ aria-hidden="true"} **Add chart** and repeat the previous step.
@@ -70,6 +70,6 @@ Simulation results are summarized on each Simulate operator and in the operator 
 
             It's recommended to use multiple charts if the variables you want to display have very different magnitudes.
 
-??? list "To save simulation results as a new dataset"
+??? list "Save simulation results as a new dataset"
 
     - On the Simulate pane, click :material-content-save-outline:{ aria-hidden="true" } **Save as new dataset**.
