@@ -108,7 +108,6 @@ nav:
   - Configuration and intervention:
     - config-and-intervention/index.md
     - Configure a model: config-and-intervention/configure-model.md
-    - Create and optimize an intervention policy: config-and-intervention/create-intervention-policy.md
     - Validate a model configuration: config-and-intervention/validate-model-configuration.md
     - Create an intervention policy: config-and-intervention/create-intervention-policy.md
     - Optimize an intervention policy: config-and-intervention/optimize-intervention-policy.md
