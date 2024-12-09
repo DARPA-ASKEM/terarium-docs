@@ -44,9 +44,15 @@ In a workflow graph, a model resource shows its underlying diagram or equations.
 
 </div>
 
-???+ list "Add a model resource to a workflow"
+??? list "Add a model resource to a workflow"
 
     - Drag the resource from the Models section of the Resources panel.
+
+??? list "Copy a model"
+
+    1. Add the Model operator to a workflow graph and connect it to an Edit model operator.
+    2. Click **Edit** on the Edit model operator.
+    3. Click **Save for re-use**, enter a name for the copy, and click **Save**.
 
 ### What can I do with a model resource?
 

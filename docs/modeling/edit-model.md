@@ -29,6 +29,13 @@ How you implement your edits is up to you. You can write your own code or prompt
 
 </div>
 
+???+ list "Add the Edit operator to a workflow"
+
+    - Perform one of the following actions:
+    
+         On a resource or operator that outputs a model or model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Edit model**.
+        - Right-click anywhere on the workflow graph, select **Modeling** > **Edit model**, and then connect the output of a model or model configuration to the Edit model input.
+
 ## Edit a model with the AI assistant
 
 Using the Notebook view of the Edit model operator, you can steer an AI assistant to quickly create, modify, and refine a model from code. All generated code is directly editable, allowing you to make modifications at any time.

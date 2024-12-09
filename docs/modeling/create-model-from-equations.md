@@ -139,8 +139,7 @@ The Create model from equations operator works with LaTeX equations. When adding
 
     ---
 
-    - Avoid the use of: 
-        - `(t)` to denote time.
+    - Avoid the use of:
         - Parentheses.
         - Capital sigma (`Σ`) and pi (`Π`) notations for summation and product.
         - Non-ASCII characters.
@@ -158,11 +157,15 @@ The Create model from equations operator works with LaTeX equations. When adding
 
     ---
 
+    - For variables that have time `t` dependence, write the dependence explicitly as `(t)`,
+    
+        *Recommended*: `X(t)`  
+        *Not recommended*: `X`
+
     - For **variables and names**, avoid the use of words or multiple character.
     - If needed, use camel case (`susceptiblePopulationSize`) to **combine multi-word or multi-character names**.
     - To represent a **parameter or variable**, use `\varepsilon` instead of `\epsilon`.
     - Don't separate equations by commas.
-    - Replace **constants** like `e` and `pi` with their actual values (up to 3 decimal places).
 
 </div>
 
