@@ -37,7 +37,7 @@ If your dataset lacks descriptive details about what each column contains, you c
 
 - **Units**: What the column measures (dates, cases, people) or contains (text).
 - **Descriptions**: A short plain language explanation of the column's contents. 
-- **Concepts**: The meaning of the data in the column and how it should map to model variables.
+- **Concepts**: Epidemiological concepts that relate to the data in the column. Helpful in mapping data to model variables.
 - **Distributions of values** 
 
 Terarium's enrichment service uses an AI language model to generate column details based on either:

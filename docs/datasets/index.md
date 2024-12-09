@@ -71,7 +71,7 @@ Hover over the output of the Dataset resource and click <span class="sr-only" id
 
     - [Configure model](../config-and-intervention/configure-model.md)  
       Use the dataset to extract initial values and parameters for the condition you want to test.
-    - [Validate configuration](../config-and-intervention/configure-model.md#validate-a-model-configuration)  
+    - [Validate configuration](../config-and-intervention/validate-model-configuration.md)  
       Use the dataset to validate a configuration
 
 -   __Simulation__

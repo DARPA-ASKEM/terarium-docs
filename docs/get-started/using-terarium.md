@@ -4,78 +4,125 @@ title: "Using Terarium"
 
 # Using Terarium
 
-Terarium is a comprehensive platform that supports your scientific modeling processes from discovery to publication. With it, you can upload, search for, modify, and simulate scientific models and easily share and reproduce your results.
+Terarium supports your scientific decision making by helping you organize, refine, and communicate the results of your modeling processes. You can:
 
-## Extracting knowledge
+- Gather existing knowledge.
+- Break down complex scientific operations into separate, easy-to-configure tasks.
+- Create reproducible visual representations of how your resources, processes, and results chain together.
 
-A project in Terarium acts as a repository for resources (models, datasets, and documents) related to your modeling goals.
+## How Terarium represents your modeling work
 
-???+ list "Upload resources"
+The following concepts describe how Terarium organizes your modeling work to help you manage, visualize, and run scientific processes.
+
+<div class="grid cards" markdown>
+
+-   __Project__
+
+    ---
+
+    A workspace for storing modeling resources, organizing workflows, and recording and sharing results.
+
+    [:fontawesome-solid-angle-right:{ aria-hidden="true"} Creating a project](#creating-a-project)
+
+-   __Resource__
+
+    ---
+
+    Scientific knowledge&mdash;models, datasets, or documents (PDF)&mdash;used to build workflows and extract insights.
+    
+    [:fontawesome-solid-angle-right:{ aria-hidden="true"} Gathering resources](#gathering-resources)
+
+-   __Workflow__
+
+    ---
+
+    A visual canvas for building and capturing your modeling processes. Workflows show how resources move between different operators to produce results.
+
+    [:fontawesome-solid-angle-right:{ aria-hidden="true"} Building scientific modeling workflows](#building-scientific-modeling-workflows)
+
+-   __Operator__
+
+    ---
+
+    A part of a workflow that performs tasks like data transformation or simulation.
+    
+    [:fontawesome-solid-angle-right:{ aria-hidden="true"} Using the library of operators](#using-the-library-of-operators)
+
+</div>
+
+## Creating a project
+
+Create a project for a problem you want to model and then:
+
+- Upload existing models, datasets, and documents to build a library of relevant knowledge. 
+- Visually construct different modeling workflows to transform the resources and test different models.
+
+<figure markdown>
+![](../img/get-started/project.png)
+<figcaption>
+The overview of a COVID-19 project. The Resources panel (left) provides access to your library of models, datasets, and documents. Build new visual workflows to extract knowledge from and build on your resources.
+</figcaption> 
+</figure>
+
+??? list "Create a project"
+
+    1. Perform one of the following actions on the Home page:
+        - To start from scratch, click :octicons-plus-24:{ aria-hidden="true" } **New project**
+        - To copy a project, find it in My projects or Public projects and then click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-copy-24:{ aria-hidden="true" style="transform: rotate(-90deg);"} **Copy**.
+        - To upload a project, click :octicons-upload-16:{ aria-hidden="true" } **Upload project** and drag in or browse to the location of your *.project* file.
+    2. Edit the project overview to capture your goals and save results over time.
+
+## Gathering resources
+
+Use the Resources panel to upload and access your models, datasets, and documents.
+
+![](../img/get-started/upload.png)
+
+???+ note
+
+    You can also add resources by: 
+
+    - Copying them from other projects.
+    - Creating them using Terarium's library of operators.
+
+??? list "Upload resources"
 
     1. Click **Upload** in the Resources panel.
-       ![](../img/get-started/upload.png)
     2. Drag in your resources or click **open a file browser** to locate them.
     3. Click **Upload**.
     
         !!! note
     
-            When you upload a PDF, Terarium automatically scans the document and extracts any linear ordinary differential equations. Depending on the size of the document, this may take some time. Click <span class="sr-only" id="notifications-icon-label">Notifications</span> :material-bell-outline:{ title="Notifications" aria-labelledBy="notifications-icon-label" } in the nav bar to check the progress of an extraction. 
+            To view a resource, click its title in the Resources panel. 
 
-## Constructing scientific modeling workflows
+## Building scientific modeling workflows
 
-A workflow in Terarium is a graphical editor for building and executing complex modeling processes.
+Create a workflow to visually build your modeling processes. Each box is a resource or an operator that handles a task like transformation and simulation. Chain their outputs and inputs to:
+
+- Recreate, reuse, and modify existing models and datasets to suit your modeling needs.
+- Rapidly create scenarios and interventions by configuring, validating, calibrating, and optimizing models.
 
 ![](../img/get-started/workflow.png)
 
-Graph nodes represent resources or operators that handle transformation and simulation. Connect them to recreate models from documents, iteratively modify them, and run sophisticated calibration, optimization, and simulation tasks.
+??? list "Create a workflow"
 
-???+ list "Create a workflow"
+    1. In the Workflows section of the Resource panel, click :octicons-plus-24:{ aria-hidden="true" } **New**.
+    2. Select a template, fill out the required fields, and then click **Create**.
+    3. Use the canvas to customize your workflow:
 
-    1. Click :octicons-plus-24:{ aria-hidden="true" } **New** in the Workflows section of the Resource panel.
-    2. Enter a name for the new workflow and click **Save**.
-    2. Drag Models, Datasets, or Documents into the workflow graph from the Resources panel.
-    3. Right-click anywhere on the workflow graph and choose from the library of operators.
-    4. Connect your resources and operators by clicking ![](../img/output.png){ aria-hidden="true" class="node-icon" } on the right side of a node and then clicking a corresponding input ![](../img/input.png){ aria-hidden="true" class="node-icon" } on the left side of the destination node.
-    
-        ???+ note
-    
-            - Labels on inputs show you the types of resources and operators each operator requires.
-            - Some operators don't display outputs until you click **Open** or **Edit** and modify their settings or run their associated task.
+        - Drag in resources (models, datasets, or documents) from the Resources panel.
+        - Right-click on the canvas to add operators.
+        - Connect resources and operators by clicking the source input ![](../img/output.png){ aria-hidden="true" class="node-icon" } and followed by the output ![](../img/input.png){ aria-hidden="true" class="node-icon" } destination. Labels show you the types of resources and operators you can connect.
 
-## Modifying models and data
+## Using the library of operators
 
-Using Terarium's library of operators, you can recreate, reuse, and modify existing models and datasets to suit your modeling needs:
+Drill down into operators to configure complex scientific tasks. Each operator supports: 
 
-<div class="grid cards" markdown>
+- A guided wizard for quickly configuring common settings.
+- A notebook for direct coding.
+- An integrated AI assistant for creating and refining code even if you don't have any programming experience.
 
--   __Modeling__
-
-    ---
-
-    - [**Create model from equations**](../modeling/create-model-from-equations.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index"}](https://github.com/DARPA-ASKEM/model-service/blob/07ae21cae2d5465f9ac5b5bbbe6c7b28b7259f04/src/ModelService.jl#L54){ target="_blank" rel="noopener noreferrer" }  
-        Build a model using LaTeX expressions or equations extracted from a paper.
-
-    - [**Edit model**](../modeling/edit-model.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/DARPA-ASKEM/beaker-kernel/blob/main/docs/contexts_mira_model_edit.md){ target="_blank" rel="noopener noreferrer" }  
-        Modify model states and transitions using a graphical template editor or an AI assistant.
-
-    - [**Stratify model**](../modeling/stratify-model.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/gyorilab/mira/blob/main/notebooks/viz_strat_petri.ipynb){ target="_blank" rel="noopener noreferrer" }  
-        Divide populations into subsets along characteristics such as age or location.
-
-    - [**Compare models**](../modeling/compare-models.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/gyorilab/mira/blob/7314765ab409ddc9647269ad2381055f1cd67706/notebooks/hackathon_2023.10/dkg_grounding_model_comparison.ipynb#L307){ target="_blank" rel="noopener noreferrer" }  
-        Generate side-by-side summaries of two or more models or prompt an AI assistant to visually compare them.
-
--   __Data__
-
-    ---
-
-    - [**Transform dataset**](../datasets/transform-dataset.md) [:octicons-book-24:{ title="User Guide" aria-label="User Guide" class="md-annotation__index" }](https://pandas.pydata.org/docs/user_guide/index.html#user-guide){ target="_blank" rel="noopener noreferrer" }  
-        Modify a dataset by explaining your changes to an AI assistant.
-
-</div>
-
-Some operators have a dual-view design, with a wizard for common settings and a notebook for direct coding. An AI assistant in the notebook helps you generate and refine code even if you don't have any programming experience.
-
-???+ list "Access resource or operator settings"
+??? list "Use Terarium's operators"
 
     1. Click **Open** or **Edit** on the operator node.
     2. Switch to the Wizard or Notebook view depending on your preference.
@@ -84,11 +131,55 @@ Some operators have a dual-view design, with a wizard for common settings and a 
     
             Any changes you make in the Wizard view are automatically translated into code in the Notebook view.
 
-## Configuring and simulating models
-
-Terarium's library of operators also allows you to rapidly create of scenarios and interventions by linking operators to configure, validate, calibrate, and optimize models:
-
 <div class="grid cards" markdown>
+
+-   __Modeling__
+
+    ---
+
+    - [**Create model from equations**](../modeling/create-model-from-equations.md)  
+        Build a model using LaTeX expressions or equations extracted from a paper.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index"} [*Source code*](https://github.com/DARPA-ASKEM/model-service/blob/07ae21cae2d5465f9ac5b5bbbe6c7b28b7259f04/src/ModelService.jl#L54){ target="_blank" rel="noopener noreferrer" }  
+
+    - [**Edit model**](../modeling/edit-model.md)  
+        Modify model states and transitions using a graphical template editor or an AI assistant.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code overview*](https://github.com/DARPA-ASKEM/beaker-kernel/blob/main/docs/contexts_mira_model_edit.md){ target="_blank" rel="noopener noreferrer" }  
+
+    - [**Stratify model**](../modeling/stratify-model.md)  
+        Divide populations into subsets along characteristics such as age or location.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code overview*](https://github.com/gyorilab/mira/blob/main/notebooks/viz_strat_petri.ipynb){ target="_blank" rel="noopener noreferrer" }  
+
+    - [**Compare models**](../modeling/compare-models.md)  
+        Generate side-by-side summaries of two or more models or prompt an AI assistant to visually compare them.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code overview*](https://github.com/gyorilab/mira/blob/7314765ab409ddc9647269ad2381055f1cd67706/notebooks/hackathon_2023.10/dkg_grounding_model_comparison.ipynb#L307){ target="_blank" rel="noopener noreferrer" }  
+
+-   __Simulation__
+
+    ---
+
+    - [**Simulate**](../simulation/simulate-model.md)  
+        Run a probabilistic simulation of a model under specific conditions.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L323){ target="_blank" rel="noopener noreferrer" }  
+    - [**Calibrate**](../simulation/calibrate-model.md)  
+        Determine or update the value of model parameters given a reference dataset of observations.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L529){ target="_blank" rel="noopener noreferrer" }  
+    - [**Optimize intervention policy**](../config-and-intervention/optimize-intervention-policy.md)  
+        Determine the optimal values for variables that minimize or maximize an intervention given some constraints.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L747){ target="_blank" rel="noopener noreferrer" }  
+    - [**Simulate ensemble**](../simulation/simulate-ensemble.md)  
+        Run a deterministic simulation of multiple models or model configurations under specific conditions.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L35){ target="_blank" rel="noopener noreferrer" }  
+    - [**Calibrate ensemble**](../simulation/calibrate-ensemble.md)    
+        Determine or update the value of model parameters given a reference dataset of observations.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L156){ target="_blank" rel="noopener noreferrer" }  
+
+-   __Data__
+
+    ---
+
+    - [**Transform dataset**](../datasets/transform-dataset.md)  
+        Modify a dataset by explaining your changes to an AI assistant.  
+        :octicons-book-24:{ title="User Guide" aria-label="User Guide" class="md-annotation__index" } [*Source code user guide*](https://pandas.pydata.org/docs/user_guide/index.html#user-guide){ target="_blank" rel="noopener noreferrer" }  
 
 -   __Config and intervention__
 
@@ -96,25 +187,9 @@ Terarium's library of operators also allows you to rapidly create of scenarios a
 
     - [**Configure model**](../config-and-intervention/configure-model.md)  
         Edit variables and parameters or extract them from a reference resource.
-    - [**Validate configuration**](../config-and-intervention/configure-model.md#validate-a-model-configuration) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/siftech/funman){ target="_blank" rel="noopener noreferrer" }  
-        Determine if a configuration generates valid outputs given a set of constraints.
+    - [**Validate configuration**](../config-and-intervention/validate-model-configuration.md)  
+        Determine if a configuration generates valid outputs given a set of constraints.  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code repository*](https://github.com/siftech/funman){ target="_blank" rel="noopener noreferrer" }  
     - [**Create intervention policy**](../config-and-intervention/create-intervention-policy.md)  
 
--   __Simulation__
-
-    ---
-
-    - [**Simulate**](../simulation/simulate-model.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L323){ target="_blank" rel="noopener noreferrer" }  
-        Run a probabilistic simulation of a model under specific conditions.
-    - [**Calibrate**](../simulation/calibrate-model.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L529){ target="_blank" rel="noopener noreferrer" }  
-        Determine or update the value of model parameters given a reference dataset of observations.
-    - [**Optimize intervention policy**](../config-and-intervention/create-intervention-policy.md#optimize-an-intervention-policy) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L747){ target="_blank" rel="noopener noreferrer" }  
-        Determine the optimal values for variables that minimize or maximize an intervention given some constraints.    
-    - [**Simulate ensemble**](../simulation/simulate-ensemble.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L35){ target="_blank" rel="noopener noreferrer" }  
-        Run a deterministic simulation of multiple models or model configurations under specific conditions.
-    - [**Calibrate ensemble**](../simulation/calibrate-ensemble.md) [:material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" }](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L156){ target="_blank" rel="noopener noreferrer" }  
-        Determine or update the value of model parameters given a reference dataset of observations.
-
 </div>
-
-Just as with operators that modify and transform resources, simulation operators support wizard and notebook views with AI-assisted configuration. 

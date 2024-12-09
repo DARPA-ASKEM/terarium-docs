@@ -32,7 +32,7 @@ Calibrate takes a model configuration and a dataset as an input.
 
 </div>
 
-???+ list "To calibrate a model"
+???+ list "Calibrate a model"
 
     1. Add the model and reference dataset to a workflow graph.
     2. Connect the Model operator output to a Configure model operator. See [Configure a model](../config-and-intervention/configure-model.md) for information on selecting a model configuration. 
@@ -59,6 +59,6 @@ Calibrate takes a model configuration and a dataset as an input.
 
 ## Intermediate results
 
-???+ list "To view calibration results"
+???+ list "View calibration results"
 
     - Use the **Select variables to plot** dropdown to choose the variables you want to see, or click **Add Chart** to add another chart.

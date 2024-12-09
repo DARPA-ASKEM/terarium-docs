@@ -1,8 +1,8 @@
 ---
-title: "Save insights as notes"
+title: "Annotate your work"
 ---
 
-# Save insights as notes
+# Annotate your work
 
 You can capture and save insights you've gained during your modeling processes:
 
@@ -13,10 +13,10 @@ You can capture and save insights you've gained during your modeling processes:
 
 You can add notes to any operator in the workflow graph.
 
-???+ list "To add a note to a workflow operator"
+???+ list "Add a note to a workflow operator"
 
     1. Perform one of the following actions:
-        - On the operator in the workflow graph, click :fontawesome-solid-ellipsis-vertical:{ title="Menu" alt="Menu" } > :octicons-pencil-24:{ aria-hidden="true"} **Add a note**
+        - On the operator in the workflow graph, click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="Menu" } > :octicons-pencil-24:{ aria-hidden="true"} **Add a note**
         - In the operator details, click :octicons-pencil-24:{ aria-hidden="true"} **Add a note**.
     2. Add your note and press ++enter++.
 
@@ -30,7 +30,7 @@ For example, to assist with publishing a paper, you could organize insights into
 
     Terarium automatically saves the state of your overview as you make changes.
 
-???+ list "To edit the project overview"
+???+ list "Edit the project overview"
 
     1. In the Resources panel, click **Overview**.
     2. Enter your insights in the text field. Use the style bar to format your text.

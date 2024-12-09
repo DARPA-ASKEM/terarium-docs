@@ -75,7 +75,7 @@ Terarium previews the a stratified model as:
 
 When reviewing the stratified model, you can get a sense of the initial variable and parameter values as a hierarchical list, but the results are easiest to understand in matrix form.
 
-???+ list "To review stratified model initials or parameters"
+??? list "Review stratified model initials or parameters"
 
     Perform one of the following actions:
 

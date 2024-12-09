@@ -24,7 +24,7 @@ More info coming soon.
 
 </div>
 
-???+ list "To run an ensemble simulation"
+???+ list "Run an ensemble simulation"
 
     1. [Configure two or more models](../config-and-intervention/configure-model.md).
     2. Right-click anywhere on the workflow graph and select **Simulation** > **Simulate ensemble**.

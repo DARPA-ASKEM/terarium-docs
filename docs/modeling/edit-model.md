@@ -29,6 +29,13 @@ How you implement your edits is up to you. You can write your own code or prompt
 
 </div>
 
+???+ list "Add the Edit operator to a workflow"
+
+    - Perform one of the following actions:
+    
+         On a resource or operator that outputs a model or model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Edit model**.
+        - Right-click anywhere on the workflow graph, select **Modeling** > **Edit model**, and then connect the output of a model or model configuration to the Edit model input.
+
 ## Edit a model with the AI assistant
 
 Using the Notebook view of the Edit model operator, you can steer an AI assistant to quickly create, modify, and refine a model from code. All generated code is directly editable, allowing you to make modifications at any time.
@@ -37,7 +44,7 @@ Using the Notebook view of the Edit model operator, you can steer an AI assistan
 
     Each time you submit a new prompt or command, the generated code is added below any existing code. Each time you run the code, the whole notebook is executed.
 
-???+ list "To edit a model using the AI assistant"
+???+ list "Edit a model using the AI assistant"
 
     2. Click in the prompt field to see suggested actions. Select a suggestion or enter your own command using plain language.
     3. Click :material-play-outline:{ aria-hidden="true" } **Run**.

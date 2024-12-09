@@ -58,37 +58,3 @@ Model Service provides REST-API wrappers for creating, manipulating, and transfo
 
     [pandas | GitHub](https://github.com/pandas-dev/pandas) :octicons-link-external-24:{ alt="External link" title="External link" }
 </div>
-
-## Subset dataset
-
-<div class="grid cards" markdown>
-
--   __Documentation__
-
-    ---
-
-    [climate-data](https://github.com/DARPA-ASKEM/climate-data/blob/main/api/processing/filters.py#L48) :octicons-link-external-24:{ alt="External link" title="External link" }
-
--   __Source code__
-
-    ---
-
-    [climate-data | GitHub](https://github.com/DARPA-ASKEM/climate-data/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
-</div>
-
-## Transform gridded dataset
-
-<div class="grid cards" markdown>
-
--   __Documentation__
-
-    ---
-
-    [beaker-kernel](https://darpa-askem.github.io/askem-beaker/contexts_climate_data_utility.html) :octicons-link-external-24:{ alt="External link" title="External link" }
-
--   __Source code__
-
-    ---
-
-    [askem-beaker | GitHub](https://github.com/DARPA-ASKEM/askem-beaker/tree/main) :octicons-link-external-24:{ alt="External link" title="External link" }
-</div>

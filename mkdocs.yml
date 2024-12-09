@@ -75,17 +75,23 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+    pymdownx.arithmatex:
+      generic: true
     tables:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascript/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
   - Home: 
     - index.md
   - Get started:
     - Using Terarium: get-started/using-terarium.md
-    - "Example project: Recreating, modifying, and simulating an SIR model": get-started/example-workflow.md  
+    - "Tutorial: Recreate, modify, and simulate a model": get-started/example-workflow.md  
   - Upload modeling resources: upload-resources/index.md
   - Build a workflow graph: workflows/index.md
   - Review and transform data: 
@@ -102,14 +108,16 @@ nav:
   - Configuration and intervention:
     - config-and-intervention/index.md
     - Configure a model: config-and-intervention/configure-model.md
-    - Create and optimize an intervention policy: config-and-intervention/create-intervention-policy.md
+    - Validate a model configuration: config-and-intervention/validate-model-configuration.md
+    - Create an intervention policy: config-and-intervention/create-intervention-policy.md
+    - Optimize an intervention policy: config-and-intervention/optimize-intervention-policy.md
   - Simulation:
     - simulation/index.md
     - Simulate a model: simulation/simulate-model.md
     - Calibrate a model: simulation/calibrate-model.md
     - Simulate ensemble: simulation/simulate-ensemble.md
     - Calibrate ensemble: simulation/calibrate-ensemble.md
-  - Save insights as notes: notes/index.md
+  - Annotate your work: notes/index.md
   - Integrated subsystems:
     - subsystems/index.md
     - TDS: subsystems/TDS.md

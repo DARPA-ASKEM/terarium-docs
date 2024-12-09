@@ -77,7 +77,7 @@ Model cards briefly summarize key aspects of the models. Available aspects inclu
 </div>
 </div>
 
-???+ list "To compare models"
+???+ list "Compare models"
 
     1. From the Resources panel, drag the models into a workflow graph.
     2. Right-click anywhere on the workflow graph and select **Modeling** > **Compare models**.
@@ -89,7 +89,7 @@ Model cards briefly summarize key aspects of the models. Available aspects inclu
 
 The AI assistant in the Compare models operator can visualize the similarities and differences of the attached models. It creates a comparison diagram for every pair of input models that color-codes the state variables and transitions that are unique to each model and common to both.
 
-???+ list "To visualize model similarities and differences"
+???+ list "Visualize model similarities and differences"
 
     1. In the Compare models operator details, click **Notebook**.
     2. Click in the prompt field and select **Compare the models and visualize and display them**.
