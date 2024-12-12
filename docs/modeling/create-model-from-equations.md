@@ -144,7 +144,7 @@ The Create model from equations operator works with LaTeX equations. When adding
         - Capital sigma (`Σ`) and pi (`Π`) notations for summation and product.
         - Non-ASCII characters.
         - Homoglyphs (characters that look similar but have different meanings).
-    - To indicate multiplication, use whitespace between variables instead of `\cdot` or `*`.
+    - To indicate multiplication, use `*` between scalar quantities.
 
 -   __Superscripts and subscripts__
 

@@ -79,7 +79,7 @@ You can choose any step in your transformation process as the thumbnail preview.
 
     - Perform one of the following actions:
     
-        - Hover over the output of a Dataset and click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Transform dataset**.
+        - On a resource or operator that outputs a dataset, hover over the output and click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Transform dataset**.
         - Right-click anywhere on the workflow graph, select **Data** > **Transform dataset**, and then connect the output of one or more Datasets or Simulations to the Transform dataset inputs.
 
 ## Modify data in the Transform dataset code notebook
@@ -94,7 +94,7 @@ Prompts and responses are written to cells where you can preview, edit, and run 
 
     Wait until the status of the AI assistant is :green_circle:{ aria-hidden="true" title="" style="margin: 0;" } Ready (not :red_circle:{ aria-hidden="true" title="" style="margin: 0;" } Offline or :orange_circle:{ aria-hidden="true" title="" style="margin: 0;" } Busy) before attempting to make any transformations. 
 
-??? list "Access the Transform dataset code notebook"
+??? list "Open the Transform dataset code notebook"
 
     - Make sure you've connected one or more datasets to the Transform dataset operator and then click **Edit**.
 
@@ -126,7 +126,7 @@ The Transform dataset AI assistant interprets plain language to answer questions
 ??? list "Prompt or question the AI assistant"
 
     1. Click in the text box at the top of the page and then perform one of the following actions:
-        - Select one of the suggested prompts and edit it to fit your dataset and the transformation you want to make.
+        - Select a suggested prompt and edit it to fit your dataset and the transformation you want to make.
         - Enter a question or describe the transformation you want to make. 
     2. Click <span class="sr-only" id="submit-icon-label">Submit</span> :octicons-paper-airplane-24:{ style="transform: rotate(-45deg);" title="Submit" aira-labelledby="Submit" }.
     3. Scroll down to the new code cell to inspect the transformation.
