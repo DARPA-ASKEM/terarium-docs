@@ -179,6 +179,21 @@ svg.feather {
   padding-left: 18px;
 }
 
+/* Ensure the grid cards inside details.list display as two columns on large screens */
+details.list .grid.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    padding: 0;
+}
+
+/* Maintain responsiveness for smaller screens */
+@media (max-width: 768px) {
+    details.list .grid.cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 /*Improved styling for grid buttons on home page*/
 
 .md-typeset .md-button {
