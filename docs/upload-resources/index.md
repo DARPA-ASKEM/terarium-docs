@@ -1,15 +1,15 @@
 ---
-title: "Upload modeling resources"
+title: "Gather modeling resources"
 ---
 
-# Upload modeling resources
+# Gather modeling resources
 
-With Terarium, you can upload, store and manage resources needed for your modeling and simulation workflows. You can upload documents, models, and datasets from: 
+With Terarium, you can gather, store and manage resources needed for your modeling and simulation workflows. You can pull in documents, models, and datasets from: 
 
 - [Your computer](#upload-resources).
 - [Other projects in Terarium](#get-resources-from-other-projects).
 
-Uploaded documents, models, and datasets appear in your project resources. You can transform and simulate them by dragging them into a workflow.
+Documents, models, and datasets appear in your project resources. You can transform and simulate them by dragging them into a workflow.
 
 ## Upload resources
 
