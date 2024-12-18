@@ -130,7 +130,7 @@ The following sections show examples of how to prompt the Edit model AI assistan
     You can use the Edit model operator to take a high-level equation and progressively expand it by substituting definitions of variables into the equation. By doing this in multiple iterative steps over several connected Edit model operators, you can create a fully detailed model with clear relationships and dependencies.
 
     ```{ .text .wrap }
-    Replace rate law t1 with the equation i * s ^ omega (1 - (1/e)**(theta * IR**2 * (v * (i * IR * Vdrop * tContact / ((AER + lambda + 5) * Vair )))))
+    Replace rate law t1 with the equation i * s * omega * (1 - (1/e)**(theta * IR**2 * Cv * Ci * IR * Vdrop * tContact / ((AER + lambda + S) * Vair)))
     ```
 
 ## Save an edited model
