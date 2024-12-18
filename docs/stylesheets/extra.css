@@ -174,6 +174,26 @@ svg.feather {
   border-top: none;
 }
 
+/* Add left padding to all children except summary */
+.md-typeset details.list > *:not(summary) {
+  padding-left: 18px;
+}
+
+/* Ensure the grid cards inside details.list display as two columns on large screens */
+details.list .grid.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    padding: 0;
+}
+
+/* Maintain responsiveness for smaller screens */
+@media (max-width: 768px) {
+    details.list .grid.cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 /*Improved styling for grid buttons on home page*/
 
 .md-typeset .md-button {
@@ -261,4 +281,23 @@ img.node-icon {
 
 .md-typeset blockquote {
     color: var(--md-typeset-color);
+}
+
+div.highlight.wrap pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    padding-right: 32px;
+}
+
+.strata-interaction {
+  color: #1971c2;
+}
+
+.strata-transition-directed {
+  color: #e03131;
+}
+
+.strata-transition-undirected {
+  color: #2f9e44;
 }

@@ -67,7 +67,7 @@ The overview of a COVID-19 project. The Resources panel (left) provides access t
 ??? list "Create a project"
 
     1. Perform one of the following actions on the Home page:
-        - To start from scratch, click :octicons-plus-24:{ aria-hidden="true" } **New project**
+        - To start from scratch, click :octicons-plus-24:{ aria-hidden="true" } **New project**.
         - To copy a project, find it in My projects or Public projects and then click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-copy-24:{ aria-hidden="true" style="transform: rotate(-90deg);"} **Copy**.
         - To upload a project, click :octicons-upload-16:{ aria-hidden="true" } **Upload project** and drag in or browse to the location of your *.project* file.
     2. Edit the project overview to capture your goals and save results over time.
