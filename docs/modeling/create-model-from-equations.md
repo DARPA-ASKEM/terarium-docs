@@ -117,7 +117,7 @@ The Create model from equations operator works with LaTeX equations. When adding
 
 <div class="grid cards" markdown>
 
--   __Derivatives__
+-   #### Derivatives
 
     ---
 
@@ -135,7 +135,7 @@ The Create model from equations operator works with LaTeX equations. When adding
 
     - Place **first-order derivatives** to the left of the equal sign.
 
--   __Mathematical notations__
+-   #### Mathematical notations
 
     ---
 
@@ -144,16 +144,16 @@ The Create model from equations operator works with LaTeX equations. When adding
         - Capital sigma (`Σ`) and pi (`Π`) notations for summation and product.
         - Non-ASCII characters.
         - Homoglyphs (characters that look similar but have different meanings).
-    - To indicate multiplication, use `*` between scalar quantities.
+    - To indicate multiplication, use ` * ` between scalar quantities.
 
--   __Superscripts and subscripts__
+-   #### Superscripts and subscripts
 
     ---
 
     - To denote **indices**, use LaTeX subscripts `_` instead of superscripts and LaTeX superscripts `^`.
     - Use **LaTeX subscripts** `_` instead of Unicode subscripts. Wrap all characters in the subscript in curly brackets `{...}`.
 
--   __Variable and symbol usage__
+-   #### Variable and symbol usage
 
     ---
 

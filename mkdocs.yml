@@ -92,7 +92,7 @@ nav:
   - Get started:
     - Using Terarium: get-started/using-terarium.md
     - "Tutorial: Recreate, modify, and simulate a model": get-started/example-workflow.md  
-  - Upload modeling resources: upload-resources/index.md
+  - Gather modeling resources: upload-resources/index.md
   - Build a workflow graph: workflows/index.md
   - Review and transform data: 
     - datasets/index.md
