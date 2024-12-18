@@ -56,7 +56,7 @@ Once you've completed your edits, the thumbnail preview shows the diagram or equ
 
 </div>
 
-???+ list "Add the Edit operator to a workflow"
+???+ list "Add the Edit model operator to a workflow"
 
     - Perform one of the following actions:
     
