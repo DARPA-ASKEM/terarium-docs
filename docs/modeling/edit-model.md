@@ -4,9 +4,36 @@ title: "Edit a model"
 
 # Edit a model
 
-Model editing lets you build on existing models. You can add, remove, or change state variables, transitions, parameters, rate laws, and observables.
+Model editing lets you build on existing models. Supported edits include:
 
-How you implement your edits is up to you. You can write your own code or prompt the integrated AI assistant to generate and execute code for you.
+- Answering questions about, adding, removing, or changing state variables, transitions, parameters, rate laws, and observables.
+- Renaming model elements.
+- Setting variable or parameter units.
+- Replacing parameters with more complex formulas.
+- Resetting the model to its original state.
+
+The Edit model operator is a code notebook with an interactive AI assistant. You describe in plain language the changes you want to make, and the LLM-powered assistant automatically generates the code for you.
+
+!!! note
+
+    The Edit model operator adapts to your coding experience. You can: 
+
+    - Use plain language to prompt an AI assistant for a no-code experience.
+    - Edit and rerun AI-generated code. 
+    - Write own executable code to make custom edits.
+
+## Edit model operator
+
+In a workflow, the Edit model operator takes a model or model configuration as an input and outputs an edited model.
+
+???+ tip
+
+    For complex edits with multiple steps, it can be helpful to chain multiple Edit model operators together. This allows you to:
+
+    - Keep each notebook short and readable.
+    - Access intermediate results for testing or comparison.
+
+Once you've completed your edits, the thumbnail preview shows the diagram or equations of the edited model.
 
 <figure markdown>
 ![](../img/models/model-edit-operator.png)
@@ -19,7 +46,7 @@ How you implement your edits is up to you. You can write your own code or prompt
 
     ---
 
-    Model
+    Model or model configuration
 
 -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
 
@@ -29,45 +56,102 @@ How you implement your edits is up to you. You can write your own code or prompt
 
 </div>
 
-???+ list "Add the Edit operator to a workflow"
+???+ list "Add the Edit model operator to a workflow"
 
     - Perform one of the following actions:
     
-         On a resource or operator that outputs a model or model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Edit model**.
+        - On a resource or operator that outputs a model or model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Edit model**.
         - Right-click anywhere on the workflow graph, select **Modeling** > **Edit model**, and then connect the output of a model or model configuration to the Edit model input.
 
-## Edit a model with the AI assistant
+## Edit a model in the Edit model code notebook
 
-Using the Notebook view of the Edit model operator, you can steer an AI assistant to quickly create, modify, and refine a model from code. All generated code is directly editable, allowing you to make modifications at any time.
+Inside the Edit mode operator is a code notebook. In the notebook, you can prompt an AI assistant to answer questions about or modify your model. If you're comfortable writing code, you can edit anything the assistant creates or add your own custom code.
+
+![](../img/models/model-edit-notebook.png)
+
+Generated code appears below your prompts, where you can preview, edit, and run it. Each prompt and response builds on the previous ones, letting you gradually make complex changes and save the history of your work.
 
 ???+ note
 
-    Each time you submit a new prompt or command, the generated code is added below any existing code. Each time you run the code, the whole notebook is executed.
+    Each new prompt and response adds new code below any existing code. When you run the Edit model operator, all the code is executed, not just your latest changes.
 
-???+ list "Edit a model using the AI assistant"
+??? list "Open the Edit model code notebook"
 
-    2. Click in the prompt field to see suggested actions. Select a suggestion or enter your own command using plain language.
-    3. Click :material-play-outline:{ aria-hidden="true" } **Run**.
+    - Make sure you've connected a model or model configuration to the Edit model operator and then click **Edit**.
 
-        ???+ tip
+### Use the AI assistant to edit a model
 
-            To generate and preview model code but not run it, click :fontawesome-regular-paper-plane:{ alt="Generate code" title="Generate code"}.
+The Edit model AI assistant interprets plain language to answer questions about or transform your model.
 
-    4. Review the resulting model diagram in the preview on the right. 
-    5. To make changes, submit a new prompt that clarifies or builds on what you asked for or directly edit the generated code.
-    6. Click :material-play-outline:{ aria-hidden="true" } **Run** again to update the model.
-    7. To save an iteration of the model at any point, click **Save for re-use**, enter a unique name and click **Save**.
+???+ tip
 
-## Edit a model with your own code
+    The AI assistant can perform more than one command at a time.
 
-More info coming soon.
+??? list "Ask the AI assistant a question about your model or the process of editing"
 
-## Use the edit model operator output
+    1. Click in the text box at the top of the page, enter your question, and then click <span class="sr-only" id="submit-icon-label">Submit</span> :octicons-paper-airplane-24:{ style="transform: rotate(-45deg);" title="Submit" aira-labelledby="Submit" }.
+    2. Click **Show thoughts** to view the answer.
 
-More info coming soon.
+??? list "Edit a model using the AI assistant"
 
-- [Edit model](#)
-- [Stratify model](stratify-model.md)
-- [Compare models](compare-models.md)
-- [Configure model](../config-and-intervention/configure-model.md)
-- [Create intervention policy](../config-and-intervention/create-intervention-policy.md)
+    1. Click in the text box at the top of the page and then perform one of the following actions:
+        - Select a suggested prompt and modify it to fit your model and required edits.
+        - Enter a plain-language description of the changes you want to make.
+    2. Click <span class="sr-only" id="submit-icon-label">Submit</span> :octicons-paper-airplane-24:{ style="transform: rotate(-45deg);" title="Submit" aira-labelledby="Submit" } to generate and preview the model edit code.
+    3. Review and edit (if necessary) the generated model edit code.
+    4. Click :material-play-outline:{ aria-hidden="true" } **Run**.
+
+### Add or edit code
+
+At any time, you can edit the code generated by the AI assistant or enter your own custom code.
+
+??? list "Add or make changes to model edit code"
+
+    1. Directly edit the python code. 
+    2. Click :material-play-outline:{ aria-hidden="true"} **Run**.
+    3. If needed, review any errors in the Output Console below the code.
+
+<!-- Add support for adding observables via pattern https://github.com/DARPA-ASKEM/askem-beaker/pull/161/ -->
+
+### Edit model examples
+
+The following sections show examples of how to prompt the Edit model AI assistant to perform commonly used edits.
+
+??? list "Add observables by pattern"
+
+    For a stratified model, you can add observables by pattern. For example, with a model stratified by age (*children*, *adults*, *elderly*) and vaccination status (*vaccinated*, *unvaccinated*]:
+    
+    ```{ .text .wrap }
+    Add an observable called susceptible_vaccinated_children for the susceptible identifier and for vaccinated children
+    ```
+
+??? list "Expand an equation"
+
+    You can use the Edit model operator to take a high-level equation and progressively expand it by substituting definitions of variables into the equation. By doing this in multiple iterative steps over several connected Edit model operators, you can create a fully detailed model with clear relationships and dependencies.
+
+    ```{ .text .wrap }
+    Replace rate law t1 with the equation i * s * omega * (1 - (1/e)**(theta * IR**2 * Cv * Ci * IR * Vdrop * tContact / ((AER + lambda + S) * Vair)))
+    ```
+
+## Save an edited model
+
+Each time you click :material-play-outline:{ aria-hidden="true" } **Run**, Terarium creates a new edited model as the output for the Edit model operator. This lets you return to previous versions of your model or choose the best one to save and use in your workflow.
+
+When you're done making changes, you can connect the chosen output to any operators in the same workflow that take models as an input. 
+
+To use an edited model in other workflows, save it as a project resource.
+
+??? list "Choose a different output for the Edit model operator"
+
+    - Use the **Select an output** dropdown.
+
+??? list "Save an edited model to your project resources"
+
+    You can save an edited model at any time.
+
+    1. (Optional) If you created multiple outputs during your edits, **Select an output** to save.
+    2. Click **Save for re-use**, enter a unique name in the text box, and then click **Save**.
+
+??? list "Download an edited model"
+    
+    - Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-download-24:{ aria-hidden="true" } **Download**.

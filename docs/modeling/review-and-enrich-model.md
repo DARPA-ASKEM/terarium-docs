@@ -38,7 +38,7 @@ To get an understanding of a model, you can open a detailed view that summarizes
     * Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="Menu" } > :octicons-pencil-24:{ aria-hidden="true"} **Rename**, type a unique name for the model, and press ++enter++.
 
 
-# Enrich model metadata
+## Enrich model metadata
 
 If your model lacks descriptive details about its variables and parameters, you can use Terarium's model enrichment capability to complete the:
 
