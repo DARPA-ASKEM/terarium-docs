@@ -48,7 +48,7 @@ In a workflow graph, a dataset resource lists the columns it contains. You can u
 
 </div>
 
-???+ list "Add a dataset resource operator to a workflow"
+???+ list "Add a dataset resource to a workflow"
 
     - Drag the resource from the Datasets section of the Resources panel.
 
