@@ -39,7 +39,7 @@ The following workflow templates streamline the process of building common model
     - Anticipate the arrival of a new variants.
     - Evaluate the potential impact of growing vaccine hesitancy and declining Non-Pharmaceutical Interventions (NPIs).
 
-    ### Fill out the Situational awareness template
+    <h3>Fill out the Situational awareness template</h3>
 
     To use the Situational awareness template, select the following inputs and outputs:
 
@@ -61,7 +61,7 @@ The following workflow templates streamline the process of building common model
     
     </div>
 
-    ### Complete the Situational awareness workflow
+    <h3>Complete the Situational awareness workflow</h3>
 
     The new workflow first calibrates the model to historical data to obtain the best estimate of parameters for the present. Then it forecasts the model into the near future. To see the results, you first need to open the Calibrate operator and: 
 
@@ -80,7 +80,7 @@ The following workflow templates streamline the process of building common model
     - Unknown severity of new variant.
     - Unknown speed of waning immunity.
 
-    ### Fill out the Sensitivity analysis template
+    <h3>Fill out the Sensitivity analysis template</h3>
 
     To use the Situational awareness template, select the following inputs and outputs:
 
@@ -102,7 +102,7 @@ The following workflow templates streamline the process of building common model
     
     </div>
 
-    ### Complete the Sensitivity analysis workflow
+    <h3>Complete the Sensitivity analysis workflow</h3>
 
     The new workflow first configures the model with parameter distributions that reflect all the sources of uncertainty. Then it simulates the model into into near future. To see the results, you first need to open the Simulate operator, edit any settings, and run it. This creates:
 
@@ -116,7 +116,7 @@ The following workflow templates streamline the process of building common model
     - The impact of several combinations of vaccination and Non-Pharmaceutical Interventions (NPIs) levels.
     - Whether it's better to implement an intervention in all locations, select locations, or not at all.
 
-    ### Fill out the Decision making template
+    <h3>Fill out the Decision making template</h3>
 
     To use the Decision making template, select the following inputs and outputs:
 
@@ -138,7 +138,7 @@ The following workflow templates streamline the process of building common model
     
     </div>   
 
-    ### Complete the Decision making workflow
+    <h3>Complete the Decision making workflow</h3>
 
     The new workflow first runs simulations for the baseline (no intervention) and each intervention policy. It then compares the relative impact of each intervention policy to the baseline. To see the results, you first need to:
 
@@ -154,7 +154,7 @@ The following workflow templates streamline the process of building common model
     - Potential emergence of a new variant.
     - Rapidly waning immunity.
 
-    ### Fill out the Horizon scanning template
+    <h3>Fill out the Horizon scanning template</h3>
 
     To use the Horizon scanning template, select the following inputs and outputs:
     
@@ -177,7 +177,7 @@ The following workflow templates streamline the process of building common model
     
     </div>
 
-    ### Complete the Horizon scanning workflow
+    <h3>Complete the Horizon scanning workflow</h3>
 
     The new workflow first configures the model to represent the extremes of uncertainty for some parameters. It then simulates into the near future with different intervention policies and compares the outcomes. To see the results, you first need to:
 
@@ -193,7 +193,7 @@ The following workflow templates streamline the process of building common model
     - Uncertainty in severity changes the priority of which group to target for vaccination.
     - Disease severity impacts the outcome of different social distancing policies.
 
-    ### Fill out the Value of information template
+    <h3>Fill out the Value of information template</h3>
 
     To use the Value of information template, select the following inputs and outputs:
     
@@ -216,7 +216,7 @@ The following workflow templates streamline the process of building common model
     
     </div>
 
-    ### Complete the Value of information workflow
+    <h3>Complete the Value of information workflow</h3>
 
     The new workflow first configures the model with parameter distributions that reflect all the sources of uncertainty. It then simulates into the near future with different intervention policies. To see the results, you first need to:
 
