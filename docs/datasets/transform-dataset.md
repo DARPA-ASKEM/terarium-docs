@@ -32,7 +32,7 @@ If a dataset doesn't align with your modeling goals, you can transform it by cle
 
 </div>
 
-The Transform dataset operator is a code notebook with an interactive AI assistant. You describe in plain language the changes you want to make, and the LLM-powered assistant automatically generates the code for you.
+The Transform dataset operator is a code notebook with an interactive AI assistant. You describe in plain language the changes you want to make, and the large language model (LLM)-powered assistant automatically generates the code for you.
 
 !!! note
 
