@@ -53,7 +53,7 @@ The Compare model operator has a wizard view and a code notebook:
 The wizard view compares the selected models along the following lines. For the best results, make sure you've [enriched](review-and-enrich-model.md#enrich-model-metadata) each model before running the comparison.
 
 - [Goal-driven comparison overview](#create-a-goal-driven-comparison-overview)
-- [Side-by-side model cards](#-get-side-by-side-model-card-comparisons)
+- [Side-by-side model cards](#get-side-by-side-model-card-comparisons)
 - [Concept comparisons](#review-model-concept-comparisons)
 
 ### Create a goal-driven comparison overview
