@@ -69,9 +69,17 @@ Most resources you upload are available for use right away. When you upload a PD
 
     - Click <span class="sr-only" id="notifications-icon-label">Notifications</span> :material-bell-outline:{ title="Notifications" aria-labelledBy="notifications-icon-label" }.
 
-## Get resources from other projects
+## Search for and copy resources from other projects
 
-You can get resources by copying them from other projects in Terarium.
+You can get resources by copying them from other projects in Terarium. If you know their location, you can get them directly from the source project. Otherwise, use the project search on the home page to find relevant resources.
+
+??? list "Find projects containing resources of interest"
+
+    The project search finds projects and resources by keyword. Keywords are checked against the names of projects and resources such as models, datasets, documents, model configurations, intervention policies, and workflows.
+
+    1. Click the Terarium logo to return to the home page.
+    2. Enter your keywords in the search field and press ++enter++.
+    3. In the results, click the project name to view the source project overview or click the resource name to open it.
 
 ??? list "Get a model or dataset from another project"
 

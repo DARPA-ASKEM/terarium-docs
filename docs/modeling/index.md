@@ -12,7 +12,7 @@ A model is an abstract representation that approximates the behavior of a system
 
     For information about: 
 
-    - Uploading models, see [Upload modeling resources](../upload-resources/index.md).
+    - Uploading models, see [Gather modeling resources](../upload-resources/index.md).
     - Creating models, see [Edit model](edit-model.md).
 
 ## Model resource

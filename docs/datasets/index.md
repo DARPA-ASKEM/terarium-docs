@@ -15,7 +15,7 @@ The Transform data operator can also serve as a place to visually plot and compa
 
 !!! note
 
-    For information about uploading datasets, see [Upload modeling resources](../upload-resources/index.md).
+    For information about uploading datasets, see [Gather modeling resources](../upload-resources/index.md).
 
 ## Dataset resource
 
