@@ -117,6 +117,7 @@ nav:
     - Calibrate a model: simulation/calibrate-model.md
     - Simulate ensemble: simulation/simulate-ensemble.md
     - Calibrate ensemble: simulation/calibrate-ensemble.md
+    - Compare datasets: simulation/compare-datasets.md
   - Annotate your work: notes/index.md
   - Integrated subsystems:
     - subsystems/index.md
