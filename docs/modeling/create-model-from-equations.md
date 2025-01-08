@@ -113,7 +113,7 @@ In addition to selecting extracted equations, you can also paste or enter LaTeX 
 
 ### Recommended LaTeX format
 
-The Create model from equations operator works with LaTeX equations. When adding or editing LaTeX equations, use the following guidelines.
+The Create model from equations operator works with LaTeX equations. Before it creates a model, Terarium uses an AI assistant to "clean" your edited equations according to the following guidelines. You can follow these same guidelines yourself or enter equations as you normally would and then check the AI-cleaned equations for errors such as missing terms or duplicated parameters.
 
 <div class="grid cards" markdown>
 
@@ -164,7 +164,7 @@ The Create model from equations operator works with LaTeX equations. When adding
 
     - For **variables and names**, avoid the use of words or multiple character.
     - If needed, use camel case (`susceptiblePopulationSize`) to **combine multi-word or multi-character names**.
-    - To represent a **parameter or variable**, use `\varepsilon` instead of `\epsilon`.
+    - Use **`\varepsilon`** instead of `\epsilon` when representing a parameter or variable. 
     - Don't separate equations by commas.
 
 </div>
@@ -181,13 +181,13 @@ Once you have selected the equations you want to use, you can create a new model
 
     Before it creates a model, Terarium uses an AI assistant to "clean" the selected equations according to the [LaTeX formatting guidelines](#recommended-latex-format). When the model is ready, the Input panel shows the equations "Edited by AI" that appear in the model.
 
-
 ??? list "Create a new model from the selected equations"
 
     When you run the Create model from equations operator, the newly created model becomes an output you can connect to other operations in the same workflow. 
 
     1. Click **Run**.
-    2. If needed, use the Output panel to [enrich the model metadata](review-and-enrich-model.md) and then click **Save**.
+    2. Review the new equations. If you need to make changes, edit the equations in the Input panel and click **Run** again.
+    3. If needed, use the Output panel to [enrich the model metadata](review-and-enrich-model.md) and then click **Save**.
 
 ??? list "Save the new model as a resource for use in other workflows"
 
