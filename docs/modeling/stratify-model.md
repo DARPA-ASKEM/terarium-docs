@@ -135,13 +135,13 @@ You can edit anything the assistant creates or add your own custom code.
 
 ![](../img/models/stratify-notebook.png)
 
-??? list "Open the Stratify model wizard"
+??? list "Open the Stratify model notebook"
 
     - Click **Notebook**.
 
 #### Prompt the AI assistant to stratify a model
 
-The Transform dataset AI assistant interprets plain language to answer questions about or stratify your model.
+The Stratify model AI assistant interprets plain language to answer questions about or stratify your model.
 
 ???+ tip
 
