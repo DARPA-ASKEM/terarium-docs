@@ -7,7 +7,7 @@ title: "Gather modeling resources"
 With Terarium, you can gather, store and manage resources needed for your modeling and simulation workflows. You can pull in documents, models, and datasets from: 
 
 - [Your computer](#upload-resources).
-- [Other projects in Terarium](#get-resources-from-other-projects).
+- [Other projects in Terarium](#search-for-and-copy-resources-from-other-projects).
 
 Documents, models, and datasets appear in your project resources. You can transform and simulate them by dragging them into a workflow.
 

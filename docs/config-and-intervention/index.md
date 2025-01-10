@@ -4,9 +4,32 @@ title: Configuration and intervention
 
 # Configuration and intervention
 
-More info coming soon.
+With Terarium's configuration and intervention operators, you can:
 
-- [Configure a model](configure-model.md)
-- [Validate a model configuration](validate-model-configuration.md)
-- [Create an intervention policy](create-intervention-policy.md)
-- [Optimize an intervention policy](create-intervention-policy.md)
+<div class="grid cards" markdown>
+
+-   [Configure a model](configure-model.md)
+
+    ---
+
+    Set initial values and parameters to prepare your model for simulations and analyses.
+
+-   [Validate a model configuration](validate-model-configuration.md)
+
+    ---
+
+    Make sure your model configuration is accurate by checking for errors such as changing population values, violations of non-negativity, and other custom constraints.
+
+-   [Create an intervention policy](create-intervention-policy.md)
+
+    ---
+
+    Define strategies or actions to influence your model's behavior under specific conditions.
+
+-   [Optimize an intervention policy](create-intervention-policy.md)
+
+    ---
+
+    Fine-tune your intervention strategies to achieve the best possible outcomes.
+
+</div>
