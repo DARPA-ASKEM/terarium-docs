@@ -100,8 +100,7 @@ In addition to selecting extracted equations, you can also paste or enter LaTeX 
 ??? list "Manually enter equations"
 
     1. Use the text box to add LaTeX equations to enter a new equation and click :octicons-plus-24:{ aria-hidden="true" } **Add**.
-    2. Repeat step 3 for each equation you want to add.
-    3. Enter a name for the new model and click **Run**.
+    2. Repeat step 1 for each equation you want to add.
 
 ??? list  "Manually copy an equation from a document"
 
@@ -164,8 +163,8 @@ The Create model from equations operator works with LaTeX equations. Before it c
 
     - For **variables and names**, avoid the use of words or multiple character.
     - If needed, use camel case (`susceptiblePopulationSize`) to **combine multi-word or multi-character names**.
-    - Use **`\varepsilon`** instead of `\epsilon` when representing a parameter or variable. 
-    - Don't separate equations by commas.
+    - **Replace any variant form of Greek letters** (`\varepsilon`) with their main form (`\epsilon`) when representing a parameter or variable. 
+    - Don't separate equations by punctuation (commas, periods, or semicolons).
 
 </div>
 
@@ -186,12 +185,22 @@ Once you have selected the equations you want to use, you can create a new model
     When you run the Create model from equations operator, the newly created model becomes an output you can connect to other operations in the same workflow. 
 
     1. Click **Run**.
+
+        ??? note "Run options for creating models"
+
+            Terarium supports two methods for creating models from equations:
+
+            - **MIRA** uses LLM assistance to [standardize LaTeX equations](https://github.com/DARPA-ASKEM/terarium/blob/c0f054f1983a7d8b07441c8d8fc5da1a989fb884/packages/gollm/gollm_openai/prompts/latex_style_guide.py) :octicons-link-external-24:{ aria-hidden="true" alt="External link" title="External link" }, [translate them to SymPy equations](https://github.com/DARPA-ASKEM/terarium/blob/c0f054f1983a7d8b07441c8d8fc5da1a989fb884/packages/gollm/gollm_openai/prompts/latex_to_sympy.py) :octicons-link-external-24:{ aria-hidden="true" alt="External link" title="External link" }, and then create a Petri Net model.
+            - **[SKEMA](https://github.com/DARPA-ASKEM/skema/tree/a68068ad4e05423499760469f253d2972c7f82de/skema/skema-rs/mathml)** :octicons-link-external-24:{ aria-hidden="true" alt="External link" title="External link" } uses regular expressions to rigidly parse LaTeX equations and create a Petri Net model.
+
+            MIRA is the default and recommended model. SKEMA can be used as a workaround when MIRA generates errors or inaccurate results. SKEMA is most reliable for equations with no parentheses, no production/degradation, and no complex rate law expressions.
+
     2. Review the new equations. If you need to make changes, edit the equations in the Input panel and click **Run** again.
     3. If needed, use the Output panel to [enrich the model metadata](review-and-enrich-model.md) and then click **Save**.
 
 ??? list "Save the new model as a resource for use in other workflows"
 
-    By default, your new model only appears as an output of the Create new model. You can enable it for use in other workflows by saving it as a project resource.
+    By default, the new model only appears as an output of the Create new model. You can make it available for use in other workflows by saving it as a project resource.
 
     - In the Output panel, click **Save for re-use** and choose a name for the new model.
 
