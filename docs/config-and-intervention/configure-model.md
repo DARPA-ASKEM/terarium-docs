@@ -16,7 +16,7 @@ In a workflow, the Configure model operator takes a model as an input and output
 
 Once you have selected a configuration, the operator in the workflow shows its name and description.
 
-![](../img/models/model-configure-operator.png)
+![](../img/config-and-intervention/configure/configure-model-operator.png)
 
 <div class="grid cards" markdown>
 
@@ -60,11 +60,11 @@ Configuring a model tailors it to meet the requirements of your simulations, cal
 
     To help you understand your workflow at a glance, the name and description of the selected model configuration appear on the Configure model operator in the notebook. You can update these in the wizard to provide more context.
 
-    1. To change the title, click <span class="sr-only" id="edit-icon-label">Edit</span> :octicons-pencil-24:{ aria-labelledby="edit-icon-label"}, enter a unique name, and press ++enter++.
+    1. To change the title, click <span class="sr-only" id="edit-icon-label">Edit</span> :octicons-pencil-24:{ title="Edit" aria-labelledby="edit-icon-label"}, enter a unique name, and press ++enter++.
     2. To change the description: 
 
-        1. Click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-angle-right:{ aria-labelledby="expand-icon-label"} to expand the Description section if necessary.
-        2. Click <span class="sr-only" id="edit-icon-label">Edit</span> :octicons-pencil-24:{ aria-labelledby="edit-icon-label"}, enter a unique name, and then click <span class="sr-only" id="apply-icon-label">Apply</span> :octicons-check-24:{ aria-hidden="true" aria-labelledby="apply-icon-label"}.
+        1. Click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-angle-right:{ title="Expand" aria-labelledby="expand-icon-label"} to expand the Description section if necessary.
+        2. Click <span class="sr-only" id="edit-icon-label">Edit</span> :octicons-pencil-24:{ title="Edit" aria-labelledby="edit-icon-label"}, enter a unique name, and then click <span class="sr-only" id="apply-icon-label">Apply</span> :octicons-check-24:{ title="Apply" aria-hidden="true" aria-labelledby="apply-icon-label"}.
         3. Click **Save**.
 
 ### Use the wizard to configure a model
@@ -79,7 +79,7 @@ Use the wizard view of the Configure model operator to:
 
 You can use the wizard to automatically attempt to extract variable and parameter values from any attached documents or datasets.
 
-![](../img/models/model-configuration-extract-from-inputs.png)
+![](../img/config-and-intervention/configure/extract-from-inputs.png)
 
 ??? list "Extract a configuration from a document or dataset"
 
@@ -90,7 +90,7 @@ You can use the wizard to automatically attempt to extract variable and paramete
 
 Each time you create a configuration for a model, Terarium saves it to your project. Whenever you add or edit a Configure model operator, you can quickly select any of the existing configurations.
 
-![](../img/models/model-configuration-select-existing.png)
+![](../img/config-and-intervention/configure/select-existing.png)
 
 ??? list "Search the available model configurations"
 
@@ -105,7 +105,7 @@ Each time you create a configuration for a model, Terarium saves it to your proj
 
 When you edit or create a model configuration, you can set a start date for its timeline, customize initial state and values, and apply uncertainty.
 
-![](../img/models/model-configuration-wizard.png)
+![](../img/config-and-intervention/configure/wizard.png)
 
 ???+ tip
 
@@ -172,7 +172,7 @@ In the notebook, you can prompt an AI assistant to:
 - Describe the model's configuration
 - Modify parameters, initial conditions, and other attributes of the model.
 
-![](../img/models/model-configuration-notebook.png)
+![](../img/config-and-intervention/configure/notebook.png)
 
 You can edit anything the assistant creates or add your own custom code.
 
