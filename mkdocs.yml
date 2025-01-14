@@ -113,9 +113,11 @@ nav:
     - Validate a model configuration: config-and-intervention/validate-model-configuration.md
     - Create an intervention policy: config-and-intervention/create-intervention-policy.md
     - Optimize an intervention policy: config-and-intervention/optimize-intervention-policy.md
+    - Simulate an intervention policy: config-and-intervention/simulate-intervention-policy.md
   - Simulation:
     - simulation/index.md
     - Simulate a model: simulation/simulate-model.md
+    - Sensitivity analysis: simulation/sensitivity-analysis.md
     - Calibrate a model: simulation/calibrate-model.md
     - Simulate ensemble: simulation/simulate-ensemble.md
     - Calibrate ensemble: simulation/calibrate-ensemble.md

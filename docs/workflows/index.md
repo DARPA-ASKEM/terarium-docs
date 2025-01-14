@@ -181,7 +181,7 @@ The following workflow templates streamline the process of building common model
 
     The new workflow first configures the model to represent the extremes of uncertainty for some parameters. It then simulates into the near future with different intervention policies and compares the outcomes. To see the results, you first need to:
 
-    1. Open and run each Simulate operator
+    1. Open and run each Simulate operator.
     2. Open and run the Compare datasets operator.
 
     This creates a comparison of the simulated extreme scenarios.
@@ -220,7 +220,7 @@ The following workflow templates streamline the process of building common model
 
     The new workflow first configures the model with parameter distributions that reflect all the sources of uncertainty. It then simulates into the near future with different intervention policies. To see the results, you first need to:
 
-    1. Open and run each Simulate operator
+    1. Open and run each Simulate operator.
     2. Open and run the Compare datasets operator.
 
     This creates a comparison of the uncertainty across the different interventions.
