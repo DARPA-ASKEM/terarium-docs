@@ -78,6 +78,8 @@ markdown_extensions:
     pymdownx.arithmatex:
       generic: true
     tables:
+    toc:
+      permalink: true
 
 extra_css:
   - stylesheets/extra.css
