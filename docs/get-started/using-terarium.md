@@ -66,11 +66,11 @@ The overview of a COVID-19 project. The Resources panel (left) provides access t
 
 ??? list "Create a project"
 
-    1. Perform one of the following actions on the Home page:
+    1. On the Home page, do one of the following actions:
         - To start from scratch, click :octicons-plus-24:{ aria-hidden="true" } **New project**.
-        - To copy a project, find it in My projects or Public projects and then click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-copy-24:{ aria-hidden="true" style="transform: rotate(-90deg);"} **Copy**.
+        - To find a project to copy, search My projects or Public projects and then click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledby="menu-icon-label" } > :octicons-copy-24:{ aria-hidden="true" style="transform: rotate(-90deg);"} **Copy**.
         - To upload a project, click :octicons-upload-16:{ aria-hidden="true" } **Upload project** and drag in or browse to the location of your *.project* file.
-    2. Edit the project overview to capture your goals and save results over time.
+    2. In the new project, edit the overview to capture your goals and save results over time.
 
 ## Gathering resources
 
@@ -87,9 +87,10 @@ Use the Resources panel to upload and access your models, datasets, and document
 
 ??? list "Upload resources"
 
-    1. Click **Upload** in the Resources panel.
-    2. Drag in your resources or click **open a file browser** to locate them.
-    3. Click **Upload**.
+    1. Do one of the following actions:
+        - Drag your files into the Resources panel.
+        - Click **Upload** and then click **open a file browser** to navigate to the location of the files you want to add.
+    2. Click **Upload**.
     
         !!! note
     
@@ -110,20 +111,21 @@ Create a workflow to visually build your modeling processes. Each box is a resou
     2. Select a template, fill out the required fields, and then click **Create**.
     3. Use the canvas to customize your workflow:
 
-        - Drag in resources (models, datasets, or documents) from the Resources panel.
+        - Drag in models, datasets, or documents from the Resources panel.
         - Right-click on the canvas to add operators.
         - Connect resources and operators by clicking the source input ![](../img/output.png){ aria-hidden="true" class="node-icon" } and followed by the output ![](../img/input.png){ aria-hidden="true" class="node-icon" } destination. Labels show you the types of resources and operators you can connect.
 
 ## Using the library of operators
 
-Drill down into operators to configure complex scientific tasks. Each operator supports: 
+Terarium's operators support various ways for you to configure complex scientific tasks. For example, you can drill down to access: 
 
 - A guided wizard for quickly configuring common settings.
 - A notebook for direct coding.
 - An integrated AI assistant for creating and refining code even if you don't have any programming experience.
 
-??? list "Use Terarium's operators"
+??? list "Use a Terarium operator"
 
+    1. Make sure you've connected all the required inputs.
     1. Click **Open** or **Edit** on the operator node.
     2. Switch to the Wizard or Notebook view depending on your preference.
     
@@ -142,7 +144,7 @@ Drill down into operators to configure complex scientific tasks. Each operator s
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index"} [*Source code*](https://github.com/DARPA-ASKEM/model-service/blob/07ae21cae2d5465f9ac5b5bbbe6c7b28b7259f04/src/ModelService.jl#L54){ target="_blank" rel="noopener noreferrer" }  
 
     - [**Edit model**](../modeling/edit-model.md)  
-        Modify model states and transitions using a graphical template editor or an AI assistant.  
+        Modify model states and transitions using an AI assistant.  
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code overview*](https://github.com/DARPA-ASKEM/beaker-kernel/blob/main/docs/contexts_mira_model_edit.md){ target="_blank" rel="noopener noreferrer" }  
 
     - [**Stratify model**](../modeling/stratify-model.md)  
@@ -158,7 +160,7 @@ Drill down into operators to configure complex scientific tasks. Each operator s
     ---
 
     - [**Simulate**](../simulation/simulate-model.md)  
-        Run a probabilistic simulation of a model under specific conditions.  
+        Run a simulation of a model under specific conditions.  
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L323){ target="_blank" rel="noopener noreferrer" }  
     - [**Calibrate**](../simulation/calibrate-model.md)  
         Determine or update the value of model parameters given a reference dataset of observations.  
@@ -167,10 +169,10 @@ Drill down into operators to configure complex scientific tasks. Each operator s
         Determine the optimal values for variables that minimize or maximize an intervention given some constraints.  
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L747){ target="_blank" rel="noopener noreferrer" }  
     - [**Simulate ensemble**](../simulation/simulate-ensemble.md)  
-        Run a deterministic simulation of multiple models or model configurations under specific conditions.  
+        Run a simulation of multiple models or model configurations under specific conditions.  
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L35){ target="_blank" rel="noopener noreferrer" }  
     - [**Calibrate ensemble**](../simulation/calibrate-ensemble.md)    
-        Determine or update the value of model parameters given a reference dataset of observations.  
+        Extend the calibration process by working across multiple models simultaneously.  
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L156){ target="_blank" rel="noopener noreferrer" }  
 
 -   __Data__
@@ -180,6 +182,10 @@ Drill down into operators to configure complex scientific tasks. Each operator s
     - [**Transform dataset**](../datasets/transform-dataset.md)  
         Modify a dataset by explaining your changes to an AI assistant.  
         :octicons-book-24:{ title="User Guide" aria-label="User Guide" class="md-annotation__index" } [*Source code user guide*](https://pandas.pydata.org/docs/user_guide/index.html#user-guide){ target="_blank" rel="noopener noreferrer" }  
+
+    - [**Compare dataset**](../datasets/transform-dataset.md)  
+        Compare the impacts of two or more interventions or rank interventions.  
+        :octicons-book-24:{ title="User Guide" aria-label="User Guide" class="md-annotation__index" } 
 
 -   __Config and intervention__
 
@@ -191,5 +197,6 @@ Drill down into operators to configure complex scientific tasks. Each operator s
         Determine if a configuration generates valid outputs given a set of constraints.  
         :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code repository*](https://github.com/siftech/funman){ target="_blank" rel="noopener noreferrer" }  
     - [**Create intervention policy**](../config-and-intervention/create-intervention-policy.md)  
+         Define intervention policies to specify changes in state variables or parameters at specific points in time.
 
 </div>

@@ -39,10 +39,4 @@ With Terarium's simulation operators, you can:
 
     Calibrate with multiple models simultaneously to explore how different configurations collectively align with historical data.
 
--   [Compare datasets](compare-datasets.md)
-
-    ---
-
-    Compare or rank two or more interventions.
-
 </div>

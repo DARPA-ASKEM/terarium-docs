@@ -37,7 +37,7 @@ In a workflow, the Compare datasets operator takes two or more datasets or simul
     - Perform one of the following actions:
     
         - On a resource or operator that outputs a dataset or simulation result, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Compare datasets**.
-        - Right-click anywhere on the workflow graph, select **Simulation** > **Compare datasets**, and then connect the output of two or more datasets or simulation results to the Compare datasets inputs. 
+        - Right-click anywhere on the workflow graph, select **Data** > **Compare datasets**, and then connect the output of two or more datasets or simulation results to the Compare datasets inputs. 
 
 ## Compare datasets
 
