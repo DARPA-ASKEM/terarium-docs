@@ -32,4 +32,10 @@ With Terarium's configuration and intervention operators, you can:
 
     Fine-tune your intervention strategies to achieve the best possible outcomes.
 
+-   [Simulate an intervention policy](simulate-intervention-policy.md)
+
+    ---
+
+    More info coming soon.
+
 </div>

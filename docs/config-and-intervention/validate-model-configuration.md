@@ -172,7 +172,7 @@ The notebook exposes structured JSON that describes the model, its configuration
 
 ## Create the validated configuration
 
-Once you've configured the validation settings, you can run the operator to generate a new validate configuration. The new configuration becomes a temporary output for the operator that you can connect to other operators in the same workflow. If you want to use it in other workflows, you can save it for reuse. 
+Once you've configured the validation settings, you can run the operator to generate a new validate configuration. The new configuration becomes a temporary output for the Validate configuration operator; you can connect it to other operators in the same workflow. If you want to use it in other workflows, you can save it for reuse. 
 
 ![](../img/config-and-intervention/validate/run.png)
 

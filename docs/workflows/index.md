@@ -165,7 +165,7 @@ The following workflow templates streamline the process of building common model
         ---
     
         - Model
-        - One or more intervention policies
+        - One or more intervention policies (optional)
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
     

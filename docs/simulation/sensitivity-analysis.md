@@ -2,6 +2,8 @@
 title: Sensitivity analysis
 ---
 
+# Sensitivity analysis
+
 You can conduct a sensitivity analysis to determine how changes in model parameters affect the outcome variables of interest. For example, you can see how varying vaccination rates and transmission impact hospitalizations.
 
 The sensitivity analysis is performed within the [Simulate](simulate-model.md) operator.
