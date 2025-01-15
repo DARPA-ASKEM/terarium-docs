@@ -15,7 +15,7 @@ The Transform data operator can also serve as a place to visually plot and compa
 
 !!! note
 
-    For information about uploading datasets, see [Gather modeling resources](../upload-resources/index.md).
+    For information about uploading datasets, see [Gather modeling resources](../gather-resources/index.md).
 
 ## Dataset resource
 
@@ -64,6 +64,8 @@ Hover over the output of the Dataset resource and click <span class="sr-only" id
 
     - [Transform dataset](transform-dataset.md)  
       Guide an AI assistant to modify or visualize the dataset. 
+    - [Compare dataset](../datasets/transform-dataset.md)  
+      Compare the impacts of two or more interventions or rank interventions. 
 
 -   __Configuration and intervention__
 
@@ -72,7 +74,7 @@ Hover over the output of the Dataset resource and click <span class="sr-only" id
     - [Configure model](../config-and-intervention/configure-model.md)  
       Use the dataset to extract initial values and parameters for the condition you want to test.
     - [Validate configuration](../config-and-intervention/validate-model-configuration.md)  
-      Use the dataset to validate a configuration
+      Use the dataset to validate a configuration.
 
 -   __Simulation__
 
@@ -81,6 +83,6 @@ Hover over the output of the Dataset resource and click <span class="sr-only" id
     - [Calibrate](../simulation/calibrate-model.md)  
       Use the dataset to improve the performance of a model by updating the value of configuration parameters.
     - [Calibrate ensemble](../simulation/calibrate-ensemble.md)  
-      Use the dataset to improve the performance of a model by updating the value of configuration parameters.
+      Fit a model composed of several other models to the dataset.
 
 </div>

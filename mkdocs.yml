@@ -94,12 +94,13 @@ nav:
   - Get started:
     - Using Terarium: get-started/using-terarium.md
     - "Tutorial: Recreate, modify, and simulate a model": get-started/example-workflow.md  
-  - Gather modeling resources: upload-resources/index.md
+  - Gather modeling resources: gather-resources/index.md
   - Build a workflow graph: workflows/index.md
   - Review and transform data: 
     - datasets/index.md
     - Review and enrich a dataset: datasets/review-and-enrich-dataset.md
     - Transform dataset: datasets/transform-dataset.md
+    - Compare datasets: datasets/compare-datasets.md
   - Modeling: 
     - modeling/index.md
     - Review and enrich a model: modeling/review-and-enrich-model.md
@@ -121,7 +122,6 @@ nav:
     - Calibrate a model: simulation/calibrate-model.md
     - Simulate ensemble: simulation/simulate-ensemble.md
     - Calibrate ensemble: simulation/calibrate-ensemble.md
-    - Compare datasets: simulation/compare-datasets.md
   - Annotate your work: notes/index.md
   - Integrated subsystems:
     - subsystems/index.md

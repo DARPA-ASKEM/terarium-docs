@@ -4,7 +4,7 @@ title: Review and enrich a dataset
 
 # Review and enrich a dataset
 
-Once you have [uploaded a dataset into your project](../upload-resources/index.md), you can open it to:
+Once you have [uploaded a dataset into your project](../gather-resources/index.md), you can open it to:
 
 - Explore and summarize its data and columns.
 - Manually add metadata that explains the data in each column.

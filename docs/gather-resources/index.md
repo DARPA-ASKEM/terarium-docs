@@ -13,7 +13,7 @@ Documents, models, and datasets appear in your project resources. You can transf
 
 ## Upload resources
 
-Using **Upload** in the Resources panel, you can import resources of the following types:
+Using the Resources panel, you can import resources of the following types:
 
 <div class="grid cards" markdown>
 
@@ -51,11 +51,10 @@ Using **Upload** in the Resources panel, you can import resources of the followi
 
 ???+ list "Upload resources"
 
-    1. In the Resource panel, click **Upload**.
-    2. Perform one of the following actions:
-        - Drag your files into the Upload resources dialog.
-        - Click **open a file browser** to navigate to the location of the files you want to add.
-    3. Click **Upload**.
+    1. Do one of the following actions:
+        - Drag your files into the Resources panel.
+        - Click **Upload** and then click **open a file browser** to navigate to the location of the files you want to add.
+    2. Click **Upload**.
 
 ### PDF Extraction
 
