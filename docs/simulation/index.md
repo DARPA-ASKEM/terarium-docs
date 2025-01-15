@@ -14,6 +14,13 @@ With Terarium's simulation operators, you can:
 
     Understand how the underlying system might behave under specific conditions
 
+-   [Sensitivity analysis](sensitivity-analysis.md)
+
+    ---
+
+    Determine how changes in model parameters affect the outcome variables of interest.
+
+
 -   [Calibrate a model](calibrate-model.md)
 
     ---
