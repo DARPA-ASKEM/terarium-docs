@@ -167,13 +167,6 @@ The Create model from equations operator works with LaTeX equations. Before it c
         *Recommended*: `a * b * (1 - c)`
         *Not recommended*: `a ∗ b ∗ 1 − a ∗ b ∗c`
 
--   #### Superscripts and subscripts
-
-    ---
-
-    - To denote **indices**, use LaTeX subscripts `_` instead of superscripts and LaTeX superscripts `^`.
-    - Use **LaTeX subscripts** `_` instead of Unicode subscripts. Wrap all characters in the subscript in curly brackets `{...}`.
-
 -   #### Variable and symbol usage
 
     ---
@@ -187,6 +180,13 @@ The Create model from equations operator works with LaTeX equations. Before it c
     - If needed, use camel case (`susceptiblePopulationSize`) to **combine multi-word or multi-character names**.
     - **Replace any variant form of Greek letters** (`\varepsilon`) with their main form (`\epsilon`) when representing a parameter or variable. 
     - Don't separate equations by punctuation (commas, periods, or semicolons).
+
+-   #### Superscripts and subscripts
+
+    ---
+
+    - To denote **indices**, use LaTeX subscripts `_` instead of superscripts and LaTeX superscripts `^`.
+    - Use **LaTeX subscripts** `_` instead of Unicode subscripts. Wrap all characters in the subscript in curly brackets `{...}`.
 
 </div>
 
