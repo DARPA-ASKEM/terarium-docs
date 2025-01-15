@@ -179,7 +179,7 @@ The following workflow templates streamline the process of building common model
 
     <h3>Complete the Horizon scanning workflow</h3>
 
-    The new workflow first configures the model to represent the extremes of uncertainty for some parameters. It then simulates into the near future with different intervention policies and compares the outcomes. To see the results, you first need to:
+    The new workflow first configures the model to represent the cartesian product of the extremes of uncertainty for some parameters. It then simulates into the near future with different intervention policies and compares the outcomes. To see the results, you first need to:
 
     1. Open and run each Simulate operator.
     2. Open and run the Compare datasets operator.
@@ -224,6 +224,46 @@ The following workflow templates streamline the process of building common model
     2. Open and run the Compare datasets operator.
 
     This creates a comparison of the uncertainty across the different interventions.
+
+??? list "Reproduce models from literature" 
+
+    Use this template to reproduce models from literature and then compare them to find the best starting point. For example, you can determine whether:
+
+    - The results from a paper are reproducible.
+    - The best model from a group of recent papers to explore disease transmission.
+
+    <h3>Fill out the Reproduce models from literature template</h3>
+
+    To use the Reproduce models from literature template, select the following inputs and outputs:
+    
+     <div class="grid cards" markdown>
+
+    -   :material-arrow-collapse-right:{ .lg .middle aria-hidden="true" } __Inputs__
+    
+        ---
+    
+        - One or more documents
+        - A brief description of your goal for comparing the resulting models (optional)
+    
+    -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
+    
+        ---
+    
+        - New models extracted from the documents
+        - Model configurations for each model
+        - Comparison of the models tailored to your goal
+        - Simulation results for the selected model configurations
+    
+    </div>
+
+    <h3>Complete the Reproduce models from literature workflow</h3>
+
+    The new workflow first extracts the models from the documents. It then compares the models according to your goal and configures and simulates them into the near future. To see the results, you first need to:
+
+    1. Open each Create model from equations operator, select the relevant equations from the paper, and run the operator to create the model.
+    2. Open and run the Compare datasets operator.
+    3. Open and edit the Configure model operators.
+    4. Open and run the Simulate operators.
 
 ## Add resources and operators to a workflow
 
