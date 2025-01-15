@@ -139,11 +139,33 @@ The Create model from equations operator works with LaTeX equations. Before it c
     ---
 
     - Avoid the use of:
-        - Parentheses.
         - Capital sigma (`Σ`) and pi (`Π`) notations for summation and product.
         - Non-ASCII characters.
         - Homoglyphs (characters that look similar but have different meanings).
-    - To indicate multiplication, use ` * ` between scalar quantities.
+    - To indicate multiplication, use ` * `.
+
+        *Recommended*: `"b * S(t) * I(t)`
+        *Not recommended*: `b S(t) I(t)`
+
+    - Rewrite expressions with negative exponents as explicit fractions.
+
+        *Recommended*: `"\\frac{{1}}{{N}}`
+        *Not recommended*: `N^{{-1}}`
+
+-   #### Parentheses
+
+    ---
+
+    - When grouping algebraic expressions, don't use square brackets `[ ]`, curly braces `{ }`, or angle brackets `< >`. Use parentheses `( )` if needed.
+    - Expand time-dependent algebraic expressions grouped by parentheses according to the distributivity property of multiplication. 
+    
+        *Recommended*: `a * S(t) * I(t) + b * S(t) * D(t) + c * A(t) * S(t)`
+        *Not recommended*: `S(t) * (a * I(t) + b * D(t) + c * A(t))`
+
+    - Don't expand constant algebraic expressions grouped by parentheses. 
+
+        *Recommended*: `a * b * (1 - c)`
+        *Not recommended*: `a ∗ b ∗ 1 − a ∗ b ∗c`
 
 -   #### Superscripts and subscripts
 
