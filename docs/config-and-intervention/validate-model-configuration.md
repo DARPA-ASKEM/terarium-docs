@@ -18,7 +18,10 @@ The Validate configuration operator takes a model configuration and an optional 
 
 ???+ tip
     
-    The input configuration should include some distribution on the parameters to allow for an exploration of the parameter space.
+    When [setting up the input configuration](configure-model.md#edit-or-create-a-model-configuration):
+
+    - Include some distribution on the parameters to allow for an exploration of the parameter space.
+    - For better results, you can set constant parameter values as distributions rather than point values. For example, instead of setting a parameter to `0`, set it to a Uniform distribution from `0` to `0`. 
 
 <figure markdown>
 ![](../img/config-and-intervention/validate/validate-configuration-operator.png)
@@ -76,6 +79,20 @@ Compartmental constraints provide a simple validation layer for your model confi
 - The model state populations are preserved.
 
 ![](../img/config-and-intervention/validate/compartmental-constraints.png)
+
+???+ tip
+
+    In cases where the compartmental constraint doesn't work properly, try defining it as a custom constraint:
+
+    1. Prompt the [Edit model](../modeling/edit-model.md#use-the-ai-assistant-to-edit-a-model) AI assistant to:
+
+        ```{ .text .wrap }
+        Create an observable that is the sum of all compartments
+        ```
+    2. Create a new [configuration](../configure-model.md) for the edited model.
+    2. Add a custom constraint with the following values:
+
+        - 
 
 ??? list "Turn the compartmental constraints on or off"
 
@@ -202,7 +219,7 @@ The validated configuration is displayed as a series of plots showing the satisf
 
     - Click **Only show furthest results**.
 
-### States time-series
+### State variable time-series
 
 State variable plots provide a time-series view of how model variables evolve over time. They offer a visual representation of how well the model satisfies constraints and checks under different parameter combinations. There is one trajectory per sampled point in the parameter space:
 
@@ -212,7 +229,6 @@ State variable plots provide a time-series view of how model variables evolve ov
 - Light blue boxes show the constraints you set up.
 
 ![](../img/config-and-intervention/validate/state-variables.png)
-
 
 ??? list "Show or hide state variable plots"
 
@@ -252,3 +268,22 @@ Parameter plots allow you to explore how variations in model parameters influenc
     When analyzing model behavior, intermediate results can sometimes make it hard to focus on the most comprehensive outcomes. You can instead display only the most extensive calculations performed for each combination of parameter values. This shows the final iteration where the model has computed the farthest timepoint necessary to ensure all checks either pass or fail.
 
     - Click **Only show furthest results**.
+
+## Troubleshooting
+
+### Long run-times
+
+If your validation is taking too long, try editing your constraints to run on a small number of timepoints, such as 0&ndash;5 days. This can help you find: 
+
+- Parameter ranges to drop. For example, if you have an infection rate of 0.1&ndash;0.9, you may notice during early validation that values above 0.8 result in immediate system instability. In this case, you can narrow the parameter range to 0.1&ndash;0.8.
+- More required constraints. For example, if early validation results are unexpected or inconsistent, there may be missing constraints, such as one limiting initial values or ensuring consistency between parameters.
+
+Resolving either of these cases can help you reduce the time required for the full validation.
+
+### Missing boxes
+
+If no boxes are returned, it often means the entire parameter range is unsatisfactory. Try running validation again with a wider parameter ranges.
+
+## Next steps
+
+You can use the new validated configuration in [simulations](../simulation/simulate-model.md) to forecast, analyze, or explore system behavior based on the validated parameters. The validation eliminates the need to manually reconfigure or adjust inputs between these steps.
