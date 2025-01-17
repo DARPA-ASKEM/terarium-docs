@@ -89,7 +89,7 @@ Compartmental constraints provide a simple validation layer for your model confi
         ```{ .text .wrap }
         Create an observable that is the sum of all compartments
         ```
-    2. Create a new [configuration](../configure-model.md) for the edited model.
+    2. Create a new [configuration](configure-model.md) for the edited model.
     2. Add a custom constraint with the following values:
 
         - 
