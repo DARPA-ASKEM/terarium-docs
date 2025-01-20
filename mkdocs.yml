@@ -32,7 +32,8 @@ theme:
         icon: material/weather-night
         name: Switch to light mode
   favicon: img/terarium-icon.png
-  font: false
+  font: 
+    text: Figtree
   language: custom
 
 plugins:
@@ -44,6 +45,7 @@ plugins:
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
+  - privacy
   - print-site:
       enumerate_headings: false
       add_cover_page: true
