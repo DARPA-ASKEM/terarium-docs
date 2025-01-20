@@ -80,7 +80,7 @@ Compartmental constraints provide a simple validation layer for your model confi
 
 ![](../img/config-and-intervention/validate/compartmental-constraints.png)
 
-???+ tip
+??? tip "Troubleshooting the compartmental constraint"
 
     In cases where the compartmental constraint doesn't work properly, try defining it as a custom constraint:
 
@@ -90,9 +90,9 @@ Compartmental constraints provide a simple validation layer for your model confi
         Create an observable that is the sum of all compartments
         ```
     2. Create a new [configuration](configure-model.md) for the edited model.
-    2. Add a custom constraint with the following values:
+    3. Add a custom constraint that **linearly constrains** the new observable above and below the total population.
 
-        - 
+        <figure markdown>![](../img/config-and-intervention/validate/compartmental-constraint-custom.png)<figcaption markdown>Custom version (bottom) of the compartmental constraint (top) limiting the new observable above and below the total population.</figcaption></figure>
 
 ??? list "Turn the compartmental constraints on or off"
 
@@ -280,9 +280,9 @@ If your validation is taking too long, try editing your constraints to run on a 
 
 Resolving either of these cases can help you reduce the time required for the full validation.
 
-### Missing boxes
+### No satisfactory conditions
 
-If no boxes are returned, it often means the entire parameter range is unsatisfactory. Try running validation again with a wider parameter ranges.
+If the results contain no satisfactory conditions, it often means the entire parameter range is unsatisfactory. Try running validation again with a wider parameter ranges.
 
 ## Next steps
 
