@@ -6,6 +6,10 @@ title: Calibrate ensemble
 
 Calibrate ensemble extends the calibration process by working across multiple models simultaneously, allowing you to explore how different configurations collectively align with historical data. By aggregating results from multiple models, Calibrate ensemble can provide a more comprehensive understanding of system behavior.
 
+???+ tip
+
+    You can quickly create an ensemble calibration using the [Calibrate an ensemble model workflow template](../workflows/index.md#create-new-workflows-based-on-templates).
+
 ## Calibrate ensemble operator
 
 In a workflow, the Calibrate ensemble operator takes two or more model configurations and a dataset as inputs. It outputs a calibrated dataset.

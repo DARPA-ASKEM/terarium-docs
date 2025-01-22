@@ -59,7 +59,7 @@ The Simulate run settings allow you to fine-tune the time frame and solver behav
 
         ???+ note
 
-            If you included a [starting timestep in your model configuration](configure-model.md#edit-or-create-a-model-configuration), the start and end dates also appear in your simulation.
+            If you included a [starting timestep in your model configuration](../config-and-intervention/configure-model.md#edit-or-create-a-model-configuration), the start and end dates also appear in your simulation.
 
 ??? list "Advanced settings"
 
