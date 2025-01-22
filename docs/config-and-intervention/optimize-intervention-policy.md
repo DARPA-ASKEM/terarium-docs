@@ -6,9 +6,11 @@ title: Optimize an intervention policy
 
 Given a model configuration and a proposed intervention policy, use the `Optimize intervention policy` operator to identify the optimal parameter values and/or time to implement the intervention such that your specified constraints are satisfied. This approach helps you make informed decisions when faced with questions like:
 
-> *What is the smallest possible transmission rate reduction that will keep infections below 1000 over the next 100 days?
-> *When is the latest possible time an intervention that reduces the transmission rate by half may be implemented in order to ensure infections remain below 1000 over the next 100 days? 
-> *What is the minimal reduction in transmission rate, and the latest time it can be applied in order to keep infections below 1000 over the next 100 days?
+> *What is the smallest possible transmission rate reduction that will keep infections below 1000 over the next 100 days?*
+
+> *When is the latest possible time an intervention that reduces the transmission rate by half may be implemented in order to ensure infections remain below 1000 over the next 100 days?*
+
+> *What is the minimal reduction in transmission rate, and the latest time it can be applied in order to keep infections below 1000 over the next 100 days?*
 
 In addition to this guide, please find the PyCIEMSS `optimize` interface documentation [here](https://github.com/ciemss/pyciemss/blob/6a41b1a8247dd76f929488a479f4d27671120b36/pyciemss/interfaces.py#L818), and a notebook with several optimization of intervention examples [here](https://github.com/ciemss/pyciemss/blob/main/docs/source/optimize_interface.ipynb).
 
@@ -19,7 +21,42 @@ The examples used throughout this guide can be found in the Terarium project [Op
 ## Create optimize intervention policy operator
 Assuming you have a [model configuration](https://github.com/DARPA-ASKEM/terarium-docs/blob/main/docs/config-and-intervention/configure-model.md), and an [intervention policy](https://github.com/DARPA-ASKEM/terarium-docs/blob/main/docs/config-and-intervention/create-intervention-policy.md) in your workflow, add an `Optimize intervention policy` operator by right-clicking in the workflow, and finding the operator in the `Simulation` menu. Then, connect your model configuration and proposed intervention policy as shown here:
 
-![](../img/config-and-intervention/optimization/optimize_workflow.png)
+![](../img/config-and-intervention/optimization/optimize_intervention_setup.png)
+
+## Open the operator and set your success criteria
+Select a threshold and tolerance for your simulations by choosing options from the dropdown menus as follows:
+> Ensure \[*state variable from your model*\] is \[*above or below*\] a thresold of \[*threshold value for the chosen state variable*\] at \[*all timepoints (as in, over the duration of the entire simulation) or last timepoint (as in, at the end of the simulation)*\] in \[*tolerance given as the percent of simulated trajectories required to stay above or below the chosen threshold*\]% of simulated outcomes.
+
+For example:
+
+![](../img/config-and-intervention/optimization/criteria_set_threshold.png)
+
+## Set your intervention policy
+Choose which aspects of your proposed intervention policy you want to optimize and how. Provide an initial guess along with minimum and maximum values to guide your optimization. Adjust the relative importance to create a properly weighted objective function when there are multiple parameters or start times being optimized. There are three possible targets for optimization, these are:
+
+(1) Parameter value
+> Find the *new value* for the parameter **from the proposed intervention policy** at the start time **from the proposed intervention policy**. The objective is the value closest to the \[*initial guess, lower bound, or upper bound*\].
+
+(2) Intervention start time
+> Find the *new start time* for the parameter **from the proposed intervention policy** when the value is **from the proposed intervention policy**. The objective is the \[*initial guess, lower bound, or upper bound*\].
+
+(3) Intervention start time and parameter value
+> Find the *new value and start time* for the parameter **from the proposed intervention policy**. The objective is the value closest to the \[*initial guess, lower bound, or upper bound (for the parameter value)*\] and at the \[*initial guess, lower bound, or upper bound (for intervention start time)*\] start time.
+
+In this guide, we will work with the following example:
+
+![](../img/config-and-intervention/optimization/set_objective_function.png)
+
+## Set your optimization settings
+Choose the duration of your simulation and how many samples you'd like to run. You have the option to switch the `Solver method`, but we generally recommend sticking with `dopri5`. Under `Optimizer options` you can adjust: (1) the maximum number of iterations, `Maxiter`, used in the basinhopping algorithm. Increasing `Maxiter` will explore the parameter space more thoroughly and better avoid getting trapped in a local minima, but will take longer to run. (2) the maximum number of function evaluations of the optimization function, `Maxfeval`, allowed during each iteration of the basinhopping process. Increasing `Maxfeval` may lead to better results, but also increases computation time.
+
+In this example, we will set the simulation to run for 200 days, and keep the default solver and optimization settings.
+
+![](../img/config-and-intervention/optimization/optimization_settings.png)
+
+## Run the optimization
+When everything is set how you want it, scroll back up to the top of the `Optimize intervention settings` menu and click the green `Run` button. When the optimization completes, you can view and compare the results of your model simulations with and without the optimized  
+
 
 <div class="grid cards" markdown>
 
