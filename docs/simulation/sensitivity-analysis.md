@@ -58,8 +58,8 @@ Once you've built your workflow, you can edit the Simulate run and output settin
 ??? list "Conduct a sensitivity analysis"
 
     1. On the Simulate operator, click **Edit**.
-    2. Select the Simulate [run settings](../simulation/simulate-model.md)
-    3. Run the simulation.
+    2. Select the Simulate [run settings](../simulation/simulate-model.md).
+    3. Click **Run** to start the simulation.
     4. Preview the sensitivity analysis results. To add variables or parameters, use the **Output** settings. 
 
 ## Understand sensitivity analysis results
@@ -68,8 +68,7 @@ The results of each analysis are represented as a sensitivity analysis graph and
 
 In the sensitivity analysis graph, color coding represents variations in the output variable (such as hospitalizations or case counts) across different parameter values or combinations. Cool colors represent lower values of the output variable, while warm colors represent higher values. 
 
-
-<figure markdown>![](../img/simulation/sensitivity/graph.png)<figcaption markdown>Sensitivity analysis graph for males infected with Mpox.</figcaption></figure>
+<figure markdown>![](../img/simulation/sensitivity/graph.png)<figcaption markdown>Sensitivity analysis graph for men infected with Mpox.</figcaption></figure>
 
 In the parameter comparisons:
 

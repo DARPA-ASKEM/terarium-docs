@@ -35,7 +35,7 @@ Once you've completed the calibration, the thumbnail preview shows the calibrate
 
     - Do one of the following actions:
     
-        - On a operator that outputs a model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Calibrate ensemble**.
+        - On an operator that outputs a model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Calibrate ensemble**.
         - Right-click anywhere on the workflow graph, select **Simulation** > **Calibrate ensemble**, and then connect two or more model configurations and a dataset to the Calibrate ensemble input.
 
 ## Calibrate ensemble
@@ -44,7 +44,7 @@ The Calibrate ensemble operator allows you to define how to:
 
 - [Map your model configurations and dataset](#map-dataset-columns-and-model-variables).
 - [Assign your level of confidence in each model](#assign-model-weights).
-- [Choose how to run the validation](#configure-the-run-settings).
+- [Choose how to run the calibration](#configure-the-run-settings).
 
 ??? list "Open a Calibrate ensemble operator"
 
@@ -86,7 +86,7 @@ By tuning weights, you can better match the ensemble's output to your expectatio
 
 ### Configure the run settings
 
-The Calibrate ensemble run settings allow you to fine-tune the time frame, solver behavior, and inference process. By adjusting these parameters, you can balance performance and precision.
+The Calibrate ensemble run settings allow you to fine-tune the time frame, solver behavior, and inference process. By adjusting these settings, you can balance performance and precision.
 
 ![](../img/simulation/calibrate-ensemble/other-settings.png)
 
