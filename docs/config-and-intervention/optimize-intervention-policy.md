@@ -55,7 +55,7 @@ In this example, we will set the simulation to run for 200 days, and keep the de
 ![](../img/config-and-intervention/optimization/optimization_settings.png)
 
 ## Run the optimization
-When everything is set how you want it, scroll back up to the top of the `Optimize intervention settings` menu and click the green `Run` button. When the optimization completes, you can view and compare the results of your model simulations with and without the optimized  
+When everything is set how you want it, scroll back up to the top of the `Optimize intervention settings` menu and click the green `Run` button. When the optimization completes, you can view and compare the results of your model simulations with and without the optimized intervention. 
 
 
 <div class="grid cards" markdown>
