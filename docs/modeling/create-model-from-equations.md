@@ -151,7 +151,7 @@ The Create model from equations operator works with LaTeX equations. Before it c
 
     - Rewrite expressions with negative exponents as explicit fractions.
 
-        *Recommended*: `"\\frac{{1}}{{N}}`
+        *Recommended*: `"\frac{{1}}{{N}}`
         *Not recommended*: `N^{{-1}}`
 
 -   #### Parentheses
@@ -159,15 +159,10 @@ The Create model from equations operator works with LaTeX equations. Before it c
     ---
 
     - When grouping algebraic expressions, don't use square brackets `[ ]`, curly braces `{ }`, or angle brackets `< >`. Use parentheses `( )` if needed.
-    - Expand time-dependent algebraic expressions grouped by parentheses according to the distributivity property of multiplication. 
+    - Always expand expressions surrounded by parentheses using the order of mathematical operations. 
     
-        *Recommended*: `a * S(t) * I(t) + b * S(t) * D(t) + c * A(t) * S(t)`
-        *Not recommended*: `S(t) * (a * I(t) + b * D(t) + c * A(t))`
-
-    - Don't expand constant algebraic expressions grouped by parentheses. 
-
-        *Recommended*: `a * b * (1 - c)`
-        *Not recommended*: `a ∗ b ∗ 1 − a ∗ b ∗c`
+        *Recommended*: `\alpha * x(t) * y(t) + \beta * x(t) * z(t)`
+        *Not recommended*: `x(t) (\alpha y(t) + \beta z(t))`
 
 -   #### Variable and symbol usage
 
