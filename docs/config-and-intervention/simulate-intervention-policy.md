@@ -6,6 +6,8 @@ title: Simulate an intervention policy
 
 You can simulate an intervention policy to assess the impact of your intervention on a variable of interest. For example, you can see how increasing vaccination rate affects hospitalizations.
 
+<iframe class="video" src="https://drive.google.com/file/d/169Nkc2h6ArjYkhsm0D-Se7JENrzzfI7Q/preview" width="640" height="360"></iframe>
+
 ## Build an intervention policy simulation workflow
 
 You can build a workflow to simulate an intervention policy manually. 

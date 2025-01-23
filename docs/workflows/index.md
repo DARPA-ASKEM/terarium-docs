@@ -21,7 +21,7 @@ A workflow is a visual canvas for building and running complex operations (calib
 
         ???+ note
 
-            Before you can use a template, your project must contain the inputs (models, model configurations, intervention policies, or datasets) you want to use.
+            Before you can use a template, your project must contain the inputs (models, model configurations, or datasets) you want to use.
 
 ## Create new workflows based on templates
 
@@ -29,8 +29,9 @@ The following workflow templates streamline the process of building common model
 
 ???+ note
 
-    - Before you can fill out a template, your project must contain the inputs (models, model configurations, intervention policies, or datasets) you want to use.
+    - Before you can fill out a template, your project must contain the inputs (models, model configurations, or datasets) you want to use.
     - Before you can see the results of a templated workflow, you must configure and run any Calibrate, Simulate, or Compare datasets operators it contains.
+    - You can create new intervention policies with the template. Once the workflow is created, you must create the Create intervention policy operator and add your intervention criteria.
 
 ??? list "Situational awareness"
 
@@ -165,9 +166,9 @@ The following workflow templates streamline the process of building common model
         ---
     
         - Model
-        - One or more intervention policies (optional)
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
+        - One or more intervention policies (optional)
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
@@ -204,9 +205,9 @@ The following workflow templates streamline the process of building common model
         ---
     
         - Model
-        - One or more intervention policies
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
+        - One or more intervention policies
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     

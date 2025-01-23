@@ -14,6 +14,8 @@ Model editing lets you build on existing models. Supported edits include:
 
 The Edit model operator is a code notebook with an interactive AI assistant. You describe in plain language the changes you want to make, and the large language model (LLM)-powered assistant automatically generates the code for you.
 
+<iframe class="video" src="https://drive.google.com/file/d/1k2T9cpCCPpGdgnhMx_DRrE1jpdoruM1o/preview" width="640" height="360"></iframe>
+
 !!! note
 
     The Edit model operator adapts to your coding experience. You can: 

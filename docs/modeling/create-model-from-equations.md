@@ -9,7 +9,7 @@ The Create model from equations operator helps you to recreate a model from lite
 1. [Choose or enter the equations](#choose-the-equations) you want to include in the model.
 2. [Create the model](#create-the-model) as an output or resource for use in other modeling and configuration processes. 
 
-![SIR model created from equations extracted from a COVID-19 research paper](../img/models/model-create-from-equations.png)
+<iframe class="video" src="https://drive.google.com/file/d/15y1c4esX-xjnLfAmP2igzkifzSpWuIm8/preview" width="640" height="360"></iframe>
 
 !!! note
 
@@ -58,6 +58,8 @@ You can create a model from a set of ordinary differential equations by:
 - [Selecting equations from a document in your project](#select-equations-from-a-document).
 - [Uploading and extracting equations from an image](#extract-equations-from-an-image). 
 - [Manually entering equations as LaTeX code](#enter-your-own-equations).
+
+![SIR model created from equations extracted from a COVID-19 research paper](../img/models/model-create-from-equations.png)
 
 To ensure the best results, Terarium uses a set of [LaTeX formatting guidelines](#recommended-latex-format) when converting extracted equations. It is recommended that you follow these guidelines for any LaTeX you add or edit as well.  
 
@@ -149,7 +151,7 @@ The Create model from equations operator works with LaTeX equations. Before it c
 
     - Rewrite expressions with negative exponents as explicit fractions.
 
-        *Recommended*: `"\\frac{{1}}{{N}}`
+        *Recommended*: `"\frac{{1}}{{N}}`
         *Not recommended*: `N^{{-1}}`
 
 -   #### Parentheses
@@ -157,15 +159,10 @@ The Create model from equations operator works with LaTeX equations. Before it c
     ---
 
     - When grouping algebraic expressions, don't use square brackets `[ ]`, curly braces `{ }`, or angle brackets `< >`. Use parentheses `( )` if needed.
-    - Expand time-dependent algebraic expressions grouped by parentheses according to the distributivity property of multiplication. 
+    - Always expand expressions surrounded by parentheses using the order of mathematical operations. 
     
-        *Recommended*: `a * S(t) * I(t) + b * S(t) * D(t) + c * A(t) * S(t)`
-        *Not recommended*: `S(t) * (a * I(t) + b * D(t) + c * A(t))`
-
-    - Don't expand constant algebraic expressions grouped by parentheses. 
-
-        *Recommended*: `a * b * (1 - c)`
-        *Not recommended*: `a ∗ b ∗ 1 − a ∗ b ∗c`
+        *Recommended*: `\alpha * x(t) * y(t) + \beta * x(t) * z(t)`
+        *Not recommended*: `x(t) (\alpha y(t) + \beta z(t))`
 
 -   #### Variable and symbol usage
 

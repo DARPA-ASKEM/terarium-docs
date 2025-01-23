@@ -135,6 +135,11 @@ When you edit or create a model configuration, you can set a start date for its 
     You can edit the initial values of model state variables either as numeric values or as expressions involving other states or parameters. Initials written as expressions must follow [SymPy](https://docs.sympy.org/latest/tutorials/intro-tutorial/basic_operations.html) :octicons-link-external-24:{ alt="External link" title="External link" } syntax.
 
     1. If your state variable is stratified, click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-greater-than:{ title="Expand" aria-labelledby="expand-icon-label" } to show the stratified states.
+
+        ???+ tip
+
+            To set all the stratified variables at once, copy a range of values from a spreadsheet, click **Open matrix**, and then click **Paste**.
+
     2. Do one of the following actions:
 
         - Enter a numeric value or a [SymPy](https://docs.sympy.org/latest/tutorials/intro-tutorial/basic_operations.html) :octicons-link-external-24:{ alt="External link" title="External link" } expression in the **Expression** field.
@@ -145,6 +150,11 @@ When you edit or create a model configuration, you can set a start date for its 
 ??? list "Edit the value of a parameter"
 
     1. If your parameter is stratified, click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-greater-than:{ title="Expand" aria-labelledby="expand-icon-label" } to show the stratified parameters.
+
+        ???+ tip
+
+            To set all the stratified parameters at once, copy a range of values from a spreadsheet, click **Open matrix**, and then click **Paste**.
+
     2. Choose the type of value to enter:
 
         - To enter a single unchanging value, select **Constant** and enter the value.
