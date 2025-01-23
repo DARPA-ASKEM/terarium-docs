@@ -7,6 +7,7 @@ title: "Annotate your work"
 You can capture and save insights you've gained during your modeling processes:
 
 - Directly on the operator where you discovered them.
+- On the workflow canvas.
 - In the project overview.
 - On charts generated through simulations and calibrations.
 
@@ -34,7 +35,19 @@ For example, to assist with publishing a paper, you could organize insights into
 ??? list "Edit the project overview"
 
     1. In the Resources panel, click **Overview**.
-    2. Enter your insights in the text field. Use the style bar to format your text.## Annotate charts
+    2. Enter your insights in the text field. Use the style bar to format your text.
+
+## Add an annotation to the workflow canvas
+
+You can add notes directly to the canvas to provide more context for the modeling decisions you've made in your workflow.
+
+??? list "Add an annotation to the workflow canvas"
+
+    1. Right-click on the workflow canvas and select **Add annotation**.
+    2. Double-click `annotation text`, enter some text, and press **Ok**.
+    3. Click and drag the annotation to a new location if needed.
+
+## Annotate charts
 
 Adding annotations to charts helps highlight key insights and guide interpretation of data. You can create annotations manually or using AI assistance.
 
