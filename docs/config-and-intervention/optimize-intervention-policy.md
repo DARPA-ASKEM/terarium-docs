@@ -90,9 +90,9 @@ Unfortunately, the example optimization problem we set up above did not complete
 # Troubleshooting a failed optimization
 Optimization problems of this type are extremely complex, and there are many ways and reasons why your optimization may fail. Here is a list of tips and things to try to get a successful optimization.
 
-
 (1) Double check your inputs. 
-  - Does your model configuration have the correct parameter values and initial states? Are the distributions around your uncertain parameters reasonable, or too large? It may be a good idea to remove or tighten unnecessary sources of uncertainty.
+  - Does your model configuration have the correct parameter values and initial states? Are the distributions around your uncertain parameters reasonable, or too large?
+  - It may be a good idea to remove or tighten unnecessary sources of uncertainty. For example, in the [Terarium workspace](https://app.staging.terarium.ai/projects/7f77e9ab-028e-408a-a071-ffc1aca3c5e4/workflow/f3a4bec3-6069-4d21-9938-a7f58fca44a8), the default configuration of the SEIR model includes substantial uncertainty in the initial infectious population. By reconfiguring the model to have a fixed number of infectious individuals initially, I could still investigate how changing the tranmission rate impacts infections, and this change led to a successful optimization. 
   - Is the proposed intervention policy correct? Does the parameter you are intervening have the intended effect on the state variable of interest?
 
 (2) Simulate the model with your proposed intervention applied.
@@ -107,10 +107,13 @@ Optimization problems of this type are extremely complex, and there are many way
   - Is the threshold too low or too high? It may be preferable to have a higher threshold if we can be more certain it will not be exceeded.
 
 (5) Reasses the bounds of your intervention value or time.
+  - Are the bounds reasonable? If the lower bound of your parameter is zero, we recommend using a lower bound more like 0.01 or 0.001 instead.
   - Are the bounds too restrictive?
   - Are the bounds not restrictive enough? If you want to search a wide swath of the parameter space, consider increasing the number of basinhopping iterations: `Maxiter` in **Optimizer options**. This gives you more chances to find the global minima of your optimization function.
 
-(6) Increase the number of samples.
+(6) Seeing yellow? If the results of your optimization look close to successful but aren't quite there yet:
+  - Try increasing the number of simulations.
+  - Try increasing `Maxiter` and `Maxfeval` in **Optimizer options**.
 
 (7) Repeat and/or try combinations of these.
 
