@@ -9,7 +9,7 @@ The Create model from equations operator helps you to recreate a model from lite
 1. [Choose or enter the equations](#choose-the-equations) you want to include in the model.
 2. [Create the model](#create-the-model) as an output or resource for use in other modeling and configuration processes. 
 
-![SIR model created from equations extracted from a COVID-19 research paper](../img/models/model-create-from-equations.png)
+<iframe class="video" src="https://drive.google.com/file/d/15y1c4esX-xjnLfAmP2igzkifzSpWuIm8/preview" width="640" height="360"></iframe>
 
 !!! note
 
@@ -58,6 +58,8 @@ You can create a model from a set of ordinary differential equations by:
 - [Selecting equations from a document in your project](#select-equations-from-a-document).
 - [Uploading and extracting equations from an image](#extract-equations-from-an-image). 
 - [Manually entering equations as LaTeX code](#enter-your-own-equations).
+
+![SIR model created from equations extracted from a COVID-19 research paper](../img/models/model-create-from-equations.png)
 
 To ensure the best results, Terarium uses a set of [LaTeX formatting guidelines](#recommended-latex-format) when converting extracted equations. It is recommended that you follow these guidelines for any LaTeX you add or edit as well.  
 

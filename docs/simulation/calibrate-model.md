@@ -6,6 +6,8 @@ title: "Calibrate a model"
 
 Calibration lets you improve the performance of a model by updating the value of configuration parameters. You can calibrate a model with a reference dataset of observations and an optional intervention policy.
 
+<iframe class="video" src="https://drive.google.com/file/d/1by_OGfVBbx2ExmdAMR8lKYFym000-B1x/preview" width="640" height="360"></iframe>
+
 ## Calibrate operator
 
 In a workflow, the Calibrate operator takes a model configuration, a dataset, and optional interventions as inputs. It outputs a calibrated model configuration. 

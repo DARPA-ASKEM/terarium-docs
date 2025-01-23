@@ -6,6 +6,8 @@ title: "Stratify a model"
 
 You can make a simple model more complex by stratifying its state variables and parameters. Stratification builds many different versions of a model and its parameters&mdash;by location, demographics, or other contextual data&mdash;into one large model. You can then configure, calibrate, or simulate the combined models all at once.
 
+<iframe class="video" src="https://drive.google.com/file/d/1S8_4vD5ZSEv--WGPiOlFEfJMD9bZ4ZHt/preview" width="640" height="360"></iframe>
+
 ## Stratify model operator
 
 In a workflow, the Stratify model operator takes a model as an input and outputs a stratified version of the model.
