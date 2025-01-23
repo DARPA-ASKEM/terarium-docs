@@ -83,6 +83,67 @@ You can tailor the resulting comparison plots to highlight the most relevant asp
         - **Default** (mean)
         - **Quantiles** (specify upper and lower bounds). 
 
+### Annotate charts
+
+Adding annotations to charts helps highlight key insights and guide interpretation of data. You can create annotations manually or using AI assistance.
+
+??? list "Add annotations that call out key values and timesteps"
+
+    To highlight notable findings, you can manually add annotations that label plotted values at key timesteps.
+
+    1. Click anywhere on the chart to add a callout.
+    2. To add more callouts without clearing the first one, hold down ++shift++ and click a new area of the chart.
+
+??? list "Prompt an AI assistant to add chart annotations"
+
+    You can prompt an AI assistant to automatically create annotations on the variables over time and comparison charts. Annotations are labelled or unlabelled lines that mark specific timestamps or peak values. Examples of AI-assisted annotations are listed below.
+
+    1. Click <span class="sr-only" id="options-icon-label">Options</span> :octicons-gear-24:{ title="Options" aria-labelledby="options-icon-label" }.
+    2. Describe the annotations you want to add and press ++enter++.
+
+        ```{ .text .wrap }
+        Draw a vertical line at day 100
+        ```
+        ```{ .text .wrap }
+        Draw a line at the peak S after calibration
+        ```
+        ```{ .text .wrap }
+        Draw a horizontal line at the peak of default configuration Susceptible after calibration. Label it as "important"
+        ```
+        ```{ .text .wrap }
+        Draw a vertical line at x is 10. Don't add the label
+        ```
+        ```{ .text .wrap }
+        Draw a line at x = 40 only for ensemble after calibration
+
+#### Display options
+
+You can customize the appearance of your charts to enhance readability and organization of the results.
+
+??? list "Access additional chart settings"
+
+    To access additional options for each chart: 
+
+    - Click <span class="sr-only" id="options-icon-label">Options</span> :octicons-gear-24:{ title="Options" aria-labelledby="options-icon-label" }.
+
+??? list "Change the chart scale"
+
+    By default, charts are shown in linear scale. You can switch to log scale to view large ranges, exponential trends, and improve visibility of small variations.
+
+    - Select or clear **Use log scale**.
+
+??? list "Hide in node"
+
+    The variables you choose to plot appear in the results panel and as thumbnails on the Compare datasets operator in the workflow. You can hide the thumbnail preview to minimize the space the Compare datasets node takes up.
+
+    - Select **Hide in node**.
+
+??? list "Change parameter colors"
+
+    You can change the color of any variable to make your charts easier to read.
+
+    - Click the color picker and choose a new color from the palette or use the eye dropper to select a color shown on your screen.
+
 ## Rank interventions
 
 More info coming soon.

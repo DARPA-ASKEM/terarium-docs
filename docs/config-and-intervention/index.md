@@ -36,6 +36,6 @@ With Terarium's configuration and intervention operators, you can:
 
     ---
 
-    More info coming soon.
+    Assess the impact of your intervention on a variable of interest.
 
 </div>

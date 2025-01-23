@@ -49,7 +49,7 @@ The Validate configuration operator takes a model configuration and an optional 
 
     - Do one of the following actions:
     
-        - On a operator that outputs a model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Validate configuration**.
+        - On an operator that outputs a model configuration, click <span class="sr-only" id="link-icon-label">Link</span> :octicons-plus-24:{ title="Link" aria-labelledby="link-icon-label" } > **Validate configuration**.
         - Right-click anywhere on the workflow graph, select **Config & Intervention** > **Validate configuration**, and then connect a model to the Validate configuration input.
 
 ## Validate a model configuration
@@ -219,24 +219,28 @@ The validated configuration is displayed as a series of plots showing the satisf
 
     - Click **Only show furthest results**.
 
-### State variable time-series
+### States variables and observables
 
-State variable plots provide a time-series view of how model variables evolve over time. They offer a visual representation of how well the model satisfies constraints and checks under different parameter combinations. There is one trajectory per sampled point in the parameter space:
+State variable and observables plots provide a time-series view of how model variables evolve over time. They offer a visual representation of how well the model satisfies constraints and checks under different parameter combinations. There is one trajectory per sampled point in the parameter space:
 
 - Dark green lines satisfy all model checks.
 - Yellow lines do not satisfy all model checks.
 - Light green lines are ambiguous.
 - Light blue boxes show the constraints you set up.
 
-![](../img/config-and-intervention/validate/state-variables.png)
+<div class="grid cards" markdown>
 
-??? list "Show or hide state variable plots"
+- ![](../img/config-and-intervention/validate/state-variables.png)
+- ![](../img/config-and-intervention/validate/observables.png)
+
+</div>
+??? list "Show or hide state variable or observable plots"
 
     1. Click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-angles-left:{ title="Expand" aria-labelledby="expand-icon-label" } to expand the Output settings.
     2. Do one of the following actions:
 
-         - Use the dropdown to search, select, or clear different state variables.
-         - Click **X** to remove a state variable plot.
+         - Use the dropdown to search, select, or clear different variables.
+         - Click **X** to remove a variable plot.
 
 ??? list "Focus on model checks"
 

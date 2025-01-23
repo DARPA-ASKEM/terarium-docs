@@ -1,8 +1,3 @@
-/*Uncharted font-family*/
-:root {
-  --md-text-font: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
-}
-
 .md-typeset h1 {
   font-weight: bold;
 }
@@ -304,4 +299,11 @@ div.highlight.wrap pre code {
 
 a.headerlink{
   text-decoration: none;
+}
+
+iframe.video {
+    display: block; /* Ensures it's treated as a block element */
+    margin: 0 auto; /* Center it horizontally */
+    padding: 0;
+    border-width: 0;
 }

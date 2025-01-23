@@ -32,7 +32,8 @@ theme:
         icon: material/weather-night
         name: Switch to light mode
   favicon: img/terarium-icon.png
-  font: false
+  font: 
+    text: Figtree
   language: custom
 
 plugins:
@@ -44,6 +45,7 @@ plugins:
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
+  - privacy
   - print-site:
       enumerate_headings: false
       add_cover_page: true
@@ -94,6 +96,7 @@ nav:
   - Get started:
     - Using Terarium: get-started/using-terarium.md
     - "Tutorial: Recreate, modify, and simulate a model": get-started/example-workflow.md  
+    - Instructional videos: get-started/video.md
   - Gather modeling resources: gather-resources/index.md
   - Build a workflow graph: workflows/index.md
   - Review and transform data: 

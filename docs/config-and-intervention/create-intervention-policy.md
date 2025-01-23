@@ -24,6 +24,7 @@ Once you've created the intervention policy, the thumbnail preview shows brief d
 
     - Model
     - Document (optional)
+    - Dataset (optional)
 
 -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
 
@@ -44,7 +45,7 @@ Once you've created the intervention policy, the thumbnail preview shows brief d
 
 Use the Create intervention policy operator to: 
 
-- [Extract an intervention policy from a document](#extract-an-intervention-policy-from-a-document).
+- [Extract an intervention policy from a project resource](#extract-an-intervention-policy-from-a-project-resource).
 - [Select from previously saved interventions](#choose-an-existing-intervention).
 - [Manually edit or create an intervention](#edit-or-create-an-intervention).
 
@@ -52,13 +53,13 @@ Use the Create intervention policy operator to:
 
     - Make sure you've connected a model to the Create intervention policy operator and then click **Open**.
 
-### Extract an intervention policy from a document
+### Extract an intervention policy from a project resource
 
-You can automatically attempt to extract intervention policies from any attached documents.
+You can automatically attempt to extract intervention policies from any attached documents or datasets.
 
 ![](../img/config-and-intervention/intervention/extract.png)
 
-??? list "Extract an intervention policy from a document"
+??? list "Extract an intervention policy from a document or dataset"
 
     1. Click **Extract from inputs**.
     2. Review and edit any of the extracted intervention policy settings as needed.
@@ -95,8 +96,9 @@ You can create:
 
 ??? list "Add a new intervention"
 
-    1. Click :octicons-plus-24:{ aria-hidden="true" } **Add intervention**.
-    2. Click <span class="sr-only" id="edit-icon-label">Edit</span> :octicons-pencil-24:{ title="Edit" aria-labelledby="edit-icon-label"}, enter a unique name, and then click <span class="sr-only" id="apply-icon-label">Apply</span> :octicons-check-24:{ title="Apply" aria-hidden="true" aria-labelledby="apply-icon-label"}.
+    1. Click :octicons-plus-24:{ aria-hidden="true" } **Create new**.
+    2. Click :octicons-plus-24:{ aria-hidden="true" } **Add intervention**.
+    3. Click <span class="sr-only" id="edit-icon-label">Edit</span> :octicons-pencil-24:{ title="Edit" aria-labelledby="edit-icon-label"}, enter a unique name, and then click <span class="sr-only" id="apply-icon-label">Apply</span> :octicons-check-24:{ title="Apply" aria-hidden="true" aria-labelledby="apply-icon-label"}.
 
 ??? list "Set up a static intervention"
 

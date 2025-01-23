@@ -9,6 +9,7 @@ Terarium is a modeling and simulation workbench designed to help you assess and 
 <div class="gridcards" markdown>
 [Using Terarium](get-started/using-terarium.md){ .md-button }
 [Get started](get-started/example-workflow.md){ .md-button }
+[Instructional videos](get-started/video.md){ .md-button }
 </div>
 
 Regardless of your level of programming experience, Terarium allows you to:
@@ -20,7 +21,7 @@ Regardless of your level of programming experience, Terarium allows you to:
 - :fontawesome-solid-chart-line:{ .lg .middle } **Analyze the results**
 </div>
 
-![The Terarium home screen with a list of projects and related papers](img/terarium-home.jpg)
+<iframe class="video" src="https://drive.google.com/file/d/1DrbkI_6b8MBjJtUrz3SPVopUK7F4T_c9/preview" width="640" height="360"></iframe>
 
 Need more help? Check out these topics:
 

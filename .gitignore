@@ -29,8 +29,9 @@ bin/
 *.rej
 
 # Local environment
+.cache/
 overrides/.icons/
-_notes.md
 site/
-vale.ini
 styles/
+_notes.md
+vale.ini

@@ -21,7 +21,7 @@ A workflow is a visual canvas for building and running complex operations (calib
 
         ???+ note
 
-            Before you can use a template, your project must contain the inputs (models, model configurations, intervention policies, or datasets) you want to use.
+            Before you can use a template, your project must contain the inputs (models, model configurations, or datasets) you want to use.
 
 ## Create new workflows based on templates
 
@@ -29,8 +29,9 @@ The following workflow templates streamline the process of building common model
 
 ???+ note
 
-    - Before you can fill out a template, your project must contain the inputs (models, model configurations, intervention policies, or datasets) you want to use.
+    - Before you can fill out a template, your project must contain the inputs (models, model configurations, or datasets) you want to use.
     - Before you can see the results of a templated workflow, you must configure and run any Calibrate, Simulate, or Compare datasets operators it contains.
+    - You can create new intervention policies with the template. Once the workflow is created, you must create the Create intervention policy operator and add your intervention criteria.
 
 ??? list "Situational awareness"
 
@@ -165,9 +166,9 @@ The following workflow templates streamline the process of building common model
         ---
     
         - Model
-        - One or more intervention policies (optional)
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
+        - One or more intervention policies (optional)
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
@@ -204,9 +205,9 @@ The following workflow templates streamline the process of building common model
         ---
     
         - Model
-        - One or more intervention policies
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
+        - One or more intervention policies
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
@@ -264,6 +265,45 @@ The following workflow templates streamline the process of building common model
     2. Open and run the Compare datasets operator.
     3. Open and edit the Configure model operators.
     4. Open and run the Simulate operators.
+
+??? list "Calibrate an ensemble model" 
+
+    Use this template to create a more accurate model by combining multiple models in an ensemble. For example, you can determine how to:
+
+    - Leverage the strengths of each model to make the most accurate model possible.
+
+    <h3>Fill out the Calibrate an ensemble model template</h3>
+
+    To use the Calibrate an ensemble model template, select the following inputs and outputs:
+    
+     <div class="grid cards" markdown>
+
+    -   :material-arrow-collapse-right:{ .lg .middle aria-hidden="true" } __Inputs__
+    
+        ---
+    
+        - A historical dataset
+        - Two or more models, each with their own model configurations
+        - A mapping of the timestamp values that the dataset and models share
+        - Additional mappings for each variable of interest that the dataset and models share
+    
+    -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
+    
+        ---
+    
+        - Simulation results each selected model configuration
+        - Calibrations against the historical for each of the selected model configurations
+        - Calibrated ensemble model based on each of the calibrations
+    
+    </div>
+
+    <h3>Complete the Calibrate an ensemble model workflow</h3>
+
+    The new workflow first simulates and calibrates each model individually, then calibrates the ensemble. To see the results, you first need to:
+
+    1. Open and run each Simulate operator.
+    2. Open and run each Calibrate operator.
+    3. Open and run the Calibrate ensemble operator.
 
 ## Add resources and operators to a workflow
 
@@ -342,3 +382,13 @@ To organize your workflow graph, you can move, rearrange, or remove any of the o
 ??? list "Remove a workflow operator"
 
     * Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="menu-icon-label" } > :fontawesome-regular-trash-can:{ aria-hidden="true" } **Remove**.
+
+??? list "Zoom to fit workflow"
+
+    You can quickly zoom the canvas to fit your whole workflow to the current window.
+
+    ???+ note
+
+        In some cases, parts of your workflow may be just off screen after the zoom.
+
+    - Click :fontawesome-solid-expand:{aria-hidden="true"} **Reset zoom**.
