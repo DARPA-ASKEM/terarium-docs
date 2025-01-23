@@ -52,6 +52,10 @@ If your model lacks descriptive details about its variables and parameters, you 
 - **Descriptions**: A short plain language explanation of the variable or parameter's contents.
 - **Concepts**: Epidemiological concepts related to the variable or parameter. Useful for comparing models and mapping variables and parameters to data columns.
 
+???+ note
+
+    Enrichment can also provide geolocation information if, for example, your model is stratified by geographic areas such as states or territories.
+
 Terarium's enrichment service uses an AI language model to automatically populate model metadata based on either:
 
 - Contextual clues in the contents of a document in your project.
