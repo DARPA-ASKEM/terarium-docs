@@ -65,12 +65,12 @@ The Simulate run settings allow you to fine-tune the time frame and solver behav
 
     Using the following advanced settings, you can further optimize the computational efficiency and thoroughness of the simulation:
 
-        - **Number of samples**: Number of stochastic samples to generate.
-        - **Method**: How to solve ordinary differential equations, [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) octicons-link-external-24:{ alt="External link" title="External link" } or [euler](https://en.wikipedia.org/wiki/Euler_method) octicons-link-external-24:{ alt="External link" title="External link" }.
+    - **Number of samples**: Number of stochastic samples to generate.
+    - **Method**: How to solve ordinary differential equations, [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) :octicons-link-external-24:{ alt="External link" title="External link" } or [euler](https://en.wikipedia.org/wiki/Euler_method) :octicons-link-external-24:{ alt="External link" title="External link" }.
 
-            ??? tip
+        ???+ tip
 
-                Using a low number of samples and the dopri5 method can speed up your runtime for debugging purposes.
+            Using a low number of samples and the dopri5 method can speed up your runtime for debugging purposes.
 
 ## Run the simulation
 
