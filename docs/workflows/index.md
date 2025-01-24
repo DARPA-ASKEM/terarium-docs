@@ -356,7 +356,7 @@ Resources and operators in the workflow graph summarize the data and inputs/outp
 
     Perform one of the following actions:
 
-    - Click **Open** or **Edit**.
+    - Click **Open**.
     - Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="menu-icon-label" } > :fontawesome-solid-up-right-from-square:{ aria-hidden="true" } **Open in new window**.
 
 ??? list "Duplicate a resource or operator"

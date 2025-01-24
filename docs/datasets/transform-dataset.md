@@ -96,7 +96,7 @@ Prompts and responses are written to cells where you can preview, edit, and run 
 
 ??? list "Open the Transform dataset code notebook"
 
-    - Make sure you've connected one or more datasets to the Transform dataset operator and then click **Edit**.
+    - Make sure you've connected one or more datasets to the Transform dataset operator and then click **Open**.
 
 ??? list "Rerun a code notebook"
 
@@ -399,7 +399,7 @@ The following sections show examples of how to prompt the Transform dataset AI a
 
     Before you combine datasets, make sure they share at least one common column like name, ID, date, or location. You can ask the AI assistant to link them by matching records based on the common data so that information aligns correctly.
     
-    1. Connect the outputs of each dataset to the input of a Transform dataset operator and then click **Edit**.
+    1. Connect the outputs of each dataset to the input of a Transform dataset operator and then click **Open**.
     2. Ask the assistant to:
 
         ```{ .text .wrap }

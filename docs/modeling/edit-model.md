@@ -79,7 +79,7 @@ Generated code appears below your prompts, where you can preview, edit, and run 
 
 ??? list "Open the Edit model code notebook"
 
-    - Make sure you've connected a model or model configuration to the Edit model operator and then click **Edit**.
+    - Make sure you've connected a model or model configuration to the Edit model operator and then click **Open**.
 
 ### Use the AI assistant to edit a model
 

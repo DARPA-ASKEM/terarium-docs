@@ -29,9 +29,9 @@ More info coming soon.
     1. [Configure two or more models](../config-and-intervention/configure-model.md).
     2. Right-click anywhere on the workflow graph and select **Simulation** > **Simulate ensemble**.
     3. Connect the Configure model outputs to the Simulate ensemble inputs.
-    4. Click **Edit**.
-    5. Enter custom weights for the model configurations or click **Set weights to be equal** to treat them as equally important.
-    6. Create a mapping between the state variables of the model configurations.
+    4. Click **Open**.
+    5. Create a mapping between the state variables of the model configurations.
+    6. Enter custom weights for the model configurations to specify your confidence in them.
     7. Set the time span:
         - **Start** and **End Step**
         - **Number of samples**

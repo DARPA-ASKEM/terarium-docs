@@ -51,7 +51,7 @@ The Stratify model operator adapts to your level of coding experience. You can s
 
 ??? list "Open the Stratify model operator"
 
-    - Make sure you've connected a model or model configuration to the Stratify model operator and then click **Edit**.
+    - Make sure you've connected a model or model configuration to the Stratify model operator and then click **Open**.
 
 ### Use the wizard to stratify a model
 

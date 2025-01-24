@@ -59,7 +59,7 @@ You can set up your dataset comparison by selecting a baseline and adjusting key
 
 ??? list "Define the comparison"
 
-    1. Select **Compare the impact of interventions**.
+    1. Select **Compare scenarios**.
     2. (Optional) Specify which dataset is the baseline simulation.
     3. (Optional) Select **Average treatment effect** to include a summary of the overall impact of interventions in the resulting comparison tables.
 

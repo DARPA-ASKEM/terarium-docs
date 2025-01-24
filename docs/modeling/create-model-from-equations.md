@@ -71,7 +71,7 @@ In some cases you may want to change the LaTeX either to correct or and new deta
 
 ??? list "Select equations from a document"
 
-    1. In the workflow, make sure the document is connected to the operator input and then click **Edit**.
+    1. In the workflow, make sure the document is connected to the operator input and then click **Open**.
     2. In the Input panel, review and select the equations you want to include in the model.
 
 ??? list "Edit equations extracted from a document" 
