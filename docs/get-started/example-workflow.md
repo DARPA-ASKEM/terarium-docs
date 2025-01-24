@@ -32,6 +32,21 @@ The goal of the modeling exercise in the project is to reduce COVID hospitalizat
 
 </div>
 
+??? tip "Try it out yourself!"
+
+    To better understand the described modeling processes, see the sample workflow link at the top of each section. To try something out yourself, copy the models, documents, or datasets from the sample workflow into your own project.
+
+    To copy a model or dataset:
+
+    1. Click its name in the Resources panel.
+    2. Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="menu-icon-label" } > :octicons-plus-24:{ aria-hidden="true" } **Add to project** and select your project.
+
+    To copy a document:
+
+    1. Click its name in the Resources panel.
+    2. Click <span class="sr-only" id="menu-icon-label">Menu</span> :fontawesome-solid-ellipsis-vertical:{ title="Menu" aria-labelledBy="menu-icon-label" } > :octicons-download-24:{ aria-hidden="true"} **Download this file** and save it to your computer.
+    3. Drag the file into the Resources panel of your prroject.
+
 ## Upload and modify models and data
 
 ### Upload resources
