@@ -51,7 +51,9 @@ Begin setting up your project by uploading the models, papers (documents), and d
 
 ### Create and compare models from equations
 
-Terarium can [automatically recreate a model](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/78688b6d-9932-4d24-b090-16ba03c7d255) from a set of ordinary differential equations. In this case, we create models by extracting equations from the uploaded documents, but you could also get equations from pasted images or manually enter them as LaTeX.
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/78688b6d-9932-4d24-b090-16ba03c7d255)
+
+Terarium can automatically recreate a modelfrom a set of ordinary differential equations. In this case, we create models by extracting equations from the uploaded documents, but you could also get equations from pasted images or manually enter them as LaTeX.
 
 When the extraction and creation is complete, Terarium builds visual representations of the extracted SIR and SEIRHD models that show how people progress between disease states.
 
@@ -93,7 +95,9 @@ The AI-generated summary indicates that the SEIRHD model would be best for forec
 
 ### Edit models
 
-Now we want to [update the SEIRHD model to allow people to move from infected to recovered without becoming hospitalized](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/d0a259d7-55fa-4438-93e0-807b5e2824fc). Even if you don't have any coding experience, you can use Terarium's AI-assisted Edit model notebook. The assistant simplifies the process of changing or building off an existing model&mdash;no knowledge of specialized modeling libraries needed!
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/d0a259d7-55fa-4438-93e0-807b5e2824fc)
+
+Now we want to update the SEIRHD model to allow people to move from infected to recovered without becoming hospitalized. Even if you don't have any coding experience, you can use Terarium's AI-assisted Edit model notebook. The assistant simplifies the process of changing or building off an existing model&mdash;no knowledge of specialized modeling libraries needed!
 
 <div class="grid cards" markdown>
 
@@ -121,6 +125,8 @@ Now we want to [update the SEIRHD model to allow people to move from infected to
       5. Click **Save for re-use** and then enter *SEIRHD edited* as the name of the new model.
 
 ### Stratify models
+
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/cfdf914b-078e-4e67-ab6f-15bbf5c0ee1a)
 
 Now we want to stratify our edited model to account for vaccinated and unvaccinated groups. Terarium's stratification process is an error-proof approach to stratifying along any dimension, such as age, sex, and location.
 
@@ -155,6 +161,8 @@ Now we want to stratify our edited model to account for vaccinated and unvaccina
     8. Click **Save for re-use** and edit the name of the new model.
 
 ### Work with data
+
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/b5ce4c02-c96c-4cdb-bef7-691c163c237d)
 
 The uploaded dataset covers all of the U.S. for 2021. However, we're only interested in LA county. We can use Terarium's data transformation tools to filter down to just what we need.
 
@@ -197,6 +205,8 @@ Doing your data transformations in Terarium helps make your modeling process mor
 
 ### Configure and calibrate a model
 
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/02c85a57-1362-4112-9e04-bf5ff177aa1a)
+
 Before you can simulate the modified SEIRHD model, we need to configure it to set the initial values for its states and parameters. To improve its performance, we can also adjust these by calibrating it against the context of the LA county data. 
 
 In this example, we'll work with an already existing model configuration, but normally you can manually create configurations based on your expert knowledge or automatically extract them from documents or datasets in your project.
@@ -225,6 +235,8 @@ When you calibrate a model, you can review the following immediate visual feedba
 
 ### Run a sensitivity analysis
 
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/c559e84c-0114-4d2c-85fd-350021432631)
+
 Next, we'll simulate our model configuration to perform a sensitivity analysis to explore the effects of infection rate (beta) and vaccination rate (r_Sv) on hospitalizations.
 
 ![](../img/get-started/example-sensitivity-workflow.png)
@@ -239,6 +251,8 @@ The scatterplots below the sensitivity chart the parameters combine to affect ho
 ![](../img/get-started/example-sensitivity-wizard.png)
 
 ### Create and simulate intervention policies
+
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/55cba4d9-f16f-4fb3-a65f-ee8a20d1a2fa)
 
 Our sensitivity analysis showed us the infection rates we should aim for to reduce hospitalizations. Now we can create different masking intervention policies to visualize the impact of different what-if masking scenarios that might get us there. For this, we'll use parameter NPI_mult, which is a multiplier for the transmission rate.
 
@@ -274,6 +288,8 @@ Both interventions reduce hospitalizations compared to the baseline, but the sta
 
 ### Optimize intervention policies
 
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/65229c06-5517-4226-a7b4-62c0504ee53f)
+
 In Terarium, you can optimize interventions to meet specified constraints, allowing you to get answers to key decision maker questions faster. We want to find how effective masking needs to be to prevent hospitalizations from exceeding capacity.
 
 ![](../img/get-started/example-interventions-optimize-settings.png)
@@ -300,6 +316,8 @@ By simulating the optimized intervention policy, you can see how the estimates o
 ![](../img/get-started/example-interventions-optimized.png)
 
 ## Compare datasets
+
+> [Sample workflow](https://app.terarium.ai/projects/cc51dd40-f08a-4085-9eb1-ae22d7483839/workflow/26f5a406-5df1-4ca2-b109-95b192f16ff0)
 
 Finally, you can take the results of your simulations, interventions, and optimizations and compare them to see which works best at reducing hospitalizations. The Compare datasets operator lets you compare scenarios based on the various simulation results you've generated.
 
