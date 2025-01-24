@@ -4,38 +4,44 @@ title: "Validate a model configuration"
 
 # Validate a model configuration
 
-At the beginning of your modelling workflow, you may be faced with multiple candidate models, some of which contain mistakes and thus make unphysical predictions. You can use the Validate configuration operator to do "sanity" or model checks on the outputs of these models. In the case of compartmental models, the operator can run the basic sanity check wherein the population of every compartment, for all timepoints, is non-negative and less than or equal to the sum of the initial condition values. 
+In your modeling workflow, you might have multiple candidate models that contain mistakes and generate unphysical predictions. You can use the Validate configuration operator to check the outputs of these models. In the case of compartmental models, the operator can run the basic check wherein the population of every compartment, for all timepoints, is non-negative and less than or equal to the sum of the initial condition values. 
 
-The Validate configuration operator supports several types of constraints such that you can check for additional assumptions on the inputs and outputs of the model
-1. "greater/less than or equal to": that a model quantity (state variable, parameter, or observable) be bounded below/above by some threshold value
-2. "increasing/decreasing": that the time derivative of a model quantity is positive or negative
-3. "linearly constrained": that several parameters satisfy a linear constraint of the form `L ≤ a_1 * p_1 + a_2 * p_2 + ... + a_k * p_k ≤ U`
-4. "following": that a model quantity remains within some range of a given time-series dataset for all given timepoints (not yet supported)
+The Validate configuration operator supports several types of constraints you can build to check for additional assumptions on the inputs and outputs of the model:
+
+1. "greater/less than or equal to": that a model quantity (state variable, parameter, or observable) be bounded below/above by some threshold value.
+2. "increasing/decreasing": that the time derivative of a model quantity is positive or negative.
+3. "linearly constrained": that several parameters satisfy a linear constraint of the form `L ≤ a_1 * p_1 + a_2 * p_2 + ... + a_k * p_k ≤ U`.
+4. "following": that a model quantity remains within some range of a given time-series dataset for all given timepoints (not yet supported).
 
 The output of this operator is a new model configuration that represents the largest region in the parameter space (as defined by the input configuration) which satisfies _all_ the given constraints.
 
-This Terarium feature is powered by the `run_validate` function of the [Functional Model Analysis (Funman)](https://github.com/siftech/funman) package.
-
-
-??? example
-
-    You are given a SIR-type compartmental model where the state variables represents relative fraction of a total population. You would want to check that (1) all the state variables are greater than zero, (2) they are less than one, (3) the `S(t)` state variable is decreasing monotonically (assuming no births), and (4) the `R(t)` state variable is increasing monotonically (assuming no deaths).
+Validate configuration is powered by the `run_validate` function of the [Functional Model Analysis (Funman)](https://github.com/siftech/funman) package.
 
 ??? example
 
-    Given some model with parameters `β, γ`, you want to find what model configuration would satisfy the linear inequality `β ≤ 2 * γ`. You can create a constraint of the form "the parameters β, γ should be linearly constrained from timepoint 0 timepoint 30 days" with inequality `0 ≤ -1 * β + 2 * γ`. The result would be a model configuration where the parameters `β, γ` are uniform distributions, covering a region of parameter space where the inequality is satisfied.
+    - Given a SIR-type compartmental model where the state variables represents relative fraction of a total population, you want to check that:
 
+        - All the state variables are greater than zero,
+        - They are less than one,
+        - The `S(t)` state variable is decreasing monotonically (assuming no births), and
+        - The `R(t)` state variable is increasing monotonically (assuming no deaths).
+
+    - Given a model with parameters `β, γ`, you want to find what model configuration would satisfy the linear inequality `β ≤ 2 * γ`. You can create a constraint of the form: 
+
+        >parameters β, γ should be linearly constrained from timepoint 0 timepoint 30 days with inequality `0 ≤ -1 * β + 2 * γ`. 
+
+        The result is a model configuration where the parameters `β, γ` are uniform distributions, covering a region of parameter space where the inequality is satisfied.
 
 ## Validate configuration operator
 
-The Validate configuration operator takes a model configuration as an input and returns a validated model configuration as output. The latter can be used simulation operators downstream.
+The Validate configuration operator takes a model configuration as an input and returns a validated model configuration as output. The output can be used in simulation operators downstream.
 
 ???+ tip
     
     When [setting up the input configuration](configure-model.md#edit-or-create-a-model-configuration):
 
-    - For each parameter of interest, specify a wide uniform distribution in the input configuration such that the Validate configuration operator has a sufficiently large parameter space to search for regions that satisfy all the given constraints.
-    - You can use the [Edit model operator](../modeling/edit-model.md#edit-a-model-in-the-edit-model-code-notebook) to define some observables for quantities that do not correspond to any existing model state variables or parameters.
+    - For each parameter of interest, specify a wide uniform distribution in the input configuration so the Validate configuration operator has a sufficiently large parameter space to search for regions that satisfy all the given constraints.
+    - You can use the [Edit model operator](../modeling/edit-model.md#edit-a-model-in-the-edit-model-code-notebook) to define observables for quantities that do not correspond to any existing model state variables or parameters.
 
 <figure markdown>
 ![](../img/config-and-intervention/validate/validate-configuration-operator.png)
@@ -68,7 +74,7 @@ The Validate configuration operator takes a model configuration as an input and 
 
 ## Validate a model configuration
 
-The Validate configuration operator allows you to define model checks and produce validate model configurations using: 
+The Validate configuration operator allows you to define model checks and produce validated model configurations using: 
 
 - A [wizard view](#use-the-wizard-to-validate-a-model-configuration) with the most common settings.
 - A [notebook view](#use-the-notebook-to-validate-a-model-configuration) with structured JSON inputs and outputs.
@@ -89,7 +95,7 @@ Use the wizard view of the Validate configuration operator to apply validation s
 
 Compartmental constraints provide a simple validation layer for your model configuration by enforcing basic physical that make sure:
 
-- The state variables do not become negative for all timepoints.
+- The state variables don't become negative for all timepoints.
 - The total population of the model are conserved and constant for all timepoints.
 
 ![](../img/config-and-intervention/validate/compartmental-constraints.png)
@@ -164,11 +170,11 @@ Run settings let you customize the scope and precision of the validation process
 ??? list "Configure the run settings"
 
     1. Select a **Preset**, Fast or Precise, to balance between run time and precision in parameter space and prediction error
-    2. Select the **Parameters of interest**. Model checks applied on parameters that are not selected will be ignored.
+    2. Select the **Parameters of interest**. Model checks applied on parameters that are not selected are ignored.
 
         ???+ note
 
-            You can only select parameters that are represented by a uniform distribution. Parameters with constant values cannot be selected.
+            You can only select parameters that are represented by a uniform distribution. Parameters with constant values can't be selected.
 
     3. Choose the **Start** and **End time**.
 
@@ -177,7 +183,7 @@ Run settings let you customize the scope and precision of the validation process
     Using the following advanced settings, you can further optimize the computational efficiency and thoroughness of the validation:
 
     - **Number of timesteps**: More timesteps provide a detailed view of how the model behaves over time and smaller prediction error, while fewer timesteps simplify the analysis and reduce run time when precision isn't as critical.
-    - **Tolerance**: Controls how finely the operator segments the parameter space for validation; the value is the relative size of the smallest sub-region that will be checked for satisfiability; `1.0` means "do not segment the input parameter space at all"  while `0.1` means "segment the space down to 10% of the parameter ranges". 
+    - **Tolerance**: Controls how finely the operator segments the parameter space for validation. The value is the relative size of the smallest sub-region that will be checked for satisfiability. `1.0` means "do not segment the input parameter space at all" while `0.1` means "segment the space down to 10% of the parameter ranges". 
 
         ???+ tip
     
@@ -185,7 +191,7 @@ Run settings let you customize the scope and precision of the validation process
 
 ### Use the notebook to validate a model configuration
 
-The notebook exposes structured JSON that describes the model, its configuration, and the same settings available in the Wizard. You can directly edit the JSON and then run it to create a new validated configuration (also represented as a structued JSON).
+The notebook exposes structured JSON that describes the model, its configuration, and the same settings available in the Wizard. You can directly edit the JSON and then run it to create a new validated configuration (also represented as a structured JSON).
 
 ![](../img/config-and-intervention/validate/notebook.png)
 
@@ -235,7 +241,7 @@ The validation result is displayed as a series of plots showing the satisfactory
 
 ### States variables and observables
 
-State variable and observables plots provide a time-series view of how these model quantities evolve over time. The simpler constraints (greater/less than some threshold value) are shown as light blue rectangles. Altogether, the plots show how and when each model quantity visually passes or fails the given constraints. Each trajectory is mapped from a single sampled point in parameter space is mapped:
+State variable and observables plots provide a time-series view of how these model quantities evolve over time. The simpler constraints (greater/less than some threshold value) are shown as light blue rectangles. Altogether, the plots show how and when each model quantity visually passes or fails the given constraints. Each trajectory is mapped from a single sampled point in parameter space:
 
 - Dark green lines satisfy all model checks.
 - Yellow lines do not satisfy all model checks.
@@ -283,7 +289,7 @@ Parameter plots allow you to explore how variations in model parameters influenc
 
 ??? list "Only show furthest results"
 
-    The validation algorithm is efficient and only solves the model ODEs incrementally. It compute outcomes with the minimum timepoints that is necessary to guarantee that all the model checks either pass or fail. These intermediate results can sometimes make it hard to focus on the trajectories that are actually validated. You can instead restrict the plot to only these trajectories by toggling on this option.
+    The validation algorithm is efficient and only solves the model ODEs incrementally. It computes outcomes with the minimum timepoints that is necessary to guarantee that all the model checks either pass or fail. These intermediate results can sometimes make it hard to focus on the trajectories that are actually validated. You can instead restrict the plot to only these trajectories by toggling on this option.
 
     - Click **Only show furthest results**.
 
@@ -294,8 +300,8 @@ Parameter plots allow you to explore how variations in model parameters influenc
 If your validation is taking too long, try reducing the complexity of the validation problem: 
 
 - Reduce the number of timesteps to ~5.
-- Reduce the number of parameters of interest to 2 or 3 of the most important.
-- Increase the tolerance to be ~0.5.
+- Reduce the number of parameters of interest to two or three of the most important.
+- Increase the tolerance to ~0.5.
 - Crop out parameter ranges that cause numerical instability. For example, if you have SIR-type model and a recovery rate `γ` that is an uniform distribution between `-1.0` and `1.0`, the model may become unstable near `γ = 0` as the basic reproduction number `R₀ → ∞`. You can narrow the distribution of `γ` to exclude the singularity at the origin.
 
 Following these steps can help you reduce the run time or produce non-trivial validation results.
@@ -306,4 +312,4 @@ If the results contain no satisfactory conditions, it often means the entire par
 
 ## Next steps
 
-You can use the new validated configuration in [simulations](../simulation/simulate-model.md) to forecast, analyze, or explore system behavior based on the validated parameters. Validation reduces the need to repeatedly reconfiguring a model to find physical starting points for simulations, calibrations, and optimizations.
+You can use the new validated configuration in [simulations](../simulation/simulate-model.md) to forecast, analyze, or explore system behavior based on the validated parameters. Validation reduces the need to repeatedly reconfigure a model to find physical starting points for simulations, calibrations, and optimizations.
