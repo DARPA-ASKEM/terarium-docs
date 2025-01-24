@@ -94,6 +94,7 @@ The following workflow templates streamline the process of building common model
         - Model
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
+        - Simulation settings (optional)
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
@@ -130,6 +131,7 @@ The following workflow templates streamline the process of building common model
         - Model
         - Model configuration
         - One or more intervention policies
+        - Simulation settings (optional)
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
@@ -169,6 +171,7 @@ The following workflow templates streamline the process of building common model
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
         - One or more intervention policies (optional)
+        - Simulation settings (optional)
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
@@ -208,6 +211,7 @@ The following workflow templates streamline the process of building common model
         - Model configuration
         - One or more uncertain parameters of interest and the ranges to explore
         - One or more intervention policies
+        - Simulation settings (optional)
     
     -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
     
