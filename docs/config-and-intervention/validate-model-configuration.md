@@ -61,7 +61,7 @@ The Validate configuration operator allows you to assess and refine model config
 
 ??? list "Open the Validate configuration operator"
 
-    - Make sure you've connected a model configuration to the Validate configuration operator and then click **Review checks**.
+    - Make sure you've connected a model configuration to the Validate configuration operator and then click **Open**.
 
 ### Use the wizard to validate a model configuration
 

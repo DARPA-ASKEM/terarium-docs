@@ -57,7 +57,7 @@ Once you've built your workflow, you can edit the Simulate run and output settin
 
 ??? list "Conduct a sensitivity analysis"
 
-    1. On the Simulate operator, click **Edit**.
+    1. On the Simulate operator, click **Open**.
     2. Select the Simulate [run settings](../simulation/simulate-model.md).
     3. Click **Run** to start the simulation.
     4. Preview the sensitivity analysis results. To add variables or parameters, use the **Output** settings. 

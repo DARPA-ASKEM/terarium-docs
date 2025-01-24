@@ -126,7 +126,7 @@ Terarium's operators support various ways for you to configure complex scientifi
 ??? list "Use a Terarium operator"
 
     1. Make sure you've connected all the required inputs.
-    1. Click **Open** or **Edit** on the operator node.
+    1. Click **Open** on the operator node.
     2. Switch to the Wizard or Notebook view depending on your preference.
     
         ???+ note

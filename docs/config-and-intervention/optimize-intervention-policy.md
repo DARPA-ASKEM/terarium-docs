@@ -20,8 +20,6 @@ Given a model configuration and a proposed intervention policy, you can identify
     - The [PyCIEMSS `optimize` interface](https://github.com/ciemss/pyciemss/blob/6a41b1a8247dd76f929488a479f4d27671120b36/pyciemss/interfaces.py#L818).
     - The [PyCIEMSS `optimize` interface notebook](https://github.com/ciemss/pyciemss/blob/main/docs/source/optimize_interface.ipynb).
 
-<!-- <figure markdown>![](../img/models/model-optimize-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L747) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure> -->
-
 ## Create an optimize intervention policy operator
 
 Assuming you have a [model configuration](configure-model.md) and an [intervention policy](create-intervention-policy.md) in your workflow, add an Optimize intervention policy operator: 
