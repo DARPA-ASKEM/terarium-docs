@@ -4,7 +4,11 @@ title: Calibrate ensemble
 
 # Calibrate ensemble
 
-Calibrate ensemble extends the calibration process by working across multiple models simultaneously, allowing you to explore how different configurations collectively align with historical data. By aggregating results from multiple models, Calibrate ensemble can provide a more comprehensive understanding of system behavior.
+Terarium supports the joint calibration of multiple models as an ensemble. Each member model is first calibrated on its own against the same time-series dataset representing historical observations and then calibrated again as a single ensemble, wherein the loss or prediction error is calculated between a linearly weighted sum of the corresponding model outputs and the dataset features. The result is a joint set of calibrated model configurations that may generate predictions with less error than what the individual models and their singly calibrated configurations could.
+
+Ensemble calibration essentially allows a search for configuration solutions wherein the member models can specialize to different features or time periods of the given dataset. This is analoguous to a high-performing [random forest regressor](https://scikit-learn.org/1.6/modules/ensemble.html#forest) can be constructed from multiple weak-learning [decision trees](https://scikit-learn.org/1.6/modules/tree.html#tree).
+
+This Terarium feature is powered by the `ensemble_calibrate` function of the [PyCIEMSS package](https://github.com/ciemss/pyciemss/blob/6a41b1a8247dd76f929488a479f4d27671120b36/pyciemss/interfaces.py#L184). An example of how it can be used programmatically can be found in [this Jupyter notebook](https://github.com/ciemss/pyciemss/blob/main/docs/source/interfaces.ipynb).  
 
 ???+ tip
 
@@ -57,13 +61,24 @@ The Calibrate ensemble operator allows you to define how to:
 
 ### Map dataset columns and model variables
 
-To begin, map the observed data (such as number of cases) to the corresponding model states (such as detected cases). 
+To begin, create a mapping between the calibration data and the model configurations by selecting features (e.g. current number of hospitalized cases and cumulative number of deaths) and corresponding outcomes that are represented by every model (e.g. threatened (`T`) and extinct (`E`) populations in the [SIDARTHE model](https://www.nature.com/articles/s41591-020-0883-7) or hospitalizations (`H`) and deaths (`D`) in a (SEIQHRD-type model)[https://www.sciencedirect.com/science/article/pii/S2211379721006732]).
 
 ![](../img/simulation/calibrate-ensemble/mapping.png)
 
-Only relevant variables need to be mapped. For example, if the models include susceptible and recovered states, but the data only includes infected, you only need to map the infected state. States like susceptible populations that are typically not observed may not be mappable.
+Note that it is not necessarily to map every dataset feature to a set of model outcomes nor vice versa. For example, susceptible or exposed populations in SEIR-type models do not correspond to readily observed or reported values.
 
-??? list "Create a mapping between the data and model configurations"
+???+ tip
+
+    High-quality case, death, and hospitalization data for COVID-19 is available on the [COVID-19 Forecast Hub GitHub repository](https://github.com/reichlab/covid19-forecast-hub/blob/3a6997b6abdcfabe321dd059ebe32334095d49b5/data-truth/README.md). If a model selected for ensemble calibration does not have a state variable that corresponds well to these observations, then you can easily add an observable using the notebook interface of the [Edit model operator](../modeling/edit-model.md#edit-a-model-in-the-edit-model-code-notebook). 
+
+???+ tip
+
+    State variables in compartmental models usually represents [_prevalence_](https://www.nimh.nih.gov/health/statistics/what-is-prevalence) of disease conditions. Literature and data repositories often provide only daily [_incident_](https://www.nimh.nih.gov/health/statistics/what-is-prevalence#part_2624) or _cumulative_ estimates. You may use the [Transform dataset operator](../datasets/transform-dataset.md#transformation-examples) to convert from incidence to prevalence values. 
+    
+    You can also use the [Edit model operator](../modeling/edit-model.md#edit-a-model-in-the-edit-model-code-notebook) to add new "controlled production" transitions and create new state variables that are cumulative equivalents. For example, the cumulative equivalent (`Icum`) of the number of infected individuals (`I`) can be defined by adding to a SIR-type model a controlled production where the outcome is `Icum`, the controller is `I`, and the rate law is `I` such that there is the equation `d Icum(t) / dt = I(t)` or `Icum(t) = int I(t) dt`.
+
+
+??? list "Create a mapping between the calibration data and the model configurations"
 
     1. Select the Timestamp column from the dataset.
     2. For each variable of interest:
@@ -74,45 +89,48 @@ Only relevant variables need to be mapped. For example, if the models include su
 
 ### Assign model weights
 
-Model weights control how much influence each model has on the final ensemble result. Adjusting these weights allows you to express your confidence in individual models or combinations of them.
+Model weights are the parameters used to linearly sum the model outcomes into the ensemble. They represent how much each model contribute to the ensemble. 
 
-- If you're unsure which model is most accurate, assign **equal medium weights** (5). This treats all models as likely contributors, allowing their outputs to combine in a balanced way. This is the default and recommended option.
-- Assign a **high weight** (10) to one or more models you believe are the most accurate. The ensemble prioritizes their influence.
-- Assign a **low weight** (1) to a model you believe is less reliable. Its influence is minimized in the ensemble calculation.
+Since "Calibrate ensemble" is Bayesian inference process, the model weights are not single values but are represented by a [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution) of order `K`, where `K` is the number of models in the ensemble. This distribution has parameters `a_1, a_2, ..., a_K` that control where and how much mass is concentrated at different possible combinations of noramlized model weights `(w_1, w_2, ..., w_k)`.
 
-![](../img/simulation/calibrate-ensemble/model-weights.png)
-
-By tuning weights, you can better match the ensemble's output to your expectations or historical data, potentially achieving a more reliable result.
+In the interface, the Dirichlet alpha parameters `a_k` are exposed as "Relative uncertainty" dropdowns. Selecting from `0` to `10` allows you to express your confidence in each of the models and find an ensemble solution that potentially produce better predictions.
 
 ??? list "Assign model weights"
 
-    - For each model, select a relative certainty from 1 (low) to 10 (high).
+    - For each model, select a value from `1` (low) to `10` (high) using the "Relative certainty" dropdown.
+
+- If you do not know a priori which models are better and probably should be given more weight, assign **equal medium weights** (e.g. `5`). This is equivalent to initially assuming a flat Dirichlet distribution where all model weight combinations are equally probable. This is the default and recommended option.
+- Assign a **high weight** (e.g. `10`) to one or more models that produces the best predictions in your belief. "Calibrate ensemble" will start searching for solutions that prioritize the contribution of these models.
+- Conversely, assign a **low weight** (e.g. `1`) to models that you believe are less reliable. Their contributions will be reduced in the ensemble calculation.
+
+![](../img/simulation/calibrate-ensemble/model-weights.png)
+
 
 ### Configure the run settings
 
-The Calibrate ensemble run settings allow you to fine-tune the time frame, solver behavior, and inference process. By adjusting these settings, you can balance performance and precision.
+The "Other settings" section contains the options for the "Calibrate ensemble" operator. They control the time period of interest and behaviour of the underlying ODE solver and optimizer. You can select a preset ("Fast" or "Normal") or adjust these settings individually to balance between run time and precision.
 
 ![](../img/simulation/calibrate-ensemble/other-settings.png)
 
-??? list "Configure the run settings"
+??? list "Configure quickly the run settings"
 
-    1. Choose the **Start** and **End time**.
-    2. Select a **Preset**, Fast or Normal.
+    1. Choose the **Start time** and **End time** to specify the timepoints to be simulated.
+    2. Select a **Preset**, "Fast" or "Normal".
 
 ??? list "Advanced settings"
 
-    Using the following advanced settings, you can further optimize the computational efficiency and thoroughness of the calibration:
+    Using the following advanced settings, you can further control how fast or precise the calibration can be:
     
-    - **Number of samples**: Number of calibration attempts made to explore the parameter space and identify the best fit.
-    - ODE solver options determine the approach for solving the system's equations during calibration:
-        - **Solver method**: *dopri5* provides more accurate results with finer calculations, while *euler* performs simpler, faster calculations.
-        - **Solver step size**: Interval between calculation steps, influencing precision and computational cost.
-    - Inference options control how model parameters are estimated during calibration:
-        - **Number of solver iterations**: Number of steps to take to converge on a solution.
-        - **Learning rate**: Step size for updating parameters during the optimization process.
-        - **Inference algorithm**: Stochastic Variational Inference (SVI), which estimates parameters probabilistically.
-        - **Loss function**: Evidence Lower Bound (ELBO), which guides parameter updates by balancing data fit and model complexity.
-        - **Optimize method**: ADAM, an algorithm for efficient parameter updates.
+    - **Number of samples**: Number of point estimates to be made on the posterior distribution (model parameters and weights) for the pre- and post-calibration simulations.
+    - ODE solver options determine the approach for solving the equations of the model during calibration:
+        - **Solver method**: *dopri5* returns the best results while *euler* is faster but less accurate (see [here](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.ode.html) for more details).
+        - **Solver step size**: Size of the time interval used to integrate the solution, larger is faster but less accurate (only needed by the *euler* method).
+    - Inference options control the behaviour of the inference algorithm that minimizes the calibration error:
+        - **Number of solver iterations**: The number of calibration steps.
+        - **Learning rate**: Step size for updating parameter values during calibration.
+        - **Inference algorithm**: [Stochastic Variational Inference (SVI)](https://pyro.ai/examples/svi_part_i.html), which estimates the parameters probabilistically.
+        - **Loss function**: [Evidence Lower Bound (ELBO)](https://pyro.ai/examples/svi_part_iii.html), which guides parameter updates by balancing data fit and model complexity.
+        - **Optimizer method**: algorithm for updating parameter values, [ADAM](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) by default.
 
 ## Create and save the calibrated dataset
 
@@ -165,13 +183,18 @@ Ensemble calibration results are presented as a series of charts that show:
 
 ### Loss
 
-The loss chart shows the error between the model's output and the calibration data. A decreasing loss indicates successful calibration.
+The loss chart shows the error between the ensemble model outputs and the calibration data. An monotonically and exponetially decrease in loss values indicates convergence and a successful calibration.
 
 ![](../img/simulation/calibrate-ensemble/loss.png)
 
 ??? list "Show or hide the loss chart"
 
     - Select or clear **Show loss chart**.
+
+???+ tip
+
+    If the loss is not decreasing to a plateau, the calibration algorithm may be struggling to converge to a solution. Failure to convergence could indicate that the model outputs are not good matches to the calibration data. Consider reducing the complexity of the problem by (1) adjusting the values of the input model configurations to approximate a solution and (2) removing the larger or least truthworthy model configurations.
+
 
 ### Ensemble variables over time
 
@@ -260,7 +283,9 @@ The error plots show the mean absolute error (MAE) for each model and variable o
 
 ### Model weights
 
-The model weights charts show the distribution of weights assigned to each model before and after calibration.
+The model weights charts show the one-dimensional projections of the Dirichlet distribution of the weights to each model, before and after the calibration.
+
+Generally, a good calibration will take broad distribution (a low-certainty prior) and return a narrow distribution (a high-certainty posterior, conditioned on the calibration data).
 
 ![](../img/simulation/calibrate-ensemble/model-weights.png)
 
