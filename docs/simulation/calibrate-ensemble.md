@@ -148,6 +148,10 @@ The Other settings control the time period of interest and behavior of the under
         - **Loss function**: [Evidence Lower Bound (ELBO)](https://pyro.ai/examples/svi_part_iii.html), which guides parameter updates by balancing data fit and model complexity.
         - **Optimizer method**: algorithm for updating parameter values, [ADAM](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) by default.
 
+???+ tip
+
+    Consider using minimum settings - such as the end time at `3`, the number of samples at `1`, and the solver method at `euler` - to check whether the calibration can run to completion with the given mapping.
+
 ## Create and save the calibrated dataset
 
 Once you've configured the settings, you can run the operator to generate a new calibrated dataset. The new dataset becomes a temporary output for the Calibrate ensemble operator. You can connect it to other operators in the same workflow.
@@ -310,3 +314,9 @@ Generally, a good calibration takes a broad distribution (a low-certainty prior)
 ??? list "To show or hide the model weights charts"
 
     - Select or clear **Show distributions in charts**.
+
+### Troubleshooting
+
+You may encounter various errors instead of calibration results.
+
+One example is `AssertionError: underflow in dt 0.0` and can be caused by an input model configuration that is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent or on the same order of magnitude as corresponding features in the calibration dataset.

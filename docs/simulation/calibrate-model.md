@@ -4,7 +4,7 @@ title: "Calibrate a model"
 
 # Calibrate a model
 
-Calibration lets you improve the performance of a model by updating the value of configuration parameters. You can calibrate a model with a reference dataset of observations and an optional intervention policy.
+Calibration lets you improve the performance of a model by updating the value of configuration parameters. You can calibrate a model with a reference dataset of observations and an optional intervention policy representing historical events that occur during the time period of the reference dataset. This operation is essentially takes prior distribution over the parameters (user's knowledge of the world at the first timepoint) and infer posterior distributions over the same, representing the best estimate of the state of the world again but conditioned on data.
 
 <iframe class="video" src="https://drive.google.com/file/d/1by_OGfVBbx2ExmdAMR8lKYFym000-B1x/preview" width="640" height="360"></iframe>
 
@@ -14,7 +14,7 @@ In a workflow, the Calibrate operator takes a model configuration, a dataset, an
 
 ???+ tip
 
-    At least one parameter in the configuration must be defined as a [uniform distribution](../config-and-intervention/configure-model.md#edit-or-create-a-model-configuration), and the dataset must have a timestamp column.
+    At least one parameter in the configuration must be defined as a [uniform distribution](../config-and-intervention/configure-model.md#edit-or-create-a-model-configuration) and the dataset must have a column named "Timestamp" with values `0, 1, 2, ...` indexing all the timepoints.
 
 Once you've completed the calibration, the thumbnail preview shows the results charts.
 
@@ -107,6 +107,12 @@ The Calibrate run settings allow you to fine-tune the time frame, solver behavio
         - **Inference algorithm**: Stochastic Variational Inference (SVI), which estimates parameters probabilistically.
         - **Loss function**: Evidence Lower Bound (ELBO), which guides parameter updates by balancing data fit and model complexity.
         - **Optimize method**: ADAM, an algorithm for efficient parameter updates.
+
+
+???+ tip
+
+    Consider using minimum settings - such as the end time at `3`, the number of samples at `1`, and the solver method at `euler` - to check whether the calibration can run to completion with the given mapping.
+
 
 ## Create the calibrated configuration
 
@@ -273,3 +279,9 @@ You can save Calibrate charts for use outside of Terarium. Download charts as im
         - View source (Vega-Lite JSON)
         - View compiled Vega (JSON)
         - Open in [Vega Editor](https://vega.github.io/editor/#/) :octicons-link-external-24:{ alt="External link" title="External link" }
+
+### Troubleshooting
+
+You may encounter various errors instead of calibration results.
+
+One example is `AssertionError: underflow in dt 0.0` and can be caused by an input model configuration that is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent or on the same order of magnitude as corresponding features in the calibration dataset.
