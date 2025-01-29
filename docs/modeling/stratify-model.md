@@ -78,7 +78,7 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
     
             Only stratify the parameters that differ for each stratum.
     
-    3. Enter a comma-separated list of labels for each of the strata groups.
+    3. Enter a comma-separated list of labels for each of the strata groups. They will be appended to the label of the variables and parameters selected for stratification, with an underscore `_` separating them.
 
         ```
         Middlesex, Suffolk, Worcester
@@ -89,6 +89,11 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
 ??? list "Stratify the model"
 
     -  Once you have completed all the settings, click **Stratify**.
+
+???+ tip
+
+    The labels for the strata groups should only contain letters (`a` to `Z`) and numbers (`0` to `9`). Do not use characters like `+`, `-`, `\`, `/`, `*`. For example, the names for some age groups could be `0to17, 18to65, 66plus` but not `0-17, 18-65, 66+`. Since these labels become part of mathematical symbols, we need to adhere to the naming convention of [SymPy](https://docs.sympy.org/latest/tutorials/intro-tutorial/gotchas.html).
+
 
 #### Allow transitions and interactions between strata
 
