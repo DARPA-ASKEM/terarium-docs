@@ -68,7 +68,7 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
 
     1. Enter a name for the strata you want to add.
 
-        ??? note
+        ???+ note
 
             If you choose to save the stratified model for re-use, the text you enter here becomes part of the suggested model name.
 
@@ -78,11 +78,13 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
     
             Only stratify the parameters that differ for each stratum.
     
-    3. Enter a comma-separated list of labels for each of the strata groups. They will be appended to the label of the variables and parameters selected for stratification, with an underscore `_` separating them.
+    3. Enter a comma-separated list of labels for each of the strata groups.
 
         ```
-        Middlesex, Suffolk, Worcester
+        Young, Old, MiddleAged
         ```
+
+        Labels are added to the selected variables and parameters for stratification, with an underscore `_` separating them (`S_Young`).
 
     4. Choose whether to [allow interactions and transitions between strata](#allow-transitions-and-interactions-between-strata).
 
@@ -92,7 +94,12 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
 
 ???+ tip
 
-    The labels for the strata groups should only contain letters (`a` to `Z`) and numbers (`0` to `9`). Do not use characters like `+`, `-`, `\`, `/`, `*`. For example, the names for some age groups could be `0to17, 18to65, 66plus` but not `0-17, 18-65, 66+`. Since these labels become part of mathematical symbols, we need to adhere to the naming convention of [SymPy](https://docs.sympy.org/latest/tutorials/intro-tutorial/gotchas.html).
+    Strata group labels should only contain letters (`a`&ndash;`Z`) and numbers (`0`&ndash;`9`). Don't use special characters like `+`, `-`, `\`, `/`, or `*`. 
+
+    - Recommended: `0to17, 18to65, 66plus`
+    - Not recommended: `0-17, 18-65, 66+`
+
+    Because strata labels become part of mathematical symbols, they must adhere to [SymPy naming conventions](https://docs.sympy.org/latest/tutorials/intro-tutorial/gotchas.html).
 
 
 #### Allow transitions and interactions between strata
