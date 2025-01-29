@@ -4,7 +4,9 @@ title: "Calibrate a model"
 
 # Calibrate a model
 
-Calibration lets you improve the performance of a model by updating the value of configuration parameters. You can calibrate a model with a reference dataset of observations and an optional intervention policy representing historical events that occur during the time period of the reference dataset. This operation is essentially takes prior distribution over the parameters (user's knowledge of the world at the first timepoint) and infer posterior distributions over the same, representing the best estimate of the state of the world again but conditioned on data.
+Calibration lets you improve the performance of a model by updating the value of configuration parameters. You can calibrate a model with a reference dataset of observations and an optional intervention policy representing historical events that occur during the time period of the reference dataset. 
+
+This operation essentially takes prior distribution over the parameters (your knowledge of the world at the first timepoint) and infers posterior distributions over the same, representing the best estimate of the state of the world again but conditioned on data.
 
 <iframe class="video" src="https://drive.google.com/file/d/1by_OGfVBbx2ExmdAMR8lKYFym000-B1x/preview" width="640" height="360"></iframe>
 
@@ -108,11 +110,9 @@ The Calibrate run settings allow you to fine-tune the time frame, solver behavio
         - **Loss function**: Evidence Lower Bound (ELBO), which guides parameter updates by balancing data fit and model complexity.
         - **Optimize method**: ADAM, an algorithm for efficient parameter updates.
 
-
 ???+ tip
 
-    Consider using minimum settings - such as the end time at `3`, the number of samples at `1`, and the solver method at `euler` - to check whether the calibration can run to completion with the given mapping.
-
+    Consider using minimum settings&mdash;such as end time `3`, number of samples at `1`, and the `euler` solver method&mdash;to check whether the calibration can run to completion with the given mapping.
 
 ## Create the calibrated configuration
 
@@ -284,4 +284,4 @@ You can save Calibrate charts for use outside of Terarium. Download charts as im
 
 You may encounter various errors instead of calibration results.
 
-One example is `AssertionError: underflow in dt 0.0` and can be caused by an input model configuration that is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent or on the same order of magnitude as corresponding features in the calibration dataset.
+One example is `AssertionError: underflow in dt 0.0`. This can happen when your input model configuration is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent with or on the same order of magnitude as corresponding features in the calibration dataset.

@@ -319,4 +319,4 @@ Generally, a good calibration takes a broad distribution (a low-certainty prior)
 
 You may encounter various errors instead of calibration results.
 
-One example is `AssertionError: underflow in dt 0.0` and can be caused by an input model configuration that is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent or on the same order of magnitude as corresponding features in the calibration dataset.
+One example is `AssertionError: underflow in dt 0.0`. This can happen when your input model configuration is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent with or on the same order of magnitude as corresponding features in the calibration dataset.
