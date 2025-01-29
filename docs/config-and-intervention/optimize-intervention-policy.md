@@ -84,11 +84,11 @@ Choose the duration of your simulation. Advanced settings let you specify how ma
 ??? list "Advanced settings"
 
     - **Number of samples**: Each simulation draws this number of samples from the model distribution. Select the number of samples to use. The default value of 100 is great for testing and understanding whether the given optimization will work. Higher values like 1,000 samples give more accurate results and a better sense of uncertainty in the model.
-    - **Solver method**: The default differential equation solver is `dopri5`, an adaptive step-size, 5th-order explicit Runge-Kutta method. The `euler` method requires you to also specify the **Solver step size**.
+    - **Solver method**: The default differential equation solver is `dopri5`, an adaptive step-size, 5th-order explicit Runge-Kutta method. The `euler` and `rk4` method requires you to also specify the **Solver step size**.
       
         ???+ note
     
-            For the best balance of speed and accuracy, the `dopri5` solver method is recommended.
+            For the best balance of speed and accuracy, the `rk4` or `dopri5`  solver method is recommended.
     
     - **Optimizer options**
           - **Algorithm**: [SciPy `basinhopping` algorithm](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html).
@@ -111,6 +111,9 @@ If the optimization does not complete successfully (as shown below), you need to
 ## Troubleshooting a failed optimization
 
 Intervention policy optimization is extremely complex. The following tips describe reasons why your optimization may fail and how get a successful optimization. When you encounter failures, repeat as necessary and try combinations of these tips.
+
+The other issue one could encounter is the following message:
+`lowest_optimization_result: message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.`
 
 ### Double check your inputs
 
