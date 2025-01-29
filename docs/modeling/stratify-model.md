@@ -68,7 +68,7 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
 
     1. Enter a name for the strata you want to add.
 
-        ??? note
+        ???+ note
 
             If you choose to save the stratified model for re-use, the text you enter here becomes part of the suggested model name.
 
@@ -81,14 +81,26 @@ Use the wizard view of the Stratify model operator to quickly apply commonly use
     3. Enter a comma-separated list of labels for each of the strata groups.
 
         ```
-        Middlesex, Suffolk, Worcester
+        Young, Old, MiddleAged
         ```
+
+        Labels are added to the selected variables and parameters for stratification, with an underscore `_` separating them (`S_Young`).
 
     4. Choose whether to [allow interactions and transitions between strata](#allow-transitions-and-interactions-between-strata).
 
 ??? list "Stratify the model"
 
     -  Once you have completed all the settings, click **Stratify**.
+
+???+ tip
+
+    Strata group labels should only contain letters (`a`&ndash;`Z`) and numbers (`0`&ndash;`9`). Don't use special characters like `+`, `-`, `\`, `/`, or `*`. 
+
+    - Recommended: `0to17, 18to65, 66plus`
+    - Not recommended: `0-17, 18-65, 66+`
+
+    Because strata labels become part of mathematical symbols, they must adhere to [SymPy naming conventions](https://docs.sympy.org/latest/tutorials/intro-tutorial/gotchas.html).
+
 
 #### Allow transitions and interactions between strata
 
