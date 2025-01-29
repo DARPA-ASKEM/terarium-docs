@@ -112,8 +112,20 @@ If the optimization does not complete successfully (as shown below), you need to
 
 Intervention policy optimization is extremely complex. The following tips describe reasons why your optimization may fail and how get a successful optimization. When you encounter failures, repeat as necessary and try combinations of these tips.
 
+
+### Optimal intervention policy is out of bounds
+Try the following
+- Expand the bounds for your intervention policy 
+- Use a different initial guess for the interventions.
+
+### Optimaization not satisfying set constraints
 The other issue one could encounter is the following message:
-`lowest_optimization_result: message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.`
+`lowest_optimization_result: message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.` This message means that the optimizer did not find a feasible solution withing the set bounds for the interventions or the risk bound is too strict to staisfy or ran out of resources (stopped too early).
+Try the following:
+- Check if the threshold value is appropriate for given problem
+- Use a different initial guess for the interventions
+- Increase `Maxiter` and `Maxfeval`
+- Increase `Number of samples` to improve accuracy of Monte Carlo risk estimation
 
 ### Double check your inputs
 
