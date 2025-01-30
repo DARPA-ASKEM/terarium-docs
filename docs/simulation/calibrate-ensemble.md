@@ -315,19 +315,13 @@ Generally, a good calibration takes a broad distribution (a low-certainty prior)
 
     - Select or clear **Show distributions in charts**.
 
-## Troubleshooting
-
-You may encounter various errors instead of calibration results.
-
-One example is `AssertionError: underflow in dt 0.0`. This can happen when your input model configuration is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent with or on the same order of magnitude as corresponding features in the calibration dataset.
-
 #### Troubleshooting
 
 Some tips for troubleshooting calibrate ensemble.
 
-	  - First, try calibrating each model to your dataset independently.
-	  - Set the `Relative certainty` under `Model weights` to one for each model. If you would like to adjust this setting, proceed slowly and cautiously. If you would like to include a preference for one model over the other(s), start by increasing its `Relative certainty` to 2, then 3, and so on.
-	  - Do your models contain uncertainty in parameter values? If not, only one sample is needed (the default number of samples is set to 100).
-    - If you plan to run your simulation for a long time and/or with a large number of samples (for example, `End time` or `Number of samples` > 100), we recommend setting these inputs to a lower value (like 10 or 20) and trying a test run to check for errors. 
-		- The PyCIEMSS error messages should be descriptive and offer some guidance as to how to proceed. However, the error messages from `Pyro` or `torchdiffeq` may be less clear. Some common errors you might encounter reference Cholesky factorization (with the message, "The factorization could not be completed because the input is not positive-definite"), and `AssertionError` is thrown with the message, "underflow in dt 0.0". Assuming you were able to calibrate each model independently, check that your candidate models and the dataset are on the same scale. You will likely encounter an error if one of your models assumes a population of 10 million, while another (or the dataset) has a population of 1,000, and similarly if one model (or the dataset) is normalized to a population of one while the others are not. Next, take a look at your initial conditions, make sure they are similar to each other and consistent with your dataset. These need not be an exact match, but you will likely encounter errors if they are too far off.
-	  - We recommend running the simulation on `Normal` mode using the `dopri5` solver method.
+ - First, try calibrating each model to your dataset independently.
+ - Set the `Relative certainty` under `Model weights` to one for each model. If you would like to adjust this setting, proceed slowly and cautiously. If you would like to include a preference for one model over the other(s), start by increasing its `Relative certainty` to 2, then 3, and so on.
+ - Do your models contain uncertainty in parameter values? If not, only one sample is needed (the default number of samples is set to 100).
+ - If you plan to simulate your calibrated ensemble model for a long time and/or with a large number of samples (for example, `End time` or `Number of samples` > 100), we recommend setting these inputs to a lower value (like 10 or 20) and trying a test run to check for errors. 
+ - The PyCIEMSS error messages should be descriptive and offer some guidance as to how to proceed. However, the error messages from `Pyro` or `torchdiffeq` may be less clear. Some common errors you might encounter reference Cholesky factorization (with the message, "The factorization could not be completed because the input is not positive-definite"), and `AssertionError` is thrown with the message, "underflow in dt 0.0". Assuming you were able to calibrate each model independently, check that your candidate models and the dataset are on the same scale. You will likely encounter an error if one of your models assumes a population of 10 million, while another (or the dataset) has a population of 1,000, and similarly if one model (or the dataset) is normalized to a population of one while the others are not. Next, take a look at your initial conditions, make sure they are similar to each other and consistent with your dataset. These need not be an exact match, but you will likely encounter errors if they are too far off.
+ - We recommend using the `dopri5` solver method.
