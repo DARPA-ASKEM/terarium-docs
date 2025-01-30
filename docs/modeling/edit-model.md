@@ -14,7 +14,10 @@ Model editing lets you build on existing models. Supported edits include:
 
 The Edit model operator is a code notebook with an interactive AI assistant. You describe in plain language the changes you want to make, and the large language model (LLM)-powered assistant automatically generates the code for you.
 
-<iframe class="video" src="https://drive.google.com/file/d/1k2T9cpCCPpGdgnhMx_DRrE1jpdoruM1o/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/editing-a-model.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/editing-a-model.mp4" download>Download the video</a>.
+</video>
 
 !!! note
 

@@ -13,7 +13,10 @@ You can use uploaded datasets or simulation results to [configure](../config-and
 
 The Transform data operator can also serve as a place to visually plot and compare multiple datasets or simulation results.
 
-<iframe class="video" src="https://drive.google.com/file/d/12uk_RpRaVlMygP2B8qHZ1LOv_CEK53Zv/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/working-with-data.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/working-with-data.mp4" download>Download the video</a>.
+</video>
 
 !!! note
 

@@ -9,7 +9,10 @@ The Create model from equations operator helps you to recreate a model from lite
 1. [Choose or enter the equations](#choose-the-equations) you want to include in the model.
 2. [Create the model](#create-the-model) as an output or resource for use in other modeling and configuration processes. 
 
-<iframe class="video" src="https://drive.google.com/file/d/15y1c4esX-xjnLfAmP2igzkifzSpWuIm8/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/create-model-from-equations.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/create-model-from-equations.mp4" download>Download the video</a>.
+</video>
 
 !!! note
 

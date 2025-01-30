@@ -315,7 +315,7 @@ Generally, a good calibration takes a broad distribution (a low-certainty prior)
 
     - Select or clear **Show distributions in charts**.
 
-### Troubleshooting
+## Troubleshooting
 
 You may encounter various errors instead of calibration results.
 
