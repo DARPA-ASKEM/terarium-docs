@@ -21,7 +21,10 @@ Regardless of your level of programming experience, Terarium allows you to:
 - :fontawesome-solid-chart-line:{ .lg .middle } **Analyze the results**
 </div>
 
-<iframe class="video" src="https://drive.google.com/file/d/1DrbkI_6b8MBjJtUrz3SPVopUK7F4T_c9/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/introduction.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/introduction.mp4" download>Download the video</a>.
+</video>
 
 Need more help? Check out these topics:
 

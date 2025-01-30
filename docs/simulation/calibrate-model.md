@@ -8,7 +8,10 @@ Calibration lets you improve the performance of a model by updating the value of
 
 This operation essentially takes prior distribution over the parameters (your knowledge of the world at the first timepoint) and infers posterior distributions over the same, representing the best estimate of the state of the world again but conditioned on data.
 
-<iframe class="video" src="https://drive.google.com/file/d/1by_OGfVBbx2ExmdAMR8lKYFym000-B1x/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/calibration.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/calibration.mp4" download>Download the video</a>.
+</video>
 
 ## Calibrate operator
 
@@ -280,7 +283,7 @@ You can save Calibrate charts for use outside of Terarium. Download charts as im
         - View compiled Vega (JSON)
         - Open in [Vega Editor](https://vega.github.io/editor/#/) :octicons-link-external-24:{ alt="External link" title="External link" }
 
-### Troubleshooting
+## Troubleshooting
 
 You may encounter various errors instead of calibration results.
 

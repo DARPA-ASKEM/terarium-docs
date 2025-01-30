@@ -16,32 +16,56 @@ The following videos show how to use Terarium to, for example:
 
 ## Introduction
 
-<iframe class="video" src="https://drive.google.com/file/d/1DrbkI_6b8MBjJtUrz3SPVopUK7F4T_c9/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/introduction.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/introduction.mp4" download>Download the video</a>.
+</video>
 
 ## Working with data
 
-<iframe class="video" src="https://drive.google.com/file/d/12uk_RpRaVlMygP2B8qHZ1LOv_CEK53Zv/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/working-with-data.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/working-with-data.mp4" download>Download the video</a>.
+</video>
 
 ## Creating a model from equations
 
-<iframe class="video" src="https://drive.google.com/file/d/15y1c4esX-xjnLfAmP2igzkifzSpWuIm8/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/create-model-from-equations.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/create-model-from-equations.mp4" download>Download the video</a>.
+</video>
 
 ## Editing a model
 
-<iframe class="video" src="https://drive.google.com/file/d/1k2T9cpCCPpGdgnhMx_DRrE1jpdoruM1o/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/editing-a-model.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/editing-a-model.mp4" download>Download the video</a>.
+</video>
 
 ## Calibration
 
-<iframe class="video" src="https://drive.google.com/file/d/1by_OGfVBbx2ExmdAMR8lKYFym000-B1x/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/calibration.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/calibration.mp4" download>Download the video</a>.
+</video>
 
 ## Simulating intervention policies
 
-<iframe class="video" src="https://drive.google.com/file/d/169Nkc2h6ArjYkhsm0D-Se7JENrzzfI7Q/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/simulating-intervention-policies.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/simulating-intervention-policies.mp4" download>Download the video</a>.
+</video>
 
 ## Optimizing intervention policies
 
-<iframe class="video" src="https://drive.google.com/file/d/1FlovnXRv9NUIRSuW1J7Xc3Ci53pwpydv/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/optimize.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/optimize.mp4" download>Download the video</a>.
+</video>
 
 ## Stratification
 
-<iframe class="video" src="https://drive.google.com/file/d/1S8_4vD5ZSEv--WGPiOlFEfJMD9bZ4ZHt/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/stratification.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/stratification.mp4" download>Download the video</a>.
+</video>

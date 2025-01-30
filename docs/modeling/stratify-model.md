@@ -6,7 +6,10 @@ title: "Stratify a model"
 
 You can make a simple model more complex by stratifying its state variables and parameters. Stratification builds many different versions of a model and its parameters&mdash;by location, demographics, or other contextual data&mdash;into one large model. You can then configure, calibrate, or simulate the combined models all at once.
 
-<iframe class="video" src="https://drive.google.com/file/d/1S8_4vD5ZSEv--WGPiOlFEfJMD9bZ4ZHt/preview" width="640" height="360"></iframe>
+<video controls>
+  <source src="https://videos.terarium.ai/stratification.mp4" type="video/mp4">
+  Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/stratification.mp4" download>Download the video</a>.
+</video>
 
 ## Stratify model operator
 
