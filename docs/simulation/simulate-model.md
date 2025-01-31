@@ -230,7 +230,7 @@ It's recommended you run simulations on the *Normal* **Preset** using the *dopri
 
 ### Uncertainty and number of samples
 
-If your models have no uncertainty in parameter values, only one sample is needed. Change **Number of samples** to *1* (the default zis set to 100).
+If your models have no uncertainty in parameter values, only one sample is needed. Change **Number of samples** to *1* (the default is set to 100).
  
 ### Simulation length and number of samples
 

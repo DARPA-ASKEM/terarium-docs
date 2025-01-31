@@ -315,13 +315,35 @@ Generally, a good calibration takes a broad distribution (a low-certainty prior)
 
     - Select or clear **Show distributions in charts**.
 
-#### Troubleshooting
+## Troubleshooting
 
-Some tips for troubleshooting calibrate ensemble.
+### Recommended run settings
 
- - First, try calibrating each model to your dataset independently.
- - Set the `Relative certainty` under `Model weights` to one for each model. If you would like to adjust this setting, proceed slowly and cautiously. If you would like to include a preference for one model over the other(s), start by increasing its `Relative certainty` to 2, then 3, and so on.
- - Do your models contain uncertainty in parameter values? If not, only one sample is needed (the default number of samples is set to 100).
- - If you plan to simulate your calibrated ensemble model for a long time and/or with a large number of samples (for example, `End time` or `Number of samples` > 100), we recommend setting these inputs to a lower value (like 10 or 20) and trying a test run to check for errors. 
- - The PyCIEMSS error messages should be descriptive and offer some guidance as to how to proceed. However, the error messages from `Pyro` or `torchdiffeq` may be less clear. Some common errors you might encounter reference Cholesky factorization (with the message, "The factorization could not be completed because the input is not positive-definite"), and `AssertionError` is thrown with the message, "underflow in dt 0.0". Assuming you were able to calibrate each model independently, check that your candidate models and the dataset are on the same scale. You will likely encounter an error if one of your models assumes a population of 10 million, while another (or the dataset) has a population of 1,000, and similarly if one model (or the dataset) is normalized to a population of one while the others are not. Next, take a look at your initial conditions, make sure they are similar to each other and consistent with your dataset. These need not be an exact match, but you will likely encounter errors if they are too far off.
- - We recommend using the `dopri5` solver method.
+It's recommended you run calibrations using the *dopri5* **Solver method**.
+
+### Calibrate each model first
+
+Try calibrating each model to your dataset independently.
+
+### Relative certainty
+
+Set the **Relative certainty** in the Model weights to *1* for each model. When using this setting, proceed slowly and cautiously. To include a preference for one model over the others, start by increasing its **Relative certainty** to *2*, then *3*, and so on.
+ 
+### Uncertainty and number of samples
+
+If your models have no uncertainty in parameter values, only one sample is needed. Change **Number of samples** to *1* (the default is set to 100).
+
+### Simulation length and number of samples
+
+If you plan to simulate your calibrated ensemble model for a long time or with a large number of samples (for example, **End time** or **Number of samples** > **100**), set them to a lower value (*10* or *20*) first and run a check for errors.
+
+### Error messages
+
+`PyCIEMSS` error messages should offer guidance on how to proceed. Error messages from `Pyro` or `torchdiffeq` may be less clear. 
+
+If you see a messages referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`) or `AssertionError` with `underflow in dt 0.0`: 
+
+1. If you successfully calibrated each model independently, check that the models and the dataset are on the same scale. Errors are likely if: 
+    - One model assumes a population of 10 million, while another (or the dataset) has a population of 1,000. 
+    - One model (or the dataset) is normalized to a population of one while the others are not. 
+2. Make sure your initial conditions are similar to each other and consistent with your dataset. They don't need to be an exact match, but errors are likely if they are too far off.
