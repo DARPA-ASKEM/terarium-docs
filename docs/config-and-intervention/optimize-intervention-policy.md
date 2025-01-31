@@ -127,6 +127,13 @@ Try the following:
 - Increase `Maxiter` and `Maxfeval` to provide more time for the optimizer to converge
 - Increase `Number of samples` to improve accuracy of Monte Carlo risk estimation
 
+### Seeing yellow
+
+If the results of your optimization look close to successful but aren't quite there yet, try increasing:
+
+- Rerun the simulation only with the intervention set to the optimal value and with *more number of samples*
+- `Maxiter` and `Maxfeval`.
+
 ### Double check your inputs
 
 - Does your model configuration have the correct parameter values and initial states? Are the distributions around your uncertain parameters reasonable or too large?
@@ -153,9 +160,3 @@ Are the bounds:
 - Too restrictive?
 - Not restrictive enough? If you want to search a wide swath of the parameter space, consider increasing the number of basinhopping iterations (`Maxiter`). This gives you more chances to find the global minima of your objective function.
 
-### Seeing yellow
-
-If the results of your optimization look close to successful but aren't quite there yet, try increasing:
-
-- Rerun the simulation only with the intervention set to the optimal value and with *more number of samples*
-- `Maxiter` and `Maxfeval`.
