@@ -225,3 +225,22 @@ You can save Simulate charts for use outside of Terarium. Download charts as ima
 ## Troubleshooting
 
 The Simulate operator may fail to return a result and show an error message ending with `AssertionError: underflow in dt 0.0`. This suggests that the values in the given configuration have caused the model to be unsolvable by the selected solver method, particularly `dopri5`. A workaround is to select a different solver method, such as `rk4` and `euler`. Although they are less performant than `dopri5`, they may be less likely to get caught in an unworkable state.
+### Recommended run settings
+
+It's recommended you run simulations on the *Normal* **Preset** using the *dopri5* **Solver method**.
+
+### Uncertainty and number of samples
+
+If your models have no uncertainty in parameter values, only one sample is needed. Change **Number of samples** to *1* (the default is set to 100).
+ 
+### Simulation length and number of samples
+
+If you plan to run your simulation for a long time or with a large number of samples (for example, **End time** or **Number of samples** > **100**), set them to a lower value (*10* or *20*) first and run a check for errors. 
+ 
+### Error messages
+
+`PyCIEMSS` error messages should offer guidance on how to proceed. Error messages from `Pyro` or `torchdiffeq` may be less clear. 
+  
+If you see a messages referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`) or `AssertionError` with `underflow in dt 0.0`:
+
+- There is an issue with the model, likely a model state blowing up to infinity or rapidly decreasing to negative infinity. Go back and check your model equations and configuration. Make sure the flow between compartments is correct, and then try adjusting your parameter values or initial conditions (are they too big?).
