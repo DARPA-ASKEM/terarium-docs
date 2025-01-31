@@ -27,6 +27,12 @@ The Edit model operator is a code notebook with an interactive AI assistant. You
     - Edit and rerun AI-generated code. 
     - Write own executable code to make custom edits.
 
+???+ note
+
+    In addition to this help, you can find more examples and information about model editing in the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
+
+
+
 ## Edit model operator
 
 In a workflow, the Edit model operator takes a model or model configuration as an input and outputs an edited model.

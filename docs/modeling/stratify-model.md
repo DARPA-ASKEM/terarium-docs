@@ -11,6 +11,11 @@ You can make a simple model more complex by stratifying its state variables and 
   Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/stratification.mp4" download>Download the video</a>.
 </video>
 
+???+ note
+
+    In addition to this help, you can find more examples and information about model stratification in the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
+
+
 ## Stratify model operator
 
 In a workflow, the Stratify model operator takes a model as an input and outputs a stratified version of the model.

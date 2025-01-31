@@ -221,3 +221,7 @@ You can save Simulate charts for use outside of Terarium. Download charts as ima
         - View source (Vega-Lite JSON)
         - View compiled Vega (JSON)
         - Open in [Vega Editor](https://vega.github.io/editor/#/) :octicons-link-external-24:{ alt="External link" title="External link" }
+
+## Troubleshooting
+
+The Simulate operator may fail to return a result and show an error message ending with `AssertionError: underflow in dt 0.0`. This suggests that the values in the given configuration have caused the model to be unsolvable by the selected solver method, particularly `dopri5`. A workaround is to select a different solver method, such as `rk4` and `euler`. Although they are less performant than `dopri5`, they may be less likely to get caught in an unworkable state.
