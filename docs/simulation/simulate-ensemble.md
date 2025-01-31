@@ -45,7 +45,7 @@ More info coming soon.
 
 ## Troubleshooting
 
-#### Recommended run settings
+### Recommended run settings
 
 It's recommended you run simulations on the *Normal* **Preset** using the *dopri5* **Solver method**.
 

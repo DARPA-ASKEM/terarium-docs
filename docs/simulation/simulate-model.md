@@ -222,12 +222,24 @@ You can save Simulate charts for use outside of Terarium. Download charts as ima
         - View compiled Vega (JSON)
         - Open in [Vega Editor](https://vega.github.io/editor/#/) :octicons-link-external-24:{ alt="External link" title="External link" }
 
-#### Troubleshooting
+## Troubleshooting
 
-Some tips for troubleshooting model simulation.
+### Recommended run settings
 
- - Does your model contain uncertainty in parameter values? If not, only one sample is needed (the default number of samples is set to 100).
- - If you plan to run your simulation for a long time and/or with a large number of samples (for example, `End time` or `Number of samples` > 100), we recommend setting these inputs to a lower value (like 10 or 20) and trying a test run to check for errors. 
- - The PyCIEMSS error messages should be descriptive and offer some guidance as to how to proceed. However, the error messages from `Pyro` or `torchdiffeq` may be less clear. Some common errors you might encounter reference Cholesky factorization (with the message, "The factorization could not be completed because the input is not positive-definite"), and `AssertionError` is thrown with the message, "underflow in dt 0.0". These errors indicate an issue with the model, and generally arise when a model state is blowing up to infinity, or rapidly decreasing to negative infinity. Should you encounter these errors, go back and check your model equations and configuration. Make sure the flow between compartments is correct, and then try adjusting your parameter values or initial conditions (are they too big?).
- - We recommend running the simulation on `Normal` mode using the `dopri5` solver method.
-	 
+It's recommended you run simulations on the *Normal* **Preset** using the *dopri5* **Solver method**.
+
+### Uncertainty and number of samples
+
+If your models have no uncertainty in parameter values, only one sample is needed. Change **Number of samples** to *1* (the default zis set to 100).
+ 
+### Simulation length and number of samples
+
+If you plan to run your simulation for a long time or with a large number of samples (for example, **End time** or **Number of samples** > **100**), set them to a lower value (*10* or *20*) first and run a check for errors. 
+ 
+### Error messages
+
+`PyCIEMSS` error messages should offer guidance on how to proceed. Error messages from `Pyro` or `torchdiffeq` may be less clear. 
+  
+If you see a messages referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`) or `AssertionError` with `underflow in dt 0.0`:
+
+- There is an issue with the model, likely a model state blowing up to infinity or rapidly decreasing to negative infinity. Go back and check your model equations and configuration. Make sure the flow between compartments is correct, and then try adjusting your parameter values or initial conditions (are they too big?).
