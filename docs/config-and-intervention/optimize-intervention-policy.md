@@ -114,13 +114,13 @@ Intervention policy optimization is extremely complex. The following tips descri
 
 
 ### Optimal intervention policy is out of bounds
-Try the following
+Try the following:
 - Expand the bounds for your intervention policy 
 - Use a different initial guess for the interventions.
 
 ### Optimaization not satisfying set constraints
 The other issue one could encounter is the following message:
-`lowest_optimization_result: message: Did not converge to a solution satisfying the constraints. See `maxcv` for magnitude of violation.` This message means that the optimizer did not find a feasible solution withing the set bounds for the interventions or the risk bound is too strict to staisfy or ran out of resources (stopped too early).
+`lowest_optimization_result: message: Did not converge to a solution satisfying the constraints. See maxcv for magnitude of violation.` This message means that the optimizer did not find a feasible solution within the set bounds for the interventions or the risk bound is too strict to staisfy or the optimizer ran out of resources (stopped too early).
 Try the following:
 - Check if the threshold value is appropriate for given problem
 - Use a different initial guess for the interventions
@@ -130,11 +130,10 @@ Try the following:
 ### Double check your inputs
 
 - Does your model configuration have the correct parameter values and initial states? Are the distributions around your uncertain parameters reasonable or too large?
-- Remove or tighten unnecessary sources of uncertainty. For example, if the default configuration of a SEIR model includes substantial uncertainty in the initial infectious population, try setting a fixed number of infectious individuals initially. This can help you investigate how changing the tranmission rate impacts infections and discover a successful optimization. 
+- As a sanity check, remove or tighten unnecessary sources of uncertainty. For example, if the default configuration of a SEIR model includes substantial uncertainty in the initial infectious population, try setting a fixed number of infectious individuals initially. This can help you investigate how changing the tranmission rate impacts infections and discover a successful optimization. 
 - Is the proposed intervention policy correct? Does the parameter you are intervening have the intended effect on the state variable of interest?
 
-### Simulate the model with your proposed intervention applied
-
+**Simulate the model with your proposed intervention applied as a check**
 Compare the results. Thicker solid lines represent the *mean trajectory* of the simulations, while the optimization focuses on "worst case scenarios" defined by your *risk tolerance*. Even if the peak of the intervened simulations is close to your desired threshold value, the range of all simulations (shown in lighter gray or green) can be much wider. Asking that the threshold not be exceeded in 95% of simulations is different than it might appear, as the mean being close to the threshold doesn't fully account for the variability, as shown below.
 
 ![Intervened samples](../img/config-and-intervention/optimization/intervened_samples.png)
