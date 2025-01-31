@@ -19,13 +19,17 @@ The Edit model operator is a code notebook with an interactive AI assistant. You
   Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/editing-a-model.mp4" download>Download the video</a>.
 </video>
 
-!!! note
+???+ note
 
     The Edit model operator adapts to your coding experience. You can: 
 
     - Use plain language to prompt an AI assistant for a no-code experience.
     - Edit and rerun AI-generated code. 
     - Write own executable code to make custom edits.
+
+???+ note
+
+    For more examples and information about model editing, see the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
 
 ## Edit model operator
 

@@ -62,3 +62,10 @@ Once you've built your workflow, you can edit the Simulate run and output settin
         ???+ tip
 
             Using a descriptive naming convention for your datasets will help you keep track of them when you want to compare multiple scenarios.
+
+
+## Troubleshooting
+
+If the simulation fails and shows an `AssertionError: underflow in dt 0.0` error, the configuration has made the model unsolvable with the selected solver **Method**. This often happens with the *dopri5* solver method.
+
+**Workaround**: Try using a different solver method, such as *rk4* or *euler*. These solvers are be less efficient than *dopri5*, but they are also less likely to get caught in an unworkable state
