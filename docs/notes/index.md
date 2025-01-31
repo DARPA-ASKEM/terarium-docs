@@ -43,7 +43,7 @@ You can add notes directly to the canvas to provide more context for the modelin
 
 ??? list "Add an annotation to the workflow canvas"
 
-    1. Right-click on the workflow canvas and select **Add annotation**.
+    1. Right-click on the workflow canvas and select **Text block**.
     2. Double-click `annotation text`, enter some text, and press **Ok**.
     3. Click and drag the annotation to a new location if needed.
 
