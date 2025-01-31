@@ -124,7 +124,7 @@ The other issue one could encounter is the following message:
 Try the following:
 - Check if the threshold value is appropriate for given problem
 - Use a different initial guess for the interventions
-- Increase `Maxiter` and `Maxfeval`
+- Increase `Maxiter` and `Maxfeval` to provide more time for the optimizer to converge
 - Increase `Number of samples` to improve accuracy of Monte Carlo risk estimation
 
 ### Double check your inputs
@@ -133,18 +133,17 @@ Try the following:
 - As a sanity check, remove or tighten unnecessary sources of uncertainty. For example, if the default configuration of a SEIR model includes substantial uncertainty in the initial infectious population, try setting a fixed number of infectious individuals initially. This can help you investigate how changing the tranmission rate impacts infections and discover a successful optimization. 
 - Is the proposed intervention policy correct? Does the parameter you are intervening have the intended effect on the state variable of interest?
 
-**Simulate the model with your proposed intervention applied as a check**
-Compare the results. Thicker solid lines represent the *mean trajectory* of the simulations, while the optimization focuses on "worst case scenarios" defined by your *risk tolerance*. Even if the peak of the intervened simulations is close to your desired threshold value, the range of all simulations (shown in lighter gray or green) can be much wider. Asking that the threshold not be exceeded in 95% of simulations is different than it might appear, as the mean being close to the threshold doesn't fully account for the variability, as shown below.
+**Simulate the model with your proposed intervention applied as a check and compare the results:** Thicker solid lines represent the *mean trajectory* of the simulations, while the optimization focuses on "worst case scenarios" defined by your *risk tolerance*. Even if the peak of the intervened simulations is close to your desired threshold value, the range of all simulations (shown in lighter gray or green) can be much wider. Asking that the threshold not be exceeded in 95% of simulations is different than it might appear, as the mean being close to the threshold doesn't fully account for the variability, as shown below.
 
 ![Intervened samples](../img/config-and-intervention/optimization/intervened_samples.png)
-
-### Adjust your risk tolerance
-
-Depending on the situation, it might be okay for infections to remain below a certain threshold only 75% of the time. But if the threshold for hospitalizations is the number of available beds, it may not be appropriate to become more risk tolerant.
 
 ### Adjust your threshold
 
 Is the threshold too low or too high? It may be preferable to have a higher threshold if you can be more certain it will not be exceeded.
+
+### Adjust your risk tolerance
+
+Depending on the situation, it might be okay for infections to remain below a certain threshold only 75% of the time. But if the threshold for hospitalizations is the number of available beds, it may not be appropriate to become more risk tolerant.
 
 ### Reassess the bounds of your intervention value or time.
 
@@ -152,11 +151,11 @@ Are the bounds:
 
 - Reasonable? If the lower bound of your parameter is zero, try using a lower bound like 0.01 or 0.001 instead.
 - Too restrictive?
-- Not restrictive enough? If you want to search a wide swath of the parameter space, consider increasing the number of basinhopping iterations (`Maxiter`). This gives you more chances to find the global minima of your optimization function.
+- Not restrictive enough? If you want to search a wide swath of the parameter space, consider increasing the number of basinhopping iterations (`Maxiter`). This gives you more chances to find the global minima of your objective function.
 
 ### Seeing yellow
 
 If the results of your optimization look close to successful but aren't quite there yet, try increasing:
 
-- The number of simulations.
+- Rerun the simulation only with the intervention set to the optimal value and with *more number of samples*
 - `Maxiter` and `Maxfeval`.
