@@ -317,6 +317,33 @@ Generally, a good calibration takes a broad distribution (a low-certainty prior)
 
 ## Troubleshooting
 
-You may encounter various errors instead of calibration results.
+### Recommended run settings
 
-One example is `AssertionError: underflow in dt 0.0`. This can happen when your input model configuration is too far from any solution. Consider checking whether the parameter values of the configuration can produce outcomes consistent with or on the same order of magnitude as corresponding features in the calibration dataset.
+It's recommended you run calibrations using the *dopri5* **Solver method**.
+
+### Calibrate each model first
+
+Try calibrating each model to your dataset independently.
+
+### Relative certainty
+
+Set the **Relative certainty** in the Model weights to *1* for each model. When using this setting, proceed slowly and cautiously. To include a preference for one model over the others, start by increasing its **Relative certainty** to *2*, then *3*, and so on.
+ 
+### Uncertainty and number of samples
+
+If your models have no uncertainty in parameter values, only one sample is needed. Change **Number of samples** to *1* (the default is set to 100).
+
+### Simulation length and number of samples
+
+If you plan to simulate your calibrated ensemble model for a long time or with a large number of samples (for example, **End time** or **Number of samples** > **100**), set them to a lower value (*10* or *20*) first and run a check for errors.
+
+### Error messages
+
+`PyCIEMSS` error messages should offer guidance on how to proceed. Error messages from `Pyro` or `torchdiffeq` may be less clear. 
+
+If you see a messages referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`) or `AssertionError` with `underflow in dt 0.0`: 
+
+1. If you successfully calibrated each model independently, check that the models and the dataset are on the same scale. Errors are likely if: 
+    - One model assumes a population of 10 million, while another (or the dataset) has a population of 1,000. 
+    - One model (or the dataset) is normalized to a population of one while the others are not. 
+2. Make sure your initial conditions are similar to each other and consistent with your dataset. They don't need to be an exact match, but errors are likely if they are too far off.
