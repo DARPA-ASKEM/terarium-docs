@@ -47,11 +47,6 @@ More info coming soon.
 
 ### Recommended run settings
 
-## Troubleshooting
-
-The Simulate operator may fail to return a result and show an error message ending with `AssertionError: underflow in dt 0.0`. This suggests that the values in the given configuration have caused the model to be unsolvable by the selected solver method, particularly `dopri5`. A workaround is to select a different solver method, such as `rk4` and `euler`. Although they are less performant than `dopri5`, they may be less likely to get caught in an unworkable state.
-
-
 It's recommended you run simulations on the *Normal* **Preset** using the *dopri5* **Solver method**.
 
 ### Simulate each model first
@@ -74,8 +69,16 @@ If you plan to run your simulation for a long time or with a large number of sam
 
 `PyCIEMSS` error messages should offer guidance on how to proceed. Error messages from `Pyro` or `torchdiffeq` may be less clear. 
 
-If you see a messages referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`) or `AssertionError` with `underflow in dt 0.0`:
+#### Cholesky factorization
+
+If you see a message referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`):
 
 - If you successfully simulated each model independently, check that the models are on the same scale and have similar initial conditions. Errors are likely if: 
     - One model assumes a population of 10 million, while another has a population of 1,000. 
     - One model is normalized to a population of one while the others are not.
+
+#### AssertionError
+
+If the simulation fails and shows an `AssertionError: underflow in dt 0.0` error, the configuration has made the model unsolvable with the selected solver **Method**. This often happens with the *dopri5* solver method.
+
+- **Workaround**: Try using a different solver method, such as *rk4* or *euler*. These solvers are be less efficient than *dopri5*, but they are also less likely to get caught in an unworkable state

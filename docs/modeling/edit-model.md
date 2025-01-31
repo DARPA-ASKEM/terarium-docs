@@ -19,7 +19,7 @@ The Edit model operator is a code notebook with an interactive AI assistant. You
   Your browser does not support HTML5 video. <a href="https://videos.terarium.ai/editing-a-model.mp4" download>Download the video</a>.
 </video>
 
-!!! note
+???+ note
 
     The Edit model operator adapts to your coding experience. You can: 
 
@@ -29,9 +29,7 @@ The Edit model operator is a code notebook with an interactive AI assistant. You
 
 ???+ note
 
-    In addition to this help, you can find more examples and information about model editing in the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
-
-
+    For more examples and information about model editing, see the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
 
 ## Edit model operator
 

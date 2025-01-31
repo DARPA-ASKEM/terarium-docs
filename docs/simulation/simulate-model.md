@@ -66,7 +66,7 @@ The Simulate run settings allow you to fine-tune the time frame and solver behav
     Using the following advanced settings, you can further optimize the computational efficiency and thoroughness of the simulation:
 
     - **Number of samples**: Number of stochastic samples to generate.
-    - **Method**: How to solve ordinary differential equations, [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) :octicons-link-external-24:{ alt="External link" title="External link" } or [euler](https://en.wikipedia.org/wiki/Euler_method) :octicons-link-external-24:{ alt="External link" title="External link" }.
+    - **Method**: How to solve ordinary differential equations, [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) :octicons-link-external-24:{ alt="External link" title="External link" }, rk4, or [euler](https://en.wikipedia.org/wiki/Euler_method) :octicons-link-external-24:{ alt="External link" title="External link" }.
 
         ???+ tip
 
@@ -224,7 +224,6 @@ You can save Simulate charts for use outside of Terarium. Download charts as ima
 
 ## Troubleshooting
 
-The Simulate operator may fail to return a result and show an error message ending with `AssertionError: underflow in dt 0.0`. This suggests that the values in the given configuration have caused the model to be unsolvable by the selected solver method, particularly `dopri5`. A workaround is to select a different solver method, such as `rk4` and `euler`. Although they are less performant than `dopri5`, they may be less likely to get caught in an unworkable state.
 ### Recommended run settings
 
 It's recommended you run simulations on the *Normal* **Preset** using the *dopri5* **Solver method**.
@@ -240,7 +239,15 @@ If you plan to run your simulation for a long time or with a large number of sam
 ### Error messages
 
 `PyCIEMSS` error messages should offer guidance on how to proceed. Error messages from `Pyro` or `torchdiffeq` may be less clear. 
+
+#### Cholesky factorization
   
-If you see a messages referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`) or `AssertionError` with `underflow in dt 0.0`:
+If you see a message referencing Cholesky factorization (including `The factorization could not be completed because the input is not positive-definite`):
 
 - There is an issue with the model, likely a model state blowing up to infinity or rapidly decreasing to negative infinity. Go back and check your model equations and configuration. Make sure the flow between compartments is correct, and then try adjusting your parameter values or initial conditions (are they too big?).
+
+#### AssertionError
+
+If the simulation fails and shows an `AssertionError: underflow in dt 0.0` error, the configuration has made the model unsolvable with the selected solver **Method**. This often happens with the *dopri5* solver method.
+
+- **Workaround**: Try using a different solver method, such as *rk4* or *euler*. These solvers are be less efficient than *dopri5*, but they are also less likely to get caught in an unworkable state

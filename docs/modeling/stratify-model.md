@@ -13,8 +13,7 @@ You can make a simple model more complex by stratifying its state variables and 
 
 ???+ note
 
-    In addition to this help, you can find more examples and information about model stratification in the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
-
+    For more examples and information about model stratification, see the [MIRA training material](https://github.com/gyorilab/mira/blob/main/docs/training_material.md).
 
 ## Stratify model operator
 

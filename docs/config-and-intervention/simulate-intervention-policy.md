@@ -66,5 +66,6 @@ Once you've built your workflow, you can edit the Simulate run and output settin
 
 ## Troubleshooting
 
-The Simulate operator may fail to return a result and show an error message ending with `AssertionError: underflow in dt 0.0`. This suggests that the values in the given configuration have caused the model to be unsolvable by the selected solver method, particularly `dopri5`. A workaround is to select a different solver method, such as `rk4` and `euler`. Although they are less performant than `dopri5`, they may be less likely to get caught in an unworkable state.
+If the simulation fails and shows an `AssertionError: underflow in dt 0.0` error, the configuration has made the model unsolvable with the selected solver **Method**. This often happens with the *dopri5* solver method.
 
+**Workaround**: Try using a different solver method, such as *rk4* or *euler*. These solvers are be less efficient than *dopri5*, but they are also less likely to get caught in an unworkable state
