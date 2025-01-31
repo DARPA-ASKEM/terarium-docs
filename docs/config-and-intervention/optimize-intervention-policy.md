@@ -84,11 +84,11 @@ Choose the duration of your simulation. Advanced settings let you specify how ma
 ??? list "Advanced settings"
 
     - **Number of samples**: Each simulation draws this number of samples from the model distribution. Select the number of samples to use. The default value of 100 is great for testing and understanding whether the given optimization will work. Higher values like 1,000 samples give more accurate results and a better sense of uncertainty in the model.
-    - **Solver method**: The default differential equation solver is `dopri5`, an adaptive step-size, 5th-order explicit Runge-Kutta method. The `euler` method requires you to also specify the **Solver step size**.
+    - **Solver method**: The default differential equation solver is `dopri5`, an adaptive step-size, 5th-order explicit Runge-Kutta method. The `euler` and `rk4` methods require you to also specify the **Solver step size**.
       
         ???+ note
     
-            For the best balance of speed and accuracy, the `dopri5` solver method is recommended.
+            For the best balance of speed and accuracy, the `rk4` or `dopri5`  solver method is recommended.
     
     - **Optimizer options**
           - **Algorithm**: [SciPy `basinhopping` algorithm](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.basinhopping.html).
@@ -112,25 +112,50 @@ If the optimization does not complete successfully (as shown below), you need to
 
 Intervention policy optimization is extremely complex. The following tips describe reasons why your optimization may fail and how get a successful optimization. When you encounter failures, repeat as necessary and try combinations of these tips.
 
+### Optimal intervention policy is out of bounds
+
+If the optimal intervention policy is out of bounds, try:
+
+- Expanding the bounds for your intervention policy.
+- Using a different initial guess for the interventions.
+
+### Optimization not satisfying set constraints
+
+> `lowest_optimization_result: message: Did not converge to a solution satisfying the constraints. See maxcv for magnitude of violation`
+ 
+This error message means that the optimizer didn't find a feasible solution within the bounds for the interventions, the risk bound is too strict to satisfy, or the optimizer ran out of resources (stopped too early).
+
+To address this:
+
+- Check if the threshold value is appropriate for given problem.
+- Use a different initial guess for the interventions.
+- Increase **Maxiter** and **Maxfeval** to provide more time for the optimizer to converge.
+- Increase the **Number of samples** to improve accuracy of Monte Carlo risk estimation.
+
+### Seeing yellow
+
+If the results of your optimization look close to successful but aren't quite there yet:
+
+- Rerun the simulation with the intervention set to the optimal value and an increased **Number of samples**.
+- Increase **Maxiter** and **Maxfeval**.
+
 ### Double check your inputs
 
 - Does your model configuration have the correct parameter values and initial states? Are the distributions around your uncertain parameters reasonable or too large?
-- Remove or tighten unnecessary sources of uncertainty. For example, if the default configuration of a SEIR model includes substantial uncertainty in the initial infectious population, try setting a fixed number of infectious individuals initially. This can help you investigate how changing the tranmission rate impacts infections and discover a successful optimization. 
+- As a check, remove or tighten unnecessary sources of uncertainty. For example, if the default configuration of a SEIR model includes substantial uncertainty in the initial infectious population, try setting a fixed number of infectious individuals initially. This can help you investigate how changing the transmission rate impacts infections and discover a successful optimization. 
 - Is the proposed intervention policy correct? Does the parameter you are intervening have the intended effect on the state variable of interest?
 
-### Simulate the model with your proposed intervention applied
-
-Compare the results. Thicker solid lines represent the *mean trajectory* of the simulations, while the optimization focuses on "worst case scenarios" defined by your *risk tolerance*. Even if the peak of the intervened simulations is close to your desired threshold value, the range of all simulations (shown in lighter gray or green) can be much wider. Asking that the threshold not be exceeded in 95% of simulations is different than it might appear, as the mean being close to the threshold doesn't fully account for the variability, as shown below.
+**Simulate the model with your proposed intervention applied as a check and compare the results**: Thicker solid lines represent the *mean trajectory* of the simulations, while the optimization focuses on "worst case scenarios" defined by your *risk tolerance*. Even if the peak of the intervened simulations is close to your desired threshold value, the range of all simulations (shown in lighter gray or green) can be much wider. Asking that the threshold not be exceeded in 95% of simulations is different than it might appear, as the mean being close to the threshold doesn't fully account for the variability, as shown below.
 
 ![Intervened samples](../img/config-and-intervention/optimization/intervened_samples.png)
-
-### Adjust your risk tolerance
-
-Depending on the situation, it might be okay for infections to remain below a certain threshold only 75% of the time. But if the threshold for hospitalizations is the number of available beds, it may not be appropriate to become more risk tolerant.
 
 ### Adjust your threshold
 
 Is the threshold too low or too high? It may be preferable to have a higher threshold if you can be more certain it will not be exceeded.
+
+### Adjust your risk tolerance
+
+Depending on the situation, it might be okay for infections to remain below a certain threshold only 75% of the time. But if the threshold for hospitalizations is the number of available beds, it may not be appropriate to become more risk tolerant.
 
 ### Reassess the bounds of your intervention value or time.
 
@@ -138,11 +163,5 @@ Are the bounds:
 
 - Reasonable? If the lower bound of your parameter is zero, try using a lower bound like 0.01 or 0.001 instead.
 - Too restrictive?
-- Not restrictive enough? If you want to search a wide swath of the parameter space, consider increasing the number of basinhopping iterations (`Maxiter`). This gives you more chances to find the global minima of your optimization function.
+- Not restrictive enough? If you want to search a wide swath of the parameter space, consider increasing the number of basinhopping iterations (**Maxiter**). This gives you more chances to find the global minima of your objective function.
 
-### Seeing yellow
-
-If the results of your optimization look close to successful but aren't quite there yet, try increasing:
-
-- The number of simulations.
-- `Maxiter` and `Maxfeval`.
