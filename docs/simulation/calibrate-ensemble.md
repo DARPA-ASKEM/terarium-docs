@@ -13,7 +13,7 @@ The result is a joint set of calibrated model configurations that may generate p
 
 Ensemble calibration essentially allows a search for configuration solutions where the member models can specialize to different features or time periods of the given dataset. This is analogous to a high-performing [random forest regressor](https://scikit-learn.org/1.6/modules/ensemble.html#forest) which can be constructed from multiple weak-learning [decision trees](https://scikit-learn.org/1.6/modules/tree.html#tree).
 
-Calibrate ensemble is powered by the `ensemble_calibrate` function of the [PyCIEMSS package](https://github.com/ciemss/pyciemss/blob/6a41b1a8247dd76f929488a479f4d27671120b36/pyciemss/interfaces.py#L184). An example of how it can be used programmatically can be found in [this Jupyter notebook](https://github.com/ciemss/pyciemss/blob/main/docs/source/interfaces.ipynb).  
+Calibrate ensemble is powered by the `ensemble_calibrate` function of the [PyCIEMSS package](https://github.com/ciemss/pyciemss/blob/e3d7d2216494bc0217517173520f99f3ba2a03ea/pyciemss/interfaces.py#L184). An example of how it can be used programmatically can be found in [this Jupyter notebook](https://github.com/ciemss/pyciemss/blob/main/docs/source/interfaces.ipynb).  
 
 ???+ tip
 
@@ -25,7 +25,7 @@ In a workflow, the Calibrate ensemble operator takes two or more model configura
 
 Once you've completed the calibration, the thumbnail preview shows the calibrated ensemble variables over time.
 
-<figure markdown>![](../img/simulation/calibrate-ensemble/calibrate-ensemble-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L156) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
+<figure markdown>![](../img/simulation/calibrate-ensemble/calibrate-ensemble-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/e3d7d2216494bc0217517173520f99f3ba2a03ea/pyciemss/interfaces.py#L184) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
 
 <div class="grid cards" markdown>
 

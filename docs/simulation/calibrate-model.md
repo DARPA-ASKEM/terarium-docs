@@ -23,7 +23,7 @@ In a workflow, the Calibrate operator takes a model configuration, a dataset, an
 
 Once you've completed the calibration, the thumbnail preview shows the results charts.
 
-<figure markdown>![](../img/simulation/calibrate/calibrate-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L529) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
+<figure markdown>![](../img/simulation/calibrate/calibrate-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/e3d7d2216494bc0217517173520f99f3ba2a03ea/pyciemss/interfaces.py#L593) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
 
 <div class="grid cards" markdown>
 
