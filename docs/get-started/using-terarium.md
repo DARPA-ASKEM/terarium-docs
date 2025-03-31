@@ -161,19 +161,19 @@ Terarium's operators support various ways for you to configure complex scientifi
 
     - [**Simulate**](../simulation/simulate-model.md)  
         Run a simulation of a model under specific conditions.  
-        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L323){ target="_blank" rel="noopener noreferrer" }  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py){ target="_blank" rel="noopener noreferrer" }  
     - [**Calibrate**](../simulation/calibrate-model.md)  
         Determine or update the value of model parameters given a reference dataset of observations.  
-        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L529){ target="_blank" rel="noopener noreferrer" }  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py){ target="_blank" rel="noopener noreferrer" }  
     - [**Optimize intervention policy**](../config-and-intervention/optimize-intervention-policy.md)  
         Determine the optimal values for variables that minimize or maximize an intervention given some constraints.  
-        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L747){ target="_blank" rel="noopener noreferrer" }  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py){ target="_blank" rel="noopener noreferrer" }  
     - [**Simulate ensemble**](../simulation/simulate-ensemble.md)  
         Run a simulation of multiple models or model configurations under specific conditions.  
-        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L35){ target="_blank" rel="noopener noreferrer" }  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py){ target="_blank" rel="noopener noreferrer" }  
     - [**Calibrate ensemble**](../simulation/calibrate-ensemble.md)    
         Extend the calibration process by working across multiple models simultaneously.  
-        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L156){ target="_blank" rel="noopener noreferrer" }  
+        :material-github:{ title="GitHub" aria-label="GitHub" class="md-annotation__index" } [*Source code*](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py){ target="_blank" rel="noopener noreferrer" }  
 
 -   __Data__
 
