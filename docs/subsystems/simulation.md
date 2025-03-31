@@ -65,7 +65,7 @@ More info coming soon.
 
     ---
 
-    [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L35) :octicons-link-external-24:{ alt="External link" title="External link" }
+    [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py) :octicons-link-external-24:{ alt="External link" title="External link" }
 
 -   __Source code__
 
@@ -82,7 +82,7 @@ More info coming soon.
 
     ---
 
-    [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L156) :octicons-link-external-24:{ alt="External link" title="External link" }
+    [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py) :octicons-link-external-24:{ alt="External link" title="External link" }
 
 -   __Source code__
 
