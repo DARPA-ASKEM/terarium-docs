@@ -86,8 +86,8 @@ The sensitivity score ranking chart shows how much each parameter influences the
 
 ???+ note
 
-    - The sensitivity score chart lists the up to the top 20 parameters.
-    - Parameters with no uncertainty are note included in the sensitivity score ranking.
+    - The sensitivity score chart lists up to the top 20 parameters.
+    - Parameters with no uncertainty are not included in the sensitivity score ranking.
 
 In the parameter comparisons:
 
@@ -98,7 +98,7 @@ In the parameter comparisons:
 
 ??? list "Customize the parameter comparison charts"
 
-    You can view the comparisons as scatterplots to either examine detailed relationships and outliers in your data or as heatmaps allows to visualize overall trends and patterns.
+    You can either view the comparisons as scatterplots to examine detailed relationships and outliers in your data or as heatmaps to visualize overall trends and patterns.
 
     1. Click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-angles-left:{ title="Expand" aria-labelledby="expand-icon-label" } to expand the Output settings.
     2. In the Sensitivity analysis section, select **Scatter** or **Heatmap**.

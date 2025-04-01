@@ -38,11 +38,11 @@ More info coming soon.
     6. Enter custom weights for the model configurations to specify your confidence in them.
     7. Select a **Preset**, Fast or Normal.
     8. Set the time span:
-        - **End Step**
-        - **Number of samples**
+        - **End time**
         - **Number of timepoints**
+        - **Number of samples**
     9. Choose a **Solver method**, *dopri5*, *rk4*, or *euler*. 
-    9. Click :material-play-outline:{ aria-hidden="true" } **Run**.
+    10. Click :material-play-outline:{ aria-hidden="true" } **Run**.
 
 ## Troubleshooting
 
