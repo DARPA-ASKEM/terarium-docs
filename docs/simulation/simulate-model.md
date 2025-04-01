@@ -25,7 +25,7 @@ In a workflow, the Simulate operator takes a model configuration and an optional
     ---
 
     - Model configuration
-    - Intervention policy (optional)
+    - Intervention policies (optional)
 
 -   :material-arrow-expand-right:{ .lg .middle aria-hidden="true" } __Outputs__
 
@@ -55,7 +55,7 @@ The Simulate run settings allow you to fine-tune the time frame and solver behav
 ??? list "Configure the run settings"
 
     1. Select a **Preset**, Fast or Normal.
-    2. Choose the **Start** and **End time** to specify the simulation time range.
+    2. Choose the **End time** to specify the simulation time range.
 
         ???+ note
 
@@ -66,6 +66,10 @@ The Simulate run settings allow you to fine-tune the time frame and solver behav
     Using the following advanced settings, you can further optimize the computational efficiency and thoroughness of the simulation:
 
     - **Number of samples**: Number of stochastic samples to generate.
+    - **Number of timepoints**: Number of data points to generate over the simulation. Use this setting when you want to generate more timepoints than the duration of the simulation. 
+
+        For example, a simulation with a duration of 10 days has 10 timepoints by default. Use this setting to increase or decrease the number of timepoints generated during the simulation.
+
     - **Method**: How to solve ordinary differential equations, [dopri5](https://en.wikipedia.org/wiki/Dormand-Prince_method) :octicons-link-external-24:{ alt="External link" title="External link" }, rk4, or [euler](https://en.wikipedia.org/wiki/Euler_method) :octicons-link-external-24:{ alt="External link" title="External link" }.
 
         ???+ tip
@@ -91,7 +95,29 @@ Once you've configured all the simulation settings, you can run the operator to 
 
 ## View simulation results
 
-When the simulation is complete, Terarium shows the results on the operator in the workflow and in the operator details. An AI-generated description summarizes results, and you can choose the variables to plot.
+When the simulation is complete, Terarium shows the results on the operator in the workflow and in the operator details. Available details include:
+
+- An AI-generated description. 
+- Configurable charts.
+- Data table of results.
+
+### AI-generated summaries of results
+
+AI-generated summaries of simulation results describe: 
+
+- The simulation settings you selected.
+- Trends in model parameters and states over time.
+- The effects of any interventions on outcomes.
+
+??? list "Edit the auto-generated summary"
+
+    You can edit the summary to provide your own interpretation of the data.
+
+    - Click anywhere on the description, make your changes, and press ++enter++.
+
+### Charts
+
+Configurable charts provide a visual way to understand and validate simulation results, allowing you to view interventions over time, compare variables and model states, and perform sensitivity analysis to see how parameter changes affect outcomes.
 
 <div class="grid cards" markdown>
 
@@ -119,13 +145,21 @@ When the simulation is complete, Terarium shows the results on the operator in t
 
     ![](../img/simulation/simulate/comparison-charts.png)
 
-    Additional options for comparison charts let you split the selected variables into separate small multiples charts. You can further customize the small multiples charts to show the same Y axis for all charts or incorporate before and after plots of the variables.
+    To access the following options for comparison charts, click <span class="sr-only" id="options-icon-label">Options</span> :octicons-gear-24:{ title="Options" aria-labelledby="options-icon-label" } in the Output settings. 
 
-    ![](../img/simulation/simulate/comparison-small-multiples.png)
+    ??? note "Comparison method"
+        
+        Split the selected variables into separate **Small multiples** charts. You can further customize the small multiples charts to show the **Same Y axis for all** charts or **Show before and after** plots of the variables.
 
-    ???+ tip
+        ![](../img/simulation/simulate/comparison-small-multiples.png)
 
         Use multiple charts if the variables you want to compare have very different ranges or values.
+
+    ??? note "Normalization"
+
+        **Normalize data by total strata population** to accurately assess the impact on each group regardless of size. With this option selected, the y-axis shows percentages, enabling comparisons across demographic segments by accounting for population size differences.
+
+        The equations used to normalize the charts appear below the setting.
 
 -   __Sensitivity analysis__
 
@@ -133,7 +167,7 @@ When the simulation is complete, Terarium shows the results on the operator in t
 
     Sensitivity analysis charts show how changes in model parameters affect the outcome variables of interest. For more information, see [Sensitivity analysis](sensitivity-analysis.md).
 
-    <figure markdown>![](../img/simulation/sensitivity/graph.png)<figcaption markdown>Sensitivity analysis graph for men infected with Mpox.</figcaption></figure>
+    <figure markdown>![](../img/simulation/sensitivity/graph.png)<figcaption markdown>Sensitivity analysis graph showing the number of humans exposed to Mpox at day 365</figcaption></figure>
 
 </div>
 
@@ -156,36 +190,7 @@ When the simulation is complete, Terarium shows the results on the operator in t
 
 #### Annotate charts
 
-Adding annotations to charts helps highlight key insights and guide interpretation of data. You can create annotations manually or using AI assistance.
-
-??? list "Add annotations that call out key values and timesteps"
-
-    To highlight notable findings, you can manually add annotations that label plotted values at key timesteps. This applies to interventions over time, variables over time, and comparison charts.
-
-    1. Click anywhere on the chart to add a callout.
-    2. To add more callouts without clearing the first one, hold down ++shift++ and click a new area of the chart.
-
-??? list "Prompt an AI assistant to add chart annotations"
-
-    You can prompt an AI assistant to automatically create annotations on the variables over time and comparison charts. Annotations are labelled or unlabelled lines that mark specific timestamps or peak values. Examples of AI-assisted annotations are listed below.
-
-    - Describe the annotations you want to add and press ++enter++.
-
-        ```{ .text .wrap }
-        Draw a vertical line at day 100
-        ```
-        ```{ .text .wrap }
-        Draw a line at the peak S
-        ```
-        ```{ .text .wrap }
-        Draw a horizontal line at the peak of default configuration Susceptible. Label it as "important"
-        ```
-        ```{ .text .wrap }
-        Draw a vertical line at x is 10. Don't add the label
-        ```
-        ```{ .text .wrap }
-        Draw a line at x = 40
-        ```
+Adding annotations to charts helps highlight key insights and guide interpretation of data. You can [create annotations manually or using AI assistance](../notes/index.md#annotate-charts).
 
 #### Display options
 
@@ -221,6 +226,14 @@ You can save Simulate charts for use outside of Terarium. Download charts as ima
         - View source (Vega-Lite JSON)
         - View compiled Vega (JSON)
         - Open in [Vega Editor](https://vega.github.io/editor/#/) :octicons-link-external-24:{ alt="External link" title="External link" }
+
+### Data
+
+An interactive table of simulation results enables you to explore model state and parameter values across various samples and timepoints, providing a detailed view of how these values evolve throughout the simulation.
+
+??? list "View simulation data"
+
+    - Click :octicons-list-unordered-16:{ aria-hidden="true"} **Data**.
 
 ## Troubleshooting
 

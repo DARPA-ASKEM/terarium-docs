@@ -60,15 +60,34 @@ Once you've built your workflow, you can edit the Simulate run and output settin
     1. On the Simulate operator, click **Open**.
     2. Select the Simulate [run settings](../simulation/simulate-model.md).
     3. Click **Run** to start the simulation.
-    4. Preview the sensitivity analysis results. To add variables or parameters, use the **Output** settings. 
+
+??? list "Edit the sensitivity analysis output settings"
+
+    1. Click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-angles-left:{ title="Expand" aria-labelledby="expand-icon-label" } to expand the Output settings.
+    2. In the Sensitivity analysis section, complete the sentence to choose the outcomes and parameters to analyze:
+        - **Outcomes of interest**: Choose the model states or observables you're interested in. Selecting more than one outcome of interest creates a unique sensitivity analysis for each selection.
+        - Choose the timepoint you're interested in:
+            - **Value at timepoint**: Enter the timepoint of interest.
+            - **Peak value**: The timepoint at which the selected outcome is highest.
+            - **Peak timepoint**: The last timepoint.
+        - **Model parameters**: Choose the parameters whose impact your want to understand. Each selected parameter is compared against itself and all other selected parameters.
 
 ## Understand sensitivity analysis results
 
-The results of each analysis are represented as a sensitivity analysis graph and a set of parameter comparisons.
+The results of each analysis are represented as a sensitivity analysis graph, a sensitivity score ranking chart, and a set of parameter comparisons.
 
 In the sensitivity analysis graph, color coding represents variations in the output variable (such as hospitalizations or case counts) across different parameter values or combinations. Cool colors represent lower values of the output variable, while warm colors represent higher values. 
 
-<figure markdown>![](../img/simulation/sensitivity/graph.png)<figcaption markdown>Sensitivity analysis graph for men infected with Mpox.</figcaption></figure>
+<figure markdown>![](../img/simulation/sensitivity/graph.png)<figcaption markdown>Sensitivity analysis graph showing the number of humans exposed to Mpox at day 365.</figcaption></figure>
+
+The sensitivity score ranking chart shows how much each parameter influences the outcome. The bar chart shows which parameters have the greatest effect, with values ranging from -1 to 1, indicating the direction and magnitude of impact on the outcome.
+
+![](../img/simulation/sensitivity/score-ranking.png)
+
+???+ note
+
+    - The sensitivity score chart lists the up to the top 20 parameters.
+    - Parameters with no uncertainty are note included in the sensitivity score ranking.
 
 In the parameter comparisons:
 
@@ -76,3 +95,10 @@ In the parameter comparisons:
 - The **color gradient** reveals transitions across the graph. Areas with cool colors represent parameter combinations that lead to less severe outcomes, while warm colors highlight conditions where outcomes worsen.
 
 <figure markdown>![](../img/simulation/sensitivity/comparisons.png)<figcaption markdown>Comparison graphs for different Mpox infection rate parameters based on gender.</figcaption></figure>
+
+??? list "Customize the parameter comparison charts"
+
+    You can view the comparisons as scatterplots to either examine detailed relationships and outliers in your data or as heatmaps allows to visualize overall trends and patterns.
+
+    1. Click <span class="sr-only" id="expand-icon-label">Expand</span> :fontawesome-solid-angles-left:{ title="Expand" aria-labelledby="expand-icon-label" } to expand the Output settings.
+    2. In the Sensitivity analysis section, select **Scatter** or **Heatmap**.
