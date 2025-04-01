@@ -8,7 +8,7 @@ More info coming soon.
 
 ## Simulate ensemble operator
 
-<figure markdown>![](../img/models/model-simulate-ensemble-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L35) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
+<figure markdown>![](../img/models/model-simulate-ensemble-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/e3d7d2216494bc0217517173520f99f3ba2a03ea/pyciemss/interfaces.py#L41) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
 
 <div class="grid cards" markdown>
 

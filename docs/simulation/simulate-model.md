@@ -16,7 +16,7 @@ Simulating a model lets you understand how the underlying system might behave un
 
 In a workflow, the Simulate operator takes a model configuration and an optional [intervention](../config-and-intervention/create-intervention-policy.md) as inputs. Based on a customizable number of samples (to account for uncertainty) it outputs a set of simulation data.
 
-<figure markdown>![](../img/simulation/simulate/simulate-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/main/pyciemss/interfaces.py#L323) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
+<figure markdown>![](../img/simulation/simulate/simulate-operator.png)<figcaption markdown>How it works: [PyCIEMSS](https://github.com/ciemss/pyciemss/blob/e3d7d2216494bc0217517173520f99f3ba2a03ea/pyciemss/interfaces.py#L357) :octicons-link-external-24:{ alt="External link" title="External link" }</figcaption></figure>
 
 <div class="grid cards" markdown>
 
